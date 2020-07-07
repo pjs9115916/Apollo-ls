@@ -10,6 +10,7 @@ import "modules/canbus/proto/transit.proto";
 import "modules/canbus/proto/wey.proto";
 import "modules/canbus/proto/zhongyun.proto";
 import "modules/canbus/proto/ch.proto";
+import "modules/canbus/proto/ls.proto";
 
 message ChassisDetail {
   enum Type {
@@ -40,6 +41,7 @@ message ChassisDetail {
   optional Wey wey = 22;
   optional Zhongyun zhongyun = 23;
   optional Ch ch = 24;
+  optional Ls ls = 25;
   // Reserve fields for other vehicles
   optional apollo.common.VehicleID vehicle_id = 101;
 }
