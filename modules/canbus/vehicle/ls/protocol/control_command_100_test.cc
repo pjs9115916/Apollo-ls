@@ -14,19 +14,19 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/protocol/control_command_115.h"
+#include "modules/canbus/vehicle/ls/protocol/control_command_100.h"
 #include "gtest/gtest.h"
 
 namespace apollo {
 namespace canbus {
-namespace ch {
-class Controlcommand115Test : public ::testing::Test {
+namespace ls {
+class Controlcommand100Test : public ::testing::Test {
  public:
   virtual void SetUp() {}
 };
 
-TEST_F(Controlcommand115Test, simple) {
-  Controlcommand115 controlcommand;
+TEST_F(Controlcommand100Test, simple) {
+  Controlcommand100 controlcommand;
   EXPECT_EQ(controlcommand.GetPeriod(), 20 * 1000);
   uint8_t data[8] = {0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68};
   controlcommand.UpdateData(data);
@@ -40,6 +40,6 @@ TEST_F(Controlcommand115Test, simple) {
   EXPECT_EQ(data[7], 0b01101000);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

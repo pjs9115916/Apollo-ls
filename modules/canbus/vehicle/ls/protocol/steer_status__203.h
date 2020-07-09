@@ -21,13 +21,13 @@
 
 namespace apollo {
 namespace canbus {
-namespace ch {
+namespace ls {
 
-class Steerstatus512 : public ::apollo::drivers::canbus::ProtocolData<
+class Steerstatus203 : public ::apollo::drivers::canbus::ProtocolData<
                            ::apollo::canbus::ChassisDetail> {
  public:
   static const int32_t ID;
-  Steerstatus512();
+  Steerstatus203();
   void Parse(const std::uint8_t* bytes, int32_t length,
              ChassisDetail* chassis) const override;
 
@@ -38,7 +38,7 @@ class Steerstatus512 : public ::apollo::drivers::canbus::ProtocolData<
   // 'STEER_ANGLE_EN_STS', 'is_signed_var': False, 'offset': 0.0,
   // 'physical_range': '[0|1]', 'bit': 0, 'type': 'enum', 'order': 'intel',
   // 'physical_unit': ''}
-  Steer_status__512::Steer_angle_en_stsType steer_angle_en_sts(
+  Steer_status__203::Steer_angle_en_stsType steer_angle_en_sts(
       const std::uint8_t* bytes, const int32_t length) const;
 
   // config detail: {'description': 'Current steering angle(Status)', 'offset':
@@ -48,6 +48,6 @@ class Steerstatus512 : public ::apollo::drivers::canbus::ProtocolData<
   double steer_angle_sts(const std::uint8_t* bytes, const int32_t length) const;
 };
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

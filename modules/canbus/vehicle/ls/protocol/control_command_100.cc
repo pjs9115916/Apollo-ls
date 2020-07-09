@@ -14,37 +14,37 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/protocol/control_command_115.h"
+#include "modules/canbus/vehicle/ls/protocol/control_command_100.h"
 #include "modules/drivers/canbus/common/byte.h"
 
 namespace apollo {
 namespace canbus {
-namespace ch {
+namespace ls {
 
 using ::apollo::drivers::canbus::Byte;
 
-const int32_t Controlcommand115::ID = 0x115;
+const int32_t Controlcommand100::ID = 0x100;
 
 // public
-Controlcommand115::Controlcommand115() { Reset(); }
+Controlcommand100::Controlcommand100() { Reset(); }
 
-uint32_t Controlcommand115::GetPeriod() const {
+uint32_t Controlcommand100::GetPeriod() const {
   // modify every protocol's period manually
   static const uint32_t PERIOD = 20 * 1000;
   return PERIOD;
 }
 
-void Controlcommand115::UpdateData(uint8_t* data) {
+void Controlcommand100::UpdateData(uint8_t* data) {
   set_p_ctrl_cmd(data, ctrl_cmd_);
 }
 
-void Controlcommand115::Reset() {
+void Controlcommand100::Reset() {
   // you should check this manually
-  ctrl_cmd_ = Control_command_115::CTRL_CMD_OUT_OF_CONTROL;
+  ctrl_cmd_ = Control_command_100::CTRL_CMD_OUT_OF_CONTROL;
 }
 
-Controlcommand115* Controlcommand115::set_ctrl_cmd(
-    Control_command_115::Ctrl_cmdType ctrl_cmd) {
+Controlcommand100* Controlcommand100::set_ctrl_cmd(
+    Control_command_100::Ctrl_cmdType ctrl_cmd) {
   ctrl_cmd_ = ctrl_cmd;
   return this;
 }
@@ -54,14 +54,14 @@ Controlcommand115* Controlcommand115::set_ctrl_cmd(
 // 'len': 8, 'name': 'CTRL_CMD', 'is_signed_var': False, 'offset': 0.0,
 // 'physical_range': '[0|1]', 'bit': 0, 'type': 'enum', 'order': 'intel',
 // 'physical_unit': ''}
-void Controlcommand115::set_p_ctrl_cmd(
-    uint8_t* data, Control_command_115::Ctrl_cmdType ctrl_cmd) {
+void Controlcommand100::set_p_ctrl_cmd(
+    uint8_t* data, Control_command_100::Ctrl_cmdType ctrl_cmd) {
   int x = ctrl_cmd;
 
   Byte to_set(data + 0);
   to_set.set_value(static_cast<uint8_t>(x), 0, 8);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

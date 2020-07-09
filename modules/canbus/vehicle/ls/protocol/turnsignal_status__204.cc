@@ -39,14 +39,14 @@ void Turnsignalstatus204::Parse(const std::uint8_t* bytes, int32_t length,
 // 'TURN_SIGNAL_STS_RIGHT'}, 'precision': 1.0, 'len': 8, 'name':
 // 'turn_signal_sts', 'is_signed_var': False, 'offset': 0.0, 'physical_range':
 // '[0|2]', 'bit': 0, 'type': 'enum', 'order': 'intel', 'physical_unit': ''}
-turnsignal_status__204::Turn_signal_stsType
+Turnsignal_status__204::Turn_signal_stsType
 Turnsignalstatus204::turn_signal_sts(const std::uint8_t* bytes,
                                      int32_t length) const {
   Byte t0(bytes + 0);
   int32_t x = t0.get_byte(0, 8);
 
-  return static_cast<turnsignal_status__204::Turn_signal_stsType>(x);
+  return static_cast<Turnsignal_status__204::Turn_signal_stsType>(x);
 }
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

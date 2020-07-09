@@ -40,11 +40,11 @@ void Turnsignalcommand104::UpdateData(uint8_t* data) {
 
 void Turnsignalcommand104::Reset() {
   // you should check this manually
-  turn_signal_cmd_ = turnsignal_command_104::TURN_SIGNAL_CMD_NONE;
+  turn_signal_cmd_ = Turnsignal_command_104::TURN_SIGNAL_CMD_NONE;
 }
 
 Turnsignalcommand104* Turnsignalcommand104::set_turn_signal_cmd(
-    turnsignal_command_104::Turn_signal_cmdType turn_signal_cmd) {
+    Turnsignal_command_104::Turn_signal_cmdType turn_signal_cmd) {
   turn_signal_cmd_ = turn_signal_cmd;
   return this;
 }
@@ -56,13 +56,13 @@ Turnsignalcommand104* Turnsignalcommand104::set_turn_signal_cmd(
 // '[0|2]', 'bit': 0, 'type': 'enum', 'order': 'intel', 'physical_unit': ''}
 void Turnsignalcommand104::set_p_turn_signal_cmd(
     uint8_t* data,
-    turnsignal_command_104::Turn_signal_cmdType turn_signal_cmd) {
+    Turnsignal_command_104::Turn_signal_cmdType turn_signal_cmd) {
   int x = turn_signal_cmd;
 
   Byte to_set(data + 0);
   to_set.set_value(static_cast<uint8_t>(x), 0, 8);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

@@ -14,32 +14,32 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/ch_vehicle_factory.h"
+#include "modules/canbus/vehicle/ls/ls_vehicle_factory.h"
 #include "gtest/gtest.h"
 #include "modules/canbus/proto/vehicle_parameter.pb.h"
 
 namespace apollo {
 namespace canbus {
 
-class ChVehicleFactoryTest : public ::testing::Test {
+class LsVehicleFactoryTest : public ::testing::Test {
  public:
   virtual void SetUp() {
     VehicleParameter parameter;
-    parameter.set_brand(apollo::common::CH);
-    ch_factory_.SetVehicleParameter(parameter);
+    parameter.set_brand(apollo::common::LS);
+    ls_factory_.SetVehicleParameter(parameter);
   }
   virtual void TearDown() {}
 
  protected:
-  ChVehicleFactory ch_factory_;
+  LsVehicleFactory ls_factory_;
 };
 
-TEST_F(ChVehicleFactoryTest, InitVehicleController) {
-  EXPECT_NE(ch_factory_.CreateVehicleController(), nullptr);
+TEST_F(LsVehicleFactoryTest, InitVehicleController) {
+  EXPECT_NE(ls_factory_.CreateVehicleController(), nullptr);
 }
 
-TEST_F(ChVehicleFactoryTest, InitMessageManager) {
-  EXPECT_NE(ch_factory_.CreateMessageManager(), nullptr);
+TEST_F(LsVehicleFactoryTest, InitMessageManager) {
+  EXPECT_NE(ls_factory_.CreateMessageManager(), nullptr);
 }
 
 }  // namespace canbus

@@ -170,10 +170,10 @@ Chassis LsController::chassis() {
   // 4 engine rpm ch has no engine rpm
   // chassis_.set_engine_rpm(0);
   // 5 ch has no wheel spd.
-  if (chassis_detail.ls().has_ecu_status_200() &&
-      chassis_detail.ls().ecu_status_200().has_speed()) {
+  if (chassis_detail.ls().has_ecu_status__200() &&
+      chassis_detail.ls().ecu_status__200().has_speed()) {
     chassis_.set_speed_mps(
-        static_cast<float>(chassis_detail.ls().ecu_status_200().speed()));
+        static_cast<float>(chassis_detail.ls().ecu_status__200().speed()));
   } else {
     chassis_.set_speed_mps(0);
   }
@@ -200,24 +200,24 @@ Chassis LsController::chassis() {
   }
 
   // 23, previously 10   gear
-  if (chassis_detail.ls().has_gear_status_204() &&
-      chassis_detail.ls().gear_status_204().has_gear_sts()) {
+  if (chassis_detail.ls().has_gear_status__204() &&
+      chassis_detail.ls().gear_status__204().has_gear_sts()) {
     Chassis::GearPosition gear_pos = Chassis::GEAR_INVALID;
 
-    if (chassis_detail.ls().gear_status_204().gear_sts() ==
-        gear_status_204::GEAR_STS_NEUTRAL) {
+    if (chassis_detail.ls().gear_status__204().gear_sts() ==
+        Gear_status__204::GEAR_STS_NEUTRAL) {
       gear_pos = Chassis::GEAR_NEUTRAL;
     }
-    if (chassis_detail.ls().gear_status_204().gear_sts() ==
-        gear_status_204::GEAR_STS_REVERSE) {
+    if (chassis_detail.ls().gear_status__204().gear_sts() ==
+        Gear_status__204::GEAR_STS_REVERSE) {
       gear_pos = Chassis::GEAR_REVERSE;
     }
-    if (chassis_detail.ls().gear_status_204().gear_sts() ==
-        gear_status_204::GEAR_STS_DRIVE) {
+    if (chassis_detail.ls().gear_status__204().gear_sts() ==
+        Gear_status__204::GEAR_STS_DRIVE) {
       gear_pos = Chassis::GEAR_DRIVE;
     }
-    if (chassis_detail.ls().gear_status_204().gear_sts() ==
-        gear_status_204::GEAR_STS_PARK) {
+    if (chassis_detail.ls().gear_status__204().gear_sts() ==
+        Gear_status__204::GEAR_STS_PARK) {
       gear_pos = Chassis::GEAR_PARKING;
     }
 
@@ -321,28 +321,28 @@ void LsController::Gear(Chassis::GearPosition gear_position) {
   // ADD YOUR OWN CAR CHASSIS OPERATION
   switch (gear_position) {
     case Chassis::GEAR_NEUTRAL: {
-      gear_command_104_->set_gear_cmd(Gear_command_114::GEAR_CMD_NEUTRAL);
+      gear_command_104_->set_gear_cmd(Gear_command_104::GEAR_CMD_NEUTRAL);
       break;
     }
     case Chassis::GEAR_REVERSE: {
-      gear_command_104_->set_gear_cmd(Gear_command_114::GEAR_CMD_REVERSE);
+      gear_command_104_->set_gear_cmd(Gear_command_104::GEAR_CMD_REVERSE);
       break;
     }
     case Chassis::GEAR_DRIVE: {
-      gear_command_104_->set_gear_cmd(Gear_command_114::GEAR_CMD_DRIVE);
+      gear_command_104_->set_gear_cmd(Gear_command_104::GEAR_CMD_DRIVE);
       break;
     }
     case Chassis::GEAR_PARKING: {
-      gear_command_104_->set_gear_cmd(Gear_command_114::GEAR_CMD_PARK);
+      gear_command_104_->set_gear_cmd(Gear_command_104::GEAR_CMD_PARK);
       break;
     }
     case Chassis::GEAR_INVALID: {
       AERROR << "Gear command is invalid!";
-      gear_command_104_->set_gear_cmd(Gear_command_114::GEAR_CMD_NEUTRAL);
+      gear_command_104_->set_gear_cmd(Gear_command_104::GEAR_CMD_NEUTRAL);
       break;
     }
     default: {
-      gear_command_104_->set_gear_cmd(Gear_command_114::GEAR_CMD_NEUTRAL);
+      gear_command_104_->set_gear_cmd(Gear_command_104::GEAR_CMD_NEUTRAL);
       break;
     }
   }
@@ -436,8 +436,7 @@ void LsController::SecurityDogThreadFunc() {
   int64_t start = 0;
   int64_t end = 0;
   while (can_sender_->IsRunning()) {
-    start = ::apollo::common::time::AsInt64<::apollo::common::time::micros>(
-        ::apollo::common::time::Clock::Now());
+    start = absl::ToUnixMicros(::apollo::common::time::Clock::Now());
     const Chassis::DrivingMode mode = driving_mode();
     bool emergency_mode = false;
 
@@ -475,8 +474,7 @@ void LsController::SecurityDogThreadFunc() {
       set_driving_mode(Chassis::EMERGENCY_MODE);
       message_manager_->ResetSendMessages();
     }
-    end = ::apollo::common::time::AsInt64<::apollo::common::time::micros>(
-        ::apollo::common::time::Clock::Now());
+    end = absl::ToUnixMicros(::apollo::common::time::Clock::Now());
     std::chrono::duration<double, std::micro> elapsed{end - start};
     if (elapsed < default_period) {
       std::this_thread::sleep_for(default_period - elapsed);

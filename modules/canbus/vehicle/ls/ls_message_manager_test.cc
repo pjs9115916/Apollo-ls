@@ -14,148 +14,148 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/ch_message_manager.h"
+#include "modules/canbus/vehicle/ls/ls_message_manager.h"
 #include "gtest/gtest.h"
-#include "modules/canbus/vehicle/ch/protocol/brake_command_111.h"
-#include "modules/canbus/vehicle/ch/protocol/brake_status__511.h"
-#include "modules/canbus/vehicle/ch/protocol/control_command_115.h"
-#include "modules/canbus/vehicle/ch/protocol/ecu_status_1_515.h"
-#include "modules/canbus/vehicle/ch/protocol/ecu_status_2_516.h"
-#include "modules/canbus/vehicle/ch/protocol/ecu_status_3_517.h"
-#include "modules/canbus/vehicle/ch/protocol/gear_command_114.h"
-#include "modules/canbus/vehicle/ch/protocol/gear_status_514.h"
-#include "modules/canbus/vehicle/ch/protocol/steer_command_112.h"
-#include "modules/canbus/vehicle/ch/protocol/steer_status__512.h"
-#include "modules/canbus/vehicle/ch/protocol/throttle_command_110.h"
-#include "modules/canbus/vehicle/ch/protocol/throttle_status__510.h"
-#include "modules/canbus/vehicle/ch/protocol/turnsignal_command_113.h"
-#include "modules/canbus/vehicle/ch/protocol/turnsignal_status__513.h"
+#include "modules/canbus/vehicle/ls/protocol/brake_command_102.h"
+#include "modules/canbus/vehicle/ls/protocol/brake_status__202.h"
+#include "modules/canbus/vehicle/ls/protocol/control_command_100.h"
+#include "modules/canbus/vehicle/ls/protocol/ecu_status__200.h"
+//#include "modules/canbus/vehicle/ls/protocol/ecu_status_2_516.h"
+//#include "modules/canbus/vehicle/ls/protocol/ecu_status_3_517.h"
+#include "modules/canbus/vehicle/ls/protocol/gear_command_104.h"
+#include "modules/canbus/vehicle/ls/protocol/gear_status__204.h"
+#include "modules/canbus/vehicle/ls/protocol/steer_command_103.h"
+#include "modules/canbus/vehicle/ls/protocol/steer_status__203.h"
+#include "modules/canbus/vehicle/ls/protocol/throttle_command_101.h"
+#include "modules/canbus/vehicle/ls/protocol/throttle_status__201.h"
+#include "modules/canbus/vehicle/ls/protocol/turnsignal_command_104.h"
+#include "modules/canbus/vehicle/ls/protocol/turnsignal_status__204.h"
 
 namespace apollo {
 namespace canbus {
-namespace ch {
+namespace ls {
 using ::apollo::canbus::ChassisDetail;
 using ::apollo::drivers::canbus::ProtocolData;
 
-class ChMessageManagerTest : public ::testing::Test {
+class LsMessageManagerTest : public ::testing::Test {
  public:
   virtual void SetUp() {}
 };
 
-TEST_F(ChMessageManagerTest, Brakecommand111) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Brakecommand102) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Brakecommand111::ID);
+      manager.GetMutableProtocolDataById(Brakecommand102::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Brakecommand111 *>(pd)->ID, Brakecommand111::ID);
+  EXPECT_EQ(static_cast<Brakecommand102 *>(pd)->ID, Brakecommand102::ID);
 }
 
-TEST_F(ChMessageManagerTest, Brakestatus511) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Brakestatus202) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Brakestatus511::ID);
+      manager.GetMutableProtocolDataById(Brakestatus202::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Brakestatus511 *>(pd)->ID, Brakestatus511::ID);
+  EXPECT_EQ(static_cast<Brakestatus202 *>(pd)->ID, Brakestatus202::ID);
 }
 
-TEST_F(ChMessageManagerTest, Controlcommand115) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Controlcommand100) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Controlcommand115::ID);
+      manager.GetMutableProtocolDataById(Controlcommand100::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Controlcommand115 *>(pd)->ID, Controlcommand115::ID);
+  EXPECT_EQ(static_cast<Controlcommand100 *>(pd)->ID, Controlcommand100::ID);
 }
 
-TEST_F(ChMessageManagerTest, Ecustatus1515) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Ecustatus200) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Ecustatus1515::ID);
+      manager.GetMutableProtocolDataById(Ecustatus200::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Ecustatus1515 *>(pd)->ID, Ecustatus1515::ID);
+  EXPECT_EQ(static_cast<Ecustatus200 *>(pd)->ID, Ecustatus200::ID);
 }
 
-TEST_F(ChMessageManagerTest, Ecustatus2516) {
-  ChMessageManager manager;
+/*TEST_F(LsMessageManagerTest, Ecustatus2516) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
       manager.GetMutableProtocolDataById(Ecustatus2516::ID);
   EXPECT_NE(pd, nullptr);
   EXPECT_EQ(static_cast<Ecustatus2516 *>(pd)->ID, Ecustatus2516::ID);
 }
 
-TEST_F(ChMessageManagerTest, Ecustatus3517) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Ecustatus3517) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
       manager.GetMutableProtocolDataById(Ecustatus3517::ID);
   EXPECT_NE(pd, nullptr);
   EXPECT_EQ(static_cast<Ecustatus3517 *>(pd)->ID, Ecustatus3517::ID);
-}
+}*/
 
-TEST_F(ChMessageManagerTest, Gearcommand114) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Gearcommand104) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Gearcommand114::ID);
+      manager.GetMutableProtocolDataById(Gearcommand104::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Gearcommand114 *>(pd)->ID, Gearcommand114::ID);
+  EXPECT_EQ(static_cast<Gearcommand104 *>(pd)->ID, Gearcommand104::ID);
 }
 
-TEST_F(ChMessageManagerTest, Gearstatus514) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Gearstatus204) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Gearstatus514::ID);
+      manager.GetMutableProtocolDataById(Gearstatus204::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Gearstatus514 *>(pd)->ID, Gearstatus514::ID);
+  EXPECT_EQ(static_cast<Gearstatus204 *>(pd)->ID, Gearstatus204::ID);
 }
 
-TEST_F(ChMessageManagerTest, Steercommand112) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Steercommand103) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Steercommand112::ID);
+      manager.GetMutableProtocolDataById(Steercommand103::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Steercommand112 *>(pd)->ID, Steercommand112::ID);
+  EXPECT_EQ(static_cast<Steercommand103 *>(pd)->ID, Steercommand103::ID);
 }
 
-TEST_F(ChMessageManagerTest, Steerstatus512) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Steerstatus203) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Steerstatus512::ID);
+      manager.GetMutableProtocolDataById(Steerstatus203::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Steerstatus512 *>(pd)->ID, Steerstatus512::ID);
+  EXPECT_EQ(static_cast<Steerstatus203 *>(pd)->ID, Steerstatus203::ID);
 }
 
-TEST_F(ChMessageManagerTest, Throttlecommand110) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Throttlecommand101) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Throttlecommand110::ID);
+      manager.GetMutableProtocolDataById(Throttlecommand101::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Throttlecommand110 *>(pd)->ID, Throttlecommand110::ID);
+  EXPECT_EQ(static_cast<Throttlecommand101 *>(pd)->ID, Throttlecommand101::ID);
 }
 
-TEST_F(ChMessageManagerTest, Throttlestatus510) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Throttlestatus201) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Throttlestatus510::ID);
+      manager.GetMutableProtocolDataById(Throttlestatus201::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Throttlestatus510 *>(pd)->ID, Throttlestatus510::ID);
+  EXPECT_EQ(static_cast<Throttlestatus201 *>(pd)->ID, Throttlestatus201::ID);
 }
 
-TEST_F(ChMessageManagerTest, Turnsignalcommand113) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Turnsignalcommand104) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Turnsignalcommand113::ID);
+      manager.GetMutableProtocolDataById(Turnsignalcommand104::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Turnsignalcommand113 *>(pd)->ID,
-            Turnsignalcommand113::ID);
+  EXPECT_EQ(static_cast<Turnsignalcommand104 *>(pd)->ID,
+            Turnsignalcommand104::ID);
 }
 
-TEST_F(ChMessageManagerTest, Turnsignalstatus513) {
-  ChMessageManager manager;
+TEST_F(LsMessageManagerTest, Turnsignalstatus204) {
+  LsMessageManager manager;
   ProtocolData<ChassisDetail> *pd =
-      manager.GetMutableProtocolDataById(Turnsignalstatus513::ID);
+      manager.GetMutableProtocolDataById(Turnsignalstatus204::ID);
   EXPECT_NE(pd, nullptr);
-  EXPECT_EQ(static_cast<Turnsignalstatus513 *>(pd)->ID,
-            Turnsignalstatus513::ID);
+  EXPECT_EQ(static_cast<Turnsignalstatus204 *>(pd)->ID,
+            Turnsignalstatus204::ID);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

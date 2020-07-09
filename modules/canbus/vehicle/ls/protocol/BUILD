@@ -3,32 +3,30 @@ load("//tools:cpplint.bzl", "cpplint")
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name = "canbus_ch_protocol",
+    name = "canbus_ls_protocol",
     deps = [
-        ":brake_command_111",
-        ":brake_status__511",
-        ":control_command_115",
-        ":ecu_status_1_515",
-        ":ecu_status_2_516",
-        ":ecu_status_3_517",
-        ":gear_command_114",
-        ":gear_status_514",
-        ":steer_command_112",
-        ":steer_status__512",
-        ":throttle_command_110",
-        ":throttle_status__510",
-        ":turnsignal_command_113",
-        ":turnsignal_status__513",
+        ":brake_command_102",
+        ":brake_status__202",
+        ":control_command_100",
+        ":ecu_status__200",
+        ":gear_command_104",
+        ":gear_status__204",
+        ":steer_command_103",
+        ":steer_status__203",
+        ":throttle_command_101",
+        ":throttle_status__201",
+        ":turnsignal_command_104",
+        ":turnsignal_status__204",
     ],
 )
 
 cc_library(
-    name = "brake_command_111",
+    name = "brake_command_102",
     srcs = [
-        "brake_command_111.cc",
+        "brake_command_102.cc",
     ],
     hdrs = [
-        "brake_command_111.h",
+        "brake_command_102.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -39,24 +37,24 @@ cc_library(
 )
 
 cc_test(
-    name = "brake_command_111_test",
+    name = "brake_command_102_test",
     size = "small",
     srcs = [
-        "brake_command_111_test.cc",
+        "brake_command_102_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "brake_status__511",
+    name = "brake_status__202",
     srcs = [
-        "brake_status__511.cc",
+        "brake_status__202.cc",
     ],
     hdrs = [
-        "brake_status__511.h",
+        "brake_status__202.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -67,24 +65,24 @@ cc_library(
 )
 
 cc_test(
-    name = "brake_status__511_test",
+    name = "brake_status__202_test",
     size = "small",
     srcs = [
-        "brake_status__511_test.cc",
+        "brake_status__202_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "control_command_115",
+    name = "control_command_100",
     srcs = [
-        "control_command_115.cc",
+        "control_command_100.cc",
     ],
     hdrs = [
-        "control_command_115.h",
+        "control_command_100.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -95,24 +93,24 @@ cc_library(
 )
 
 cc_test(
-    name = "control_command_115_test",
+    name = "control_command_100_test",
     size = "small",
     srcs = [
-        "control_command_115_test.cc",
+        "control_command_100_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "ecu_status_1_515",
+    name = "ecu_status__200",
     srcs = [
-        "ecu_status_1_515.cc",
+        "ecu_status__200.cc",
     ],
     hdrs = [
-        "ecu_status_1_515.h",
+        "ecu_status__200.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -123,24 +121,54 @@ cc_library(
 )
 
 cc_test(
-    name = "ecu_status_1_515_test",
+    name = "ecu_status__200_test",
     size = "small",
     srcs = [
-        "ecu_status_1_515_test.cc",
+        "ecu_status__200_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
+        "@gtest//:main",
+    ],
+)
+
+
+
+cc_library(
+    name = "gear_command_104",
+    srcs = [
+        "gear_command_104.cc",
+    ],
+    hdrs = [
+        "gear_command_104.h",
+    ],
+    copts = ["-DMODULE_NAME=\\\"canbus\\\""],
+    deps = [
+        "//modules/canbus/proto:canbus_proto",
+        "//modules/drivers/canbus/can_comm:message_manager_base",
+        "//modules/drivers/canbus/common:canbus_common",
+    ],
+)
+
+cc_test(
+    name = "gear_command_104_test",
+    size = "small",
+    srcs = [
+        "gear_command_104_test.cc",
+    ],
+    deps = [
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "ecu_status_2_516",
+    name = "gear_status__204",
     srcs = [
-        "ecu_status_2_516.cc",
+        "gear_status__204.cc",
     ],
     hdrs = [
-        "ecu_status_2_516.h",
+        "gear_status__204.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -151,24 +179,24 @@ cc_library(
 )
 
 cc_test(
-    name = "ecu_status_2_516_test",
+    name = "gear_status__204_test",
     size = "small",
     srcs = [
-        "ecu_status_2_516_test.cc",
+        "gear_status__204_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "ecu_status_3_517",
+    name = "steer_command_103",
     srcs = [
-        "ecu_status_3_517.cc",
+        "steer_command_103.cc",
     ],
     hdrs = [
-        "ecu_status_3_517.h",
+        "steer_command_103.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -179,24 +207,24 @@ cc_library(
 )
 
 cc_test(
-    name = "ecu_status_3_517_test",
+    name = "steer_command_103_test",
     size = "small",
     srcs = [
-        "ecu_status_3_517_test.cc",
+        "steer_command_103_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "gear_command_114",
+    name = "steer_status__203",
     srcs = [
-        "gear_command_114.cc",
+        "steer_status__203.cc",
     ],
     hdrs = [
-        "gear_command_114.h",
+        "steer_status__203.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -207,24 +235,24 @@ cc_library(
 )
 
 cc_test(
-    name = "gear_command_114_test",
+    name = "steer_status__203_test",
     size = "small",
     srcs = [
-        "gear_command_114_test.cc",
+        "steer_status__203_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "gear_status_514",
+    name = "throttle_command_101",
     srcs = [
-        "gear_status_514.cc",
+        "throttle_command_101.cc",
     ],
     hdrs = [
-        "gear_status_514.h",
+        "throttle_command_101.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -235,24 +263,24 @@ cc_library(
 )
 
 cc_test(
-    name = "gear_status_514_test",
+    name = "throttle_command_101_test",
     size = "small",
     srcs = [
-        "gear_status_514_test.cc",
+        "throttle_command_101_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "steer_command_112",
+    name = "throttle_status__201",
     srcs = [
-        "steer_command_112.cc",
+        "throttle_status__201.cc",
     ],
     hdrs = [
-        "steer_command_112.h",
+        "throttle_status__201.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -263,24 +291,24 @@ cc_library(
 )
 
 cc_test(
-    name = "steer_command_112_test",
+    name = "throttle_status__201_test",
     size = "small",
     srcs = [
-        "steer_command_112_test.cc",
+        "throttle_status__201_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "steer_status__512",
+    name = "turnsignal_command_104",
     srcs = [
-        "steer_status__512.cc",
+        "turnsignal_command_104.cc",
     ],
     hdrs = [
-        "steer_status__512.h",
+        "turnsignal_command_104.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -291,24 +319,24 @@ cc_library(
 )
 
 cc_test(
-    name = "steer_status__512_test",
+    name = "turnsignal_command_104_test",
     size = "small",
     srcs = [
-        "steer_status__512_test.cc",
+        "turnsignal_command_104_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )
 
 cc_library(
-    name = "throttle_command_110",
+    name = "turnsignal_status__204",
     srcs = [
-        "throttle_command_110.cc",
+        "turnsignal_status__204.cc",
     ],
     hdrs = [
-        "throttle_command_110.h",
+        "turnsignal_status__204.h",
     ],
     copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
@@ -319,97 +347,13 @@ cc_library(
 )
 
 cc_test(
-    name = "throttle_command_110_test",
+    name = "turnsignal_status__204_test",
     size = "small",
     srcs = [
-        "throttle_command_110_test.cc",
+        "turnsignal_status__204_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
-        "@gtest//:main",
-    ],
-)
-
-cc_library(
-    name = "throttle_status__510",
-    srcs = [
-        "throttle_status__510.cc",
-    ],
-    hdrs = [
-        "throttle_status__510.h",
-    ],
-    copts = ["-DMODULE_NAME=\\\"canbus\\\""],
-    deps = [
-        "//modules/canbus/proto:canbus_proto",
-        "//modules/drivers/canbus/can_comm:message_manager_base",
-        "//modules/drivers/canbus/common:canbus_common",
-    ],
-)
-
-cc_test(
-    name = "throttle_status__510_test",
-    size = "small",
-    srcs = [
-        "throttle_status__510_test.cc",
-    ],
-    deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
-        "@gtest//:main",
-    ],
-)
-
-cc_library(
-    name = "turnsignal_command_113",
-    srcs = [
-        "turnsignal_command_113.cc",
-    ],
-    hdrs = [
-        "turnsignal_command_113.h",
-    ],
-    copts = ["-DMODULE_NAME=\\\"canbus\\\""],
-    deps = [
-        "//modules/canbus/proto:canbus_proto",
-        "//modules/drivers/canbus/can_comm:message_manager_base",
-        "//modules/drivers/canbus/common:canbus_common",
-    ],
-)
-
-cc_test(
-    name = "turnsignal_command_113_test",
-    size = "small",
-    srcs = [
-        "turnsignal_command_113_test.cc",
-    ],
-    deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
-        "@gtest//:main",
-    ],
-)
-
-cc_library(
-    name = "turnsignal_status__513",
-    srcs = [
-        "turnsignal_status__513.cc",
-    ],
-    hdrs = [
-        "turnsignal_status__513.h",
-    ],
-    copts = ["-DMODULE_NAME=\\\"canbus\\\""],
-    deps = [
-        "//modules/canbus/proto:canbus_proto",
-        "//modules/drivers/canbus/can_comm:message_manager_base",
-        "//modules/drivers/canbus/common:canbus_common",
-    ],
-)
-
-cc_test(
-    name = "turnsignal_status__513_test",
-    size = "small",
-    srcs = [
-        "turnsignal_status__513_test.cc",
-    ],
-    deps = [
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "@gtest//:main",
     ],
 )

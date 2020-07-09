@@ -23,6 +23,7 @@ namespace ls {
 
 using ::apollo::drivers::canbus::Byte;
 
+
 const int32_t Throttlecommand101::ID = 0x101;
 
 // public
@@ -42,12 +43,14 @@ void Throttlecommand101::UpdateData(uint8_t* data) {
 void Throttlecommand101::Reset() {
   // you should check this manually
   throttle_pedal_en_ctrl_ =
-      throttle_command_101::THROTTLE_PEDAL_EN_CTRL_DISABLE;
+      Throttle_command_101::THROTTLE_PEDAL_EN_CTRL_DISABLE;
+     // Throttle_command_101::Throttle_pedal_en_ctrlType::
+     
   throttle_pedal_cmd_ = 0;
 }
 
 Throttlecommand101* Throttlecommand101::set_throttle_pedal_en_ctrl(
-    throttle_command_101::Throttle_pedal_en_ctrlType throttle_pedal_en_ctrl) {
+    Throttle_command_101::Throttle_pedal_en_ctrlType throttle_pedal_en_ctrl) {
   throttle_pedal_en_ctrl_ = throttle_pedal_en_ctrl;
   return this;
 }
@@ -59,7 +62,7 @@ Throttlecommand101* Throttlecommand101::set_throttle_pedal_en_ctrl(
 // 'type': 'enum', 'order': 'intel', 'physical_unit': ''}
 void Throttlecommand101::set_p_throttle_pedal_en_ctrl(
     uint8_t* data,
-    throttle_command_101::Throttle_pedal_en_ctrlType throttle_pedal_en_ctrl) {
+    Throttle_command_101::Throttle_pedal_en_ctrlType throttle_pedal_en_ctrl) {
   int x = throttle_pedal_en_ctrl;
 
   Byte to_set(data + 0);

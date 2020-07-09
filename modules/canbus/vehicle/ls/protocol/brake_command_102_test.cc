@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/protocol/brake_command_111.h"
+#include "modules/canbus/vehicle/ls/protocol/brake_command_102.h"
 #include "gtest/gtest.h"
 
 namespace apollo {

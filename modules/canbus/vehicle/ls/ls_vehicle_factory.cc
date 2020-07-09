@@ -14,24 +14,24 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/ch_vehicle_factory.h"
+#include "modules/canbus/vehicle/ls/ls_vehicle_factory.h"
 
 #include "cyber/common/log.h"
-#include "modules/canbus/vehicle/ch/ch_controller.h"
-#include "modules/canbus/vehicle/ch/ch_message_manager.h"
+#include "modules/canbus/vehicle/ls/ls_controller.h"
+#include "modules/canbus/vehicle/ls/ls_message_manager.h"
 #include "modules/common/util/util.h"
 
 namespace apollo {
 namespace canbus {
 
-std::unique_ptr<VehicleController> ChVehicleFactory::CreateVehicleController() {
-  return std::unique_ptr<VehicleController>(new ch::ChController());
+std::unique_ptr<VehicleController> LsVehicleFactory::CreateVehicleController() {
+  return std::unique_ptr<VehicleController>(new ls::LsController());
 }
 
 std::unique_ptr<MessageManager<::apollo::canbus::ChassisDetail>>
-ChVehicleFactory::CreateMessageManager() {
+LsVehicleFactory::CreateMessageManager() {
   return std::unique_ptr<MessageManager<::apollo::canbus::ChassisDetail>>(
-      new ch::ChMessageManager());
+      new ls::LsMessageManager());
 }
 
 }  // namespace canbus

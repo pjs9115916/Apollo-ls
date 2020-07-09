@@ -16,7 +16,7 @@
 
 #pragma once
 
-#include "modules/canbus/proto/lsassis_detail.pb.h"
+#include "modules/canbus/proto/chassis_detail.pb.h"
 #include "modules/drivers/canbus/can_comm/protocol_data.h"
 
 namespace apollo {
@@ -24,12 +24,12 @@ namespace canbus {
 namespace ls {
 
 class Brakestatus202 : public ::apollo::drivers::canbus::ProtocolData<
-                           ::apollo::canbus::lsassisDetail> {
+                           ::apollo::canbus::ChassisDetail> {
  public:
   static const int32_t ID;
   Brakestatus202();
   void Parse(const std::uint8_t* bytes, int32_t length,
-             lsassisDetail* lsassis) const override;
+             ChassisDetail* chassis) const override;
 
  private:
   // config detail: {'description': 'brake pedal enable bit(Status)', 'enum':

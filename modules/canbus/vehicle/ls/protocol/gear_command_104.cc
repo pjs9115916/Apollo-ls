@@ -40,11 +40,11 @@ void Gearcommand104::UpdateData(uint8_t* data) {
 
 void Gearcommand104::Reset() {
   // you should check this manually
-  gear_cmd_ = gear_command_104::GEAR_CMD_NEUTRAL;
+  gear_cmd_ = Gear_command_104::GEAR_CMD_NEUTRAL;
 }
 
 Gearcommand104* Gearcommand104::set_gear_cmd(
-    gear_command_104::Gear_cmdType gear_cmd) {
+    Gear_command_104::Gear_cmdType gear_cmd) {
   gear_cmd_ = gear_cmd;
   return this;
 }
@@ -55,7 +55,7 @@ Gearcommand104* Gearcommand104::set_gear_cmd(
 // 'is_signed_var': False, 'offset': 0.0, 'physical_range': '[1|4]', 'bit': 0,
 // 'type': 'enum', 'order': 'intel', 'physical_unit': ''}
 void Gearcommand104::set_p_gear_cmd(uint8_t* data,
-                                    gear_command_104::Gear_cmdType gear_cmd) {
+                                    Gear_command_104::Gear_cmdType gear_cmd) {
   int x = gear_cmd;
 
   Byte to_set(data + 0);

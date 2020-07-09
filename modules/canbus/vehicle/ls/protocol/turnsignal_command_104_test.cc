@@ -14,19 +14,19 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/protocol/turnsignal_command_113.h"
+#include "modules/canbus/vehicle/ls/protocol/turnsignal_command_104.h"
 #include "gtest/gtest.h"
 
 namespace apollo {
 namespace canbus {
-namespace ch {
-class Turnsignalcommand113Test : public ::testing::Test {
+namespace ls {
+class Turnsignalcommand104Test : public ::testing::Test {
  public:
   virtual void SetUp() {}
 };
 
-TEST_F(Turnsignalcommand113Test, simple) {
-  Turnsignalcommand113 turnsignalcommand;
+TEST_F(Turnsignalcommand104Test, simple) {
+  Turnsignalcommand104 turnsignalcommand;
   EXPECT_EQ(turnsignalcommand.GetPeriod(), 20 * 1000);
   uint8_t data[8] = {0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68};
   turnsignalcommand.UpdateData(data);
@@ -40,6 +40,6 @@ TEST_F(Turnsignalcommand113Test, simple) {
   EXPECT_EQ(data[7], 0b01101000);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

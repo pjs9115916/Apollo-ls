@@ -19,7 +19,7 @@
 
 namespace apollo {
 namespace canbus {
-namespace ch {
+namespace ls {
 class Steercommand103Test : public ::testing::Test {
  public:
   virtual void SetUp() {}

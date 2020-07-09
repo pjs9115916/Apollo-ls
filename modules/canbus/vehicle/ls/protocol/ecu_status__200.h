@@ -21,13 +21,13 @@
 
 namespace apollo {
 namespace canbus {
-namespace ch {
+namespace ls {
 
-class Ecustatus1515 : public ::apollo::drivers::canbus::ProtocolData<
+class Ecustatus200 : public ::apollo::drivers::canbus::ProtocolData<
                           ::apollo::canbus::ChassisDetail> {
  public:
   static const int32_t ID;
-  Ecustatus1515();
+  Ecustatus200();
   void Parse(const std::uint8_t* bytes, int32_t length,
              ChassisDetail* chassis) const override;
 
@@ -49,7 +49,7 @@ class Ecustatus1515 : public ::apollo::drivers::canbus::ProtocolData<
   // 'precision': 1.0, 'len': 8, 'name': 'CTRL_STS', 'is_signed_var': False,
   // 'offset': 0.0, 'physical_range': '[0|1]', 'bit': 32, 'type': 'enum',
   // 'order': 'intel', 'physical_unit': ''}
-  Ecu_status_1_515::Ctrl_stsType ctrl_sts(const std::uint8_t* bytes,
+  Ecu_status__200::Ctrl_stsType ctrl_sts(const std::uint8_t* bytes,
                                           const int32_t length) const;
 
   // config detail: {'description': 'Current chassis state (Chassis status)',
@@ -65,6 +65,6 @@ class Ecustatus1515 : public ::apollo::drivers::canbus::ProtocolData<
   int chassis_err(const std::uint8_t* bytes, const int32_t length) const;
 };
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

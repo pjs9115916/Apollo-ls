@@ -29,7 +29,7 @@ TEST_F(Steerstatus203Test, General) {
   uint8_t data[8] = {0x01, 0x02, 0x03, 0x04, 0x11, 0x12, 0x13, 0x14};
   int32_t length = 8;
   ChassisDetail cd;
-  Steerstatus512 steerstatus;
+  Steerstatus203 steerstatus;
   steerstatus.Parse(data, length, &cd);
 
   EXPECT_EQ(data[0], 0b00000001);
@@ -41,8 +41,8 @@ TEST_F(Steerstatus203Test, General) {
   EXPECT_EQ(data[6], 0b00010011);
   EXPECT_EQ(data[7], 0b00010100);
 
-  EXPECT_EQ(cd.ch().steer_status__203().steer_angle_en_sts(), 1);
-  EXPECT_DOUBLE_EQ(cd.ch().steer_status__203().steer_angle_sts(),
+  EXPECT_EQ(cd.ls().steer_status__203().steer_angle_en_sts(), 1);
+  EXPECT_DOUBLE_EQ(cd.ls().steer_status__203().steer_angle_sts(),
                    0.77000000000000002);
 }
 

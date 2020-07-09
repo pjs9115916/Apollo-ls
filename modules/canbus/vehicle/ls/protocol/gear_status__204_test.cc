@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ls/protocol/gear_status_204.h"
+#include "modules/canbus/vehicle/ls/protocol/gear_status__204.h"
 #include "gtest/gtest.h"
 
 namespace apollo {
@@ -41,9 +41,9 @@ TEST_F(Gearstatus204Test, General) {
   EXPECT_EQ(data[6], 0b00010011);
   EXPECT_EQ(data[7], 0b00010100);
 
-  EXPECT_EQ(cd.ls().gear_status_204().gear_sts(), 1);
+  EXPECT_EQ(cd.ls().gear_status__204().gear_sts(), 1);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

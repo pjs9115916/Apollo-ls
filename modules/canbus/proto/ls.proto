@@ -122,7 +122,7 @@ message Steer_status__203 {
   optional double steer_angle_sts = 2;
 }
 
-message Ecu_status_200 {
+message Ecu_status__200 {
 // Report Message
   enum Ctrl_stsType {
     CTRL_STS_OUT_OF_CONTROL = 0;
@@ -140,7 +140,7 @@ message Ecu_status_200 {
   optional int32 chassis_err = 5;
 }
 
-message Gear_status_204 {
+message Gear_status__204 {
 // Report Message
   enum Gear_stsType {
     GEAR_STS_PARK = 1;
@@ -190,13 +190,13 @@ message Ls {
   optional Brake_command_102 brake_command_102 = 3; // control message
   optional Throttle_command_101 throttle_command_101 = 4; // control message
   optional Turnsignal_command_104 turnsignal_command_104 = 5; // control message
-  optional Steer_command_112 steer_command_103 = 6; // control message
+  optional Steer_command_103 steer_command_103 = 6; // control message
   optional Brake_status__202 brake_status__202 = 7; // report message
   optional Throttle_status__201 throttle_status__201 = 8; // report message
   optional Turnsignal_status__204 turnsignal_status__204 = 9; // report message
   optional Steer_status__203 steer_status__203 = 10; // report message
-  optional Ecu_status_1_515 ecu_status_200 = 11; // report message
-  optional Gear_status_204 gear_status_204 = 12; // report message
+  optional Ecu_status__200 ecu_status__200 = 11; // report message
+  optional Gear_status__204 gear_status__204 = 12; // report message
   //optional Ecu_status_3_517 ecu_status_3_517 = 13; // report message
   //optional Ecu_status_2_516 ecu_status_2_516 = 14; // report message
 }

@@ -41,6 +41,6 @@ class Turnsignalstatus204 : public ::apollo::drivers::canbus::ProtocolData<
       const std::uint8_t* bytes, const int32_t length) const;
 };
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

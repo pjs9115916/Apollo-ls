@@ -20,7 +20,7 @@
 #include "modules/canbus/proto/canbus_conf.pb.h"
 #include "modules/canbus/proto/chassis.pb.h"
 #include "modules/canbus/proto/chassis_detail.pb.h"
-#include "modules/canbus/vehicle/ch/ch_message_manager.h"
+#include "modules/canbus/vehicle/ls/ls_message_manager.h"
 #include "modules/common/proto/vehicle_signal.pb.h"
 #include "modules/control/proto/control_cmd.pb.h"
 #include "modules/drivers/canbus/can_comm/can_sender.h"

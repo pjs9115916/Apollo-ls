@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ls/protocol/gear_status_204.h"
+#include "modules/canbus/vehicle/ls/protocol/gear_status__204.h"
 #include "glog/logging.h"
 #include "modules/drivers/canbus/common/byte.h"
 #include "modules/drivers/canbus/common/canbus_consts.h"
@@ -30,7 +30,7 @@ const int32_t Gearstatus204::ID = 0x204;
 
 void Gearstatus204::Parse(const std::uint8_t* bytes, int32_t length,
                           ChassisDetail* chassis) const {
-  chassis->mutable_ls()->mutable_gear_status_204()->set_gear_sts(
+  chassis->mutable_ls()->mutable_gear_status__204()->set_gear_sts(
       gear_sts(bytes, length));
 }
 
@@ -39,13 +39,13 @@ void Gearstatus204::Parse(const std::uint8_t* bytes, int32_t length,
 // 'GEAR_STS_DRIVE'}, 'precision': 1.0, 'len': 8, 'name': 'gear_sts',
 // 'is_signed_var': False, 'offset': 0.0, 'physical_range': '[1|4]', 'bit': 0,
 // 'type': 'enum', 'order': 'intel', 'physical_unit': ''}
-gear_status_204::Gear_stsType Gearstatus204::gear_sts(const std::uint8_t* bytes,
+Gear_status__204::Gear_stsType Gearstatus204::gear_sts(const std::uint8_t* bytes,
                                                       int32_t length) const {
   Byte t0(bytes + 0);
   int32_t x = t0.get_byte(0, 8);
 
-  gear_status_204::Gear_stsType ret =
-      static_cast<gear_status_204::Gear_stsType>(x);
+  Gear_status__204::Gear_stsType ret =
+      static_cast<Gear_status__204::Gear_stsType>(x);
   return ret;
 }
 }  // namespace ls

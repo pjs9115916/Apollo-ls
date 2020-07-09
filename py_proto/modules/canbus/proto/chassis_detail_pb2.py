@@ -21,15 +21,16 @@ from modules.canbus.proto import transit_pb2 as modules_dot_canbus_dot_proto_dot
 from modules.canbus.proto import wey_pb2 as modules_dot_canbus_dot_proto_dot_wey__pb2
 from modules.canbus.proto import zhongyun_pb2 as modules_dot_canbus_dot_proto_dot_zhongyun__pb2
 from modules.canbus.proto import ch_pb2 as modules_dot_canbus_dot_proto_dot_ch__pb2
+from modules.canbus.proto import ls_pb2 as modules_dot_canbus_dot_proto_dot_ls__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='modules/canbus/proto/chassis_detail.proto',
   package='apollo.canbus',
   syntax='proto2',
-  serialized_pb=_b('\n)modules/canbus/proto/chassis_detail.proto\x12\rapollo.canbus\x1a\x31modules/common/configs/proto/vehicle_config.proto\x1a\"modules/canbus/proto/chassis.proto\x1a\x1emodules/canbus/proto/ge3.proto\x1a modules/canbus/proto/lexus.proto\x1a\"modules/canbus/proto/transit.proto\x1a\x1emodules/canbus/proto/wey.proto\x1a#modules/canbus/proto/zhongyun.proto\x1a\x1dmodules/canbus/proto/ch.proto\"\x9e\x08\n\rChassisDetail\x12\x33\n\x08\x63\x61r_type\x18\x01 \x01(\x0e\x32!.apollo.canbus.ChassisDetail.Type\x12\'\n\x05\x62\x61sic\x18\x02 \x01(\x0b\x32\x18.apollo.canbus.BasicInfo\x12%\n\x06safety\x18\x03 \x01(\x0b\x32\x15.apollo.canbus.Safety\x12!\n\x04gear\x18\x04 \x01(\x0b\x32\x13.apollo.canbus.Gear\x12\x1f\n\x03\x65ms\x18\x05 \x01(\x0b\x32\x12.apollo.canbus.Ems\x12\x1f\n\x03\x65sp\x18\x06 \x01(\x0b\x32\x12.apollo.canbus.Esp\x12\x1f\n\x03gas\x18\x07 \x01(\x0b\x32\x12.apollo.canbus.Gas\x12\x1f\n\x03\x65pb\x18\x08 \x01(\x0b\x32\x12.apollo.canbus.Epb\x12#\n\x05\x62rake\x18\t \x01(\x0b\x32\x14.apollo.canbus.Brake\x12\x31\n\x0c\x64\x65\x63\x65leration\x18\n \x01(\x0b\x32\x1b.apollo.canbus.Deceleration\x12.\n\x0bvehicle_spd\x18\x0b \x01(\x0b\x32\x19.apollo.canbus.VehicleSpd\x12\x1f\n\x03\x65ps\x18\x0c \x01(\x0b\x32\x12.apollo.canbus.Eps\x12#\n\x05light\x18\r \x01(\x0b\x32\x14.apollo.canbus.Light\x12\'\n\x07\x62\x61ttery\x18\x0e \x01(\x0b\x32\x16.apollo.canbus.Battery\x12:\n\x0e\x63heck_response\x18\x0f \x01(\x0b\x32\".apollo.canbus.CheckResponseSignal\x12+\n\x07license\x18\x10 \x01(\x0b\x32\x16.apollo.canbus.LicenseB\x02\x18\x01\x12)\n\x08surround\x18\x11 \x01(\x0b\x32\x17.apollo.canbus.Surround\x12\x1f\n\x03gem\x18\x12 \x01(\x0b\x32\x12.apollo.canbus.Gem\x12#\n\x05lexus\x18\x13 \x01(\x0b\x32\x14.apollo.canbus.Lexus\x12\'\n\x07transit\x18\x14 \x01(\x0b\x32\x16.apollo.canbus.Transit\x12\x1f\n\x03ge3\x18\x15 \x01(\x0b\x32\x12.apollo.canbus.Ge3\x12\x1f\n\x03wey\x18\x16 \x01(\x0b\x32\x12.apollo.canbus.Wey\x12)\n\x08zhongyun\x18\x17 \x01(\x0b\x32\x17.apollo.canbus.Zhongyun\x12\x1d\n\x02\x63h\x18\x18 \x01(\x0b\x32\x11.apollo.canbus.Ch\x12,\n\nvehicle_id\x18\x65 \x01(\x0b\x32\x18.apollo.common.VehicleID\"-\n\x04Type\x12\x0f\n\x0bQIRUI_EQ_15\x10\x00\x12\x14\n\x10\x43HANGAN_RUICHENG\x10\x01\"\xeb\x01\n\x13\x43heckResponseSignal\x12\x1c\n\ris_eps_online\x18\x01 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_epb_online\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_esp_online\x18\x03 \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0eis_vtog_online\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_scu_online\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x10is_switch_online\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_vcu_online\x18\x07 \x01(\x08:\x05\x66\x61lse\"6\n\x07\x42\x61ttery\x12\x17\n\x0f\x62\x61ttery_percent\x18\x01 \x01(\x01\x12\x12\n\nfuel_level\x18\x02 \x01(\x01\"\xb1\t\n\x05Light\x12;\n\x0fturn_light_type\x18\x01 \x01(\x0e\x32\".apollo.canbus.Light.TurnLightType\x12\x39\n\x0e\x62\x65\x61m_lamp_type\x18\x02 \x01(\x0e\x32!.apollo.canbus.Light.BeamLampType\x12\x18\n\x10is_brake_lamp_on\x18\x03 \x01(\x08\x12\x15\n\ris_auto_light\x18\x04 \x01(\x08\x12\x12\n\nwiper_gear\x18\x05 \x01(\x05\x12\x13\n\x0blotion_gear\x18\x06 \x01(\x05\x12\x12\n\nis_horn_on\x18\x07 \x01(\x08\x12?\n\x11lincoln_lamp_type\x18\x08 \x01(\x0e\x32$.apollo.canbus.Light.LincolnLampType\x12<\n\rlincoln_wiper\x18\t \x01(\x0e\x32%.apollo.canbus.Light.LincolnWiperType\x12@\n\x0flincoln_ambient\x18\n \x01(\x0e\x32\'.apollo.canbus.Light.LincolnAmbientType\"[\n\rTurnLightType\x12\x12\n\x0eTURN_LIGHT_OFF\x10\x00\x12\x10\n\x0cTURN_LEFT_ON\x10\x01\x12\x11\n\rTURN_RIGHT_ON\x10\x02\x12\x11\n\rTURN_LIGHT_ON\x10\x03\"?\n\x0c\x42\x65\x61mLampType\x12\x0c\n\x08\x42\x45\x41M_OFF\x10\x00\x12\x10\n\x0cHIGH_BEAM_ON\x10\x01\x12\x0f\n\x0bLOW_BEAM_ON\x10\x02\"Y\n\x0fLincolnLampType\x12\r\n\tBEAM_NULL\x10\x00\x12\x16\n\x12\x42\x45\x41M_FLASH_TO_PASS\x10\x01\x12\r\n\tBEAM_HIGH\x10\x02\x12\x10\n\x0c\x42\x45\x41M_INVALID\x10\x03\"\xdc\x02\n\x10LincolnWiperType\x12\r\n\tWIPER_OFF\x10\x00\x12\x12\n\x0eWIPER_AUTO_OFF\x10\x01\x12\x14\n\x10WIPER_OFF_MOVING\x10\x02\x12\x14\n\x10WIPER_MANUAL_OFF\x10\x03\x12\x13\n\x0fWIPER_MANUAL_ON\x10\x04\x12\x14\n\x10WIPER_MANUAL_LOW\x10\x05\x12\x15\n\x11WIPER_MANUAL_HIGH\x10\x06\x12\x14\n\x10WIPER_MIST_FLICK\x10\x07\x12\x0e\n\nWIPER_WASH\x10\x08\x12\x12\n\x0eWIPER_AUTO_LOW\x10\t\x12\x13\n\x0fWIPER_AUTO_HIGH\x10\n\x12\x17\n\x13WIPER_COURTESY_WIPE\x10\x0b\x12\x15\n\x11WIPER_AUTO_ADJUST\x10\x0c\x12\x12\n\x0eWIPER_RESERVED\x10\r\x12\x11\n\rWIPER_STALLED\x10\x0e\x12\x11\n\rWIPER_NO_DATA\x10\x0f\"\xa8\x01\n\x12LincolnAmbientType\x12\x10\n\x0c\x41MBIENT_DARK\x10\x00\x12\x11\n\rAMBIENT_LIGHT\x10\x01\x12\x14\n\x10\x41MBIENT_TWILIGHT\x10\x02\x12\x15\n\x11\x41MBIENT_TUNNEL_ON\x10\x03\x12\x16\n\x12\x41MBIENT_TUNNEL_OFF\x10\x04\x12\x13\n\x0f\x41MBIENT_INVALID\x10\x05\x12\x13\n\x0f\x41MBIENT_NO_DATA\x10\x07\"\x85\x06\n\x03\x45ps\x12\x13\n\x0bis_eps_fail\x18\x01 \x01(\x08\x12\x32\n\x11\x65ps_control_state\x18\x02 \x01(\x0e\x32\x17.apollo.canbus.Eps.Type\x12\x1c\n\x14\x65ps_driver_hand_torq\x18\x03 \x01(\x01\x12\x1f\n\x17is_steering_angle_valid\x18\x04 \x01(\x08\x12\x16\n\x0esteering_angle\x18\x05 \x01(\x01\x12\x1a\n\x12steering_angle_spd\x18\x06 \x01(\x01\x12\x1a\n\x12is_trimming_status\x18\x07 \x01(\x08\x12\x1d\n\x15is_calibration_status\x18\x08 \x01(\x08\x12\x19\n\x11is_failure_status\x18\t \x01(\x08\x12#\n\x1b\x61llow_enter_autonomous_mode\x18\n \x01(\x05\x12\x1c\n\x14\x63urrent_driving_mode\x18\x0b \x01(\x05\x12\x1a\n\x12steering_angle_cmd\x18\x0c \x01(\x01\x12\x15\n\rvehicle_speed\x18\r \x01(\x01\x12\x13\n\x0b\x65pas_torque\x18\x0e \x01(\x01\x12\x18\n\x10steering_enabled\x18\x0f \x01(\x08\x12\x17\n\x0f\x64river_override\x18\x10 \x01(\x08\x12\x17\n\x0f\x64river_activity\x18\x11 \x01(\x08\x12\x16\n\x0ewatchdog_fault\x18\x12 \x01(\x08\x12\x17\n\x0f\x63hannel_1_fault\x18\x13 \x01(\x08\x12\x17\n\x0f\x63hannel_2_fault\x18\x14 \x01(\x08\x12\x19\n\x11\x63\x61libration_fault\x18\x15 \x01(\x08\x12\x17\n\x0f\x63onnector_fault\x18\x16 \x01(\x08\x12\x14\n\x0ctimestamp_65\x18\x17 \x01(\x01\x12\x15\n\rmajor_version\x18\x18 \x01(\x05\x12\x15\n\rminor_version\x18\x19 \x01(\x05\x12\x14\n\x0c\x62uild_number\x18\x1a \x01(\x05\"=\n\x04Type\x12\x11\n\rNOT_AVAILABLE\x10\x00\x12\t\n\x05READY\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0b\n\x07INVALID\x10\x03\"\xeb\x06\n\nVehicleSpd\x12\x1d\n\x15is_vehicle_standstill\x18\x01 \x01(\x08\x12\x1c\n\x14is_vehicle_spd_valid\x18\x02 \x01(\x08\x12\x16\n\x0bvehicle_spd\x18\x03 \x01(\x01:\x01\x30\x12\x1d\n\x15is_wheel_spd_rr_valid\x18\x04 \x01(\x08\x12\x44\n\x12wheel_direction_rr\x18\x05 \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_rr\x18\x06 \x01(\x01\x12\x1d\n\x15is_wheel_spd_rl_valid\x18\x07 \x01(\x08\x12\x44\n\x12wheel_direction_rl\x18\x08 \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_rl\x18\t \x01(\x01\x12\x1d\n\x15is_wheel_spd_fr_valid\x18\n \x01(\x08\x12\x44\n\x12wheel_direction_fr\x18\x0b \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_fr\x18\x0c \x01(\x01\x12\x1d\n\x15is_wheel_spd_fl_valid\x18\r \x01(\x08\x12\x44\n\x12wheel_direction_fl\x18\x0e \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_fl\x18\x0f \x01(\x01\x12\x19\n\x11is_yaw_rate_valid\x18\x10 \x01(\x08\x12\x10\n\x08yaw_rate\x18\x11 \x01(\x01\x12\x17\n\x0fyaw_rate_offset\x18\x12 \x01(\x01\x12\x13\n\x0bis_ax_valid\x18\x13 \x01(\x08\x12\n\n\x02\x61x\x18\x14 \x01(\x01\x12\x11\n\tax_offset\x18\x15 \x01(\x01\x12\x13\n\x0bis_ay_valid\x18\x16 \x01(\x08\x12\n\n\x02\x61y\x18\x17 \x01(\x01\x12\x11\n\tay_offset\x18\x18 \x01(\x01\x12\x0f\n\x07lat_acc\x18\x19 \x01(\x01\x12\x10\n\x08long_acc\x18\x1a \x01(\x01\x12\x10\n\x08vert_acc\x18\x1b \x01(\x01\x12\x11\n\troll_rate\x18\x1c \x01(\x01\x12\x0f\n\x07\x61\x63\x63_est\x18\x1d \x01(\x01\x12\x15\n\rtimestamp_sec\x18\x1e \x01(\x01\"\xd2\x01\n\x0c\x44\x65\x63\x65leration\x12!\n\x19is_deceleration_available\x18\x01 \x01(\x08\x12\x1e\n\x16is_deceleration_active\x18\x02 \x01(\x08\x12\x17\n\x0c\x64\x65\x63\x65leration\x18\x03 \x01(\x01:\x01\x30\x12\x13\n\x0bis_evb_fail\x18\x04 \x01(\x01\x12\x17\n\x0c\x65vb_pressure\x18\x05 \x01(\x01:\x01\x30\x12\x19\n\x0e\x62rake_pressure\x18\x06 \x01(\x01:\x01\x30\x12\x1d\n\x12\x62rake_pressure_spd\x18\x07 \x01(\x01:\x01\x30\"\xb6\x08\n\x05\x42rake\x12%\n\x16is_brake_pedal_pressed\x18\x01 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\x14is_brake_force_exist\x18\x02 \x01(\x08\x12\x1a\n\x12is_brake_over_heat\x18\x03 \x01(\x08\x12\x18\n\x10is_hand_brake_on\x18\x04 \x01(\x08\x12\x1c\n\x14\x62rake_pedal_position\x18\x05 \x01(\x01\x12\x16\n\x0eis_brake_valid\x18\x06 \x01(\x08\x12\x13\n\x0b\x62rake_input\x18\x07 \x01(\x01\x12\x11\n\tbrake_cmd\x18\x08 \x01(\x01\x12\x14\n\x0c\x62rake_output\x18\t \x01(\x01\x12\x11\n\tboo_input\x18\n \x01(\x08\x12\x0f\n\x07\x62oo_cmd\x18\x0b \x01(\x08\x12\x12\n\nboo_output\x18\x0c \x01(\x08\x12 \n\x18watchdog_applying_brakes\x18\r \x01(\x08\x12\x17\n\x0fwatchdog_source\x18\x0e \x01(\x05\x12\x15\n\rbrake_enabled\x18\x0f \x01(\x08\x12\x17\n\x0f\x64river_override\x18\x10 \x01(\x08\x12\x17\n\x0f\x64river_activity\x18\x11 \x01(\x08\x12\x16\n\x0ewatchdog_fault\x18\x12 \x01(\x08\x12\x17\n\x0f\x63hannel_1_fault\x18\x13 \x01(\x08\x12\x17\n\x0f\x63hannel_2_fault\x18\x14 \x01(\x08\x12\x11\n\tboo_fault\x18\x15 \x01(\x08\x12\x17\n\x0f\x63onnector_fault\x18\x16 \x01(\x08\x12\x18\n\x10\x62rake_torque_req\x18\x17 \x01(\x01\x12\x36\n\nhsa_status\x18\x18 \x01(\x0e\x32\".apollo.canbus.Brake.HSAStatusType\x12\x18\n\x10\x62rake_torque_act\x18\x19 \x01(\x01\x12\x32\n\x08hsa_mode\x18\x1a \x01(\x0e\x32 .apollo.canbus.Brake.HSAModeType\x12\x18\n\x10wheel_torque_act\x18\x1b \x01(\x01\x12\x15\n\rmajor_version\x18\x1c \x01(\x05\x12\x15\n\rminor_version\x18\x1d \x01(\x05\x12\x14\n\x0c\x62uild_number\x18\x1e \x01(\x05\"\xbb\x01\n\rHSAStatusType\x12\x10\n\x0cHSA_INACTIVE\x10\x00\x12\x18\n\x14HSA_FINDING_GRADIENT\x10\x01\x12\x16\n\x12HSA_ACTIVE_PRESSED\x10\x02\x12\x17\n\x13HSA_ACTIVE_RELEASED\x10\x03\x12\x14\n\x10HSA_FAST_RELEASE\x10\x04\x12\x14\n\x10HSA_SLOW_RELEASE\x10\x05\x12\x0e\n\nHSA_FAILED\x10\x06\x12\x11\n\rHSA_UNDEFINED\x10\x07\"P\n\x0bHSAModeType\x12\x0b\n\x07HSA_OFF\x10\x00\x12\x0c\n\x08HSA_AUTO\x10\x01\x12\x0e\n\nHSA_MANUAL\x10\x02\x12\x16\n\x12HSA_MODE_UNDEFINED\x10\x03\"\xdb\x01\n\x03\x45pb\x12\x14\n\x0cis_epb_error\x18\x01 \x01(\x08\x12\x17\n\x0fis_epb_released\x18\x02 \x01(\x08\x12\x12\n\nepb_status\x18\x03 \x01(\x05\x12;\n\x14parking_brake_status\x18\x04 \x01(\x0e\x32\x1d.apollo.canbus.Epb.PBrakeType\"T\n\nPBrakeType\x12\x0e\n\nPBRAKE_OFF\x10\x00\x12\x15\n\x11PBRAKE_TRANSITION\x10\x01\x12\r\n\tPBRAKE_ON\x10\x02\x12\x10\n\x0cPBRAKE_FAULT\x10\x03\"\x8e\x04\n\x03Gas\x12\x1a\n\x12is_gas_pedal_error\x18\x01 \x01(\x08\x12!\n\x19is_gas_pedal_pressed_more\x18\x02 \x01(\x08\x12\x1d\n\x12gas_pedal_position\x18\x03 \x01(\x01:\x01\x30\x12\x1b\n\x0cis_gas_valid\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x16\n\x0ethrottle_input\x18\x05 \x01(\x01\x12\x14\n\x0cthrottle_cmd\x18\x06 \x01(\x01\x12\x17\n\x0fthrottle_output\x18\x07 \x01(\x01\x12\x17\n\x0fwatchdog_source\x18\x08 \x01(\x05\x12\x18\n\x10throttle_enabled\x18\t \x01(\x08\x12\x17\n\x0f\x64river_override\x18\n \x01(\x08\x12\x17\n\x0f\x64river_activity\x18\x0b \x01(\x08\x12\x16\n\x0ewatchdog_fault\x18\x0c \x01(\x08\x12\x17\n\x0f\x63hannel_1_fault\x18\r \x01(\x08\x12\x17\n\x0f\x63hannel_2_fault\x18\x0e \x01(\x08\x12\x17\n\x0f\x63onnector_fault\x18\x0f \x01(\x08\x12\x19\n\x11\x61\x63\x63\x65lerator_pedal\x18\x10 \x01(\x01\x12\x1e\n\x16\x61\x63\x63\x65lerator_pedal_rate\x18\x11 \x01(\x01\x12\x15\n\rmajor_version\x18\x12 \x01(\x05\x12\x15\n\rminor_version\x18\x13 \x01(\x05\x12\x14\n\x0c\x62uild_number\x18\x14 \x01(\x05\"\x88\x02\n\x03\x45sp\x12\x18\n\x10is_esp_acc_error\x18\x01 \x01(\x08\x12\x11\n\tis_esp_on\x18\x02 \x01(\x08\x12\x15\n\ris_esp_active\x18\x03 \x01(\x08\x12\x14\n\x0cis_abs_error\x18\x04 \x01(\x08\x12\x15\n\ris_abs_active\x18\x05 \x01(\x08\x12\x16\n\x0eis_tcsvdc_fail\x18\x06 \x01(\x08\x12\x16\n\x0eis_abs_enabled\x18\x07 \x01(\x08\x12\x16\n\x0eis_stab_active\x18\x08 \x01(\x08\x12\x17\n\x0fis_stab_enabled\x18\t \x01(\x08\x12\x16\n\x0eis_trac_active\x18\n \x01(\x08\x12\x17\n\x0fis_trac_enabled\x18\x0b \x01(\x08\"\x8d\x03\n\x03\x45ms\x12\x1f\n\x17is_engine_acc_available\x18\x01 \x01(\x08\x12\x1b\n\x13is_engine_acc_error\x18\x02 \x01(\x08\x12-\n\x0c\x65ngine_state\x18\x03 \x01(\x0e\x32\x17.apollo.canbus.Ems.Type\x12\x1f\n\x17max_engine_torq_percent\x18\x04 \x01(\x01\x12\x1f\n\x17min_engine_torq_percent\x18\x05 \x01(\x01\x12!\n\x19\x62\x61se_engine_torq_constant\x18\x06 \x01(\x05\x12\x1d\n\x15is_engine_speed_error\x18\x07 \x01(\x08\x12\x14\n\x0c\x65ngine_speed\x18\x08 \x01(\x01\x12\x15\n\rengine_torque\x18\t \x01(\x05\x12\x1d\n\x15is_over_engine_torque\x18\n \x01(\x08\x12\x12\n\nengine_rpm\x18\x0b \x01(\x01\"5\n\x04Type\x12\x08\n\x04STOP\x10\x00\x12\t\n\x05\x43RANK\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0b\n\x07INVALID\x10\x03\"\xc6\x01\n\x04Gear\x12\x1f\n\x17is_shift_position_valid\x18\x01 \x01(\x08\x12\x37\n\ngear_state\x18\x02 \x01(\x0e\x32#.apollo.canbus.Chassis.GearPosition\x12\x17\n\x0f\x64river_override\x18\x03 \x01(\x08\x12\x35\n\x08gear_cmd\x18\x04 \x01(\x0e\x32#.apollo.canbus.Chassis.GearPosition\x12\x14\n\x0c\x63\x61nbus_fault\x18\x05 \x01(\x08\"\xee\x05\n\x06Safety\x12 \n\x18is_driver_car_door_close\x18\x01 \x01(\x08\x12\x19\n\x11is_driver_buckled\x18\x02 \x01(\x08\x12\x18\n\x10\x65mergency_button\x18\x03 \x01(\x05\x12\x18\n\thas_error\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x17is_motor_invertor_fault\x18\x05 \x01(\x08\x12\x17\n\x0fis_system_fault\x18\x06 \x01(\x08\x12\x1e\n\x16is_power_battery_fault\x18\x07 \x01(\x08\x12*\n\"is_motor_invertor_over_temperature\x18\x08 \x01(\x08\x12/\n\'is_small_battery_charge_discharge_fault\x18\t \x01(\x08\x12\x14\n\x0c\x64riving_mode\x18\n \x01(\x05\x12\x1e\n\x16is_passenger_door_open\x18\x0b \x01(\x08\x12\x1d\n\x15is_rearleft_door_open\x18\x0c \x01(\x08\x12\x1e\n\x16is_rearright_door_open\x18\r \x01(\x08\x12\x14\n\x0cis_hood_open\x18\x0e \x01(\x08\x12\x15\n\ris_trunk_open\x18\x0f \x01(\x08\x12\x1d\n\x15is_passenger_detected\x18\x10 \x01(\x08\x12#\n\x1bis_passenger_airbag_enabled\x18\x11 \x01(\x08\x12\x1c\n\x14is_passenger_buckled\x18\x12 \x01(\x08\x12\x1d\n\x15\x66ront_left_tire_press\x18\x13 \x01(\x05\x12\x1e\n\x16\x66ront_right_tire_press\x18\x14 \x01(\x05\x12\x1c\n\x14rear_left_tire_press\x18\x15 \x01(\x05\x12\x1d\n\x15rear_right_tire_press\x18\x16 \x01(\x05\x12<\n\x10\x63\x61r_driving_mode\x18\x17 \x01(\x0e\x32\".apollo.canbus.Chassis.DrivingMode\"\xbc\x07\n\tBasicInfo\x12\x14\n\x0cis_auto_mode\x18\x01 \x01(\x08\x12\x32\n\x0bpower_state\x18\x02 \x01(\x0e\x32\x1d.apollo.canbus.BasicInfo.Type\x12\x1b\n\x13is_air_bag_deployed\x18\x03 \x01(\x08\x12\x11\n\todo_meter\x18\x04 \x01(\x01\x12\x13\n\x0b\x64rive_range\x18\x05 \x01(\x01\x12\x17\n\x0fis_system_error\x18\x06 \x01(\x08\x12\x1a\n\x12is_human_interrupt\x18\x07 \x01(\x08\x12\x15\n\racc_on_button\x18\x08 \x01(\x08\x12\x16\n\x0e\x61\x63\x63_off_button\x18\t \x01(\x08\x12\x16\n\x0e\x61\x63\x63_res_button\x18\n \x01(\x08\x12\x19\n\x11\x61\x63\x63_cancel_button\x18\x0b \x01(\x08\x12\x19\n\x11\x61\x63\x63_on_off_button\x18\x0c \x01(\x08\x12\x1d\n\x15\x61\x63\x63_res_cancel_button\x18\r \x01(\x08\x12\x1a\n\x12\x61\x63\x63_inc_spd_button\x18\x0e \x01(\x08\x12\x1a\n\x12\x61\x63\x63_dec_spd_button\x18\x0f \x01(\x08\x12\x1a\n\x12\x61\x63\x63_inc_gap_button\x18\x10 \x01(\x08\x12\x1a\n\x12\x61\x63\x63_dec_gap_button\x18\x11 \x01(\x08\x12\x12\n\nlka_button\x18\x12 \x01(\x08\x12\x14\n\x0c\x63\x61nbus_fault\x18\x13 \x01(\x08\x12\x10\n\x08latitude\x18\x14 \x01(\x01\x12\x11\n\tlongitude\x18\x15 \x01(\x01\x12\x11\n\tgps_valid\x18\x16 \x01(\x08\x12\x0c\n\x04year\x18\x17 \x01(\x05\x12\r\n\x05month\x18\x18 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x19 \x01(\x05\x12\r\n\x05hours\x18\x1a \x01(\x05\x12\x0f\n\x07minutes\x18\x1b \x01(\x05\x12\x0f\n\x07seconds\x18\x1c \x01(\x05\x12\x19\n\x11\x63ompass_direction\x18\x1d \x01(\x01\x12\x0c\n\x04pdop\x18\x1e \x01(\x01\x12\x14\n\x0cis_gps_fault\x18\x1f \x01(\x08\x12\x13\n\x0bis_inferred\x18  \x01(\x08\x12\x10\n\x08\x61ltitude\x18! \x01(\x01\x12\x0f\n\x07heading\x18\" \x01(\x01\x12\x0c\n\x04hdop\x18# \x01(\x01\x12\x0c\n\x04vdop\x18$ \x01(\x01\x12*\n\x07quality\x18% \x01(\x0e\x32\x19.apollo.canbus.GpsQuality\x12\x16\n\x0enum_satellites\x18& \x01(\x05\x12\x11\n\tgps_speed\x18\' \x01(\x01\"8\n\x04Type\x12\x07\n\x03OFF\x10\x00\x12\x07\n\x03\x41\x43\x43\x10\x01\x12\x06\n\x02ON\x10\x02\x12\t\n\x05START\x10\x03\x12\x0b\n\x07INVALID\x10\x04\"\xf5\x04\n\rGlobal_rpt_6a\x12\x45\n\rpacmod_status\x18\x01 \x01(\x0e\x32..apollo.canbus.Global_rpt_6a.Pacmod_statusType\x12I\n\x0foverride_status\x18\x02 \x01(\x0e\x32\x30.apollo.canbus.Global_rpt_6a.Override_statusType\x12\x17\n\x0fveh_can_timeout\x18\x03 \x01(\x08\x12\x17\n\x0fstr_can_timeout\x18\x04 \x01(\x08\x12I\n\x0f\x62rk_can_timeout\x18\x05 \x01(\x0e\x32\x30.apollo.canbus.Global_rpt_6a.Brk_can_timeoutType\x12\x17\n\x0fusr_can_timeout\x18\x06 \x01(\x08\x12\x1b\n\x13usr_can_read_errors\x18\x07 \x01(\x05\"Z\n\x11Pacmod_statusType\x12\"\n\x1ePACMOD_STATUS_CONTROL_DISABLED\x10\x00\x12!\n\x1dPACMOD_STATUS_CONTROL_ENABLED\x10\x01\"Y\n\x13Override_statusType\x12\"\n\x1eOVERRIDE_STATUS_NOT_OVERRIDDEN\x10\x00\x12\x1e\n\x1aOVERRIDE_STATUS_OVERRIDDEN\x10\x01\"h\n\x13\x42rk_can_timeoutType\x12)\n%BRK_CAN_TIMEOUT_NO_ACTIVE_CAN_TIMEOUT\x10\x00\x12&\n\"BRK_CAN_TIMEOUT_ACTIVE_CAN_TIMEOUT\x10\x01\"!\n\x0c\x42rake_cmd_6b\x12\x11\n\tbrake_cmd\x18\x01 \x01(\x01\"\xd6\x01\n\x0c\x42rake_rpt_6c\x12\x14\n\x0cmanual_input\x18\x01 \x01(\x01\x12\x17\n\x0f\x63ommanded_value\x18\x02 \x01(\x01\x12\x14\n\x0coutput_value\x18\x03 \x01(\x01\x12\x42\n\x0c\x62rake_on_off\x18\x04 \x01(\x0e\x32,.apollo.canbus.Brake_rpt_6c.Brake_on_offType\"=\n\x10\x42rake_on_offType\x12\x14\n\x10\x42RAKE_ON_OFF_OFF\x10\x00\x12\x13\n\x0f\x42RAKE_ON_OFF_ON\x10\x01\">\n\x0fSteering_cmd_6d\x12\x16\n\x0eposition_value\x18\x01 \x01(\x01\x12\x13\n\x0bspeed_limit\x18\x02 \x01(\x01\"X\n\x11Steering_rpt_1_6e\x12\x14\n\x0cmanual_input\x18\x01 \x01(\x01\x12\x17\n\x0f\x63ommanded_value\x18\x02 \x01(\x01\x12\x14\n\x0coutput_value\x18\x03 \x01(\x01\"\x8c\x01\n\x12Wheel_speed_rpt_7a\x12\x1c\n\x14wheel_spd_rear_right\x18\x01 \x01(\x05\x12\x1b\n\x13wheel_spd_rear_left\x18\x02 \x01(\x05\x12\x1d\n\x15wheel_spd_front_right\x18\x03 \x01(\x05\x12\x1c\n\x14wheel_spd_front_left\x18\x04 \x01(\x05\"\x88\x01\n\x10\x44\x61te_time_rpt_83\x12\x13\n\x0btime_second\x18\x01 \x01(\x05\x12\x13\n\x0btime_minute\x18\x02 \x01(\x05\x12\x11\n\ttime_hour\x18\x03 \x01(\x05\x12\x10\n\x08\x64\x61te_day\x18\x04 \x01(\x05\x12\x12\n\ndate_month\x18\x05 \x01(\x05\x12\x11\n\tdate_year\x18\x06 \x01(\x05\"E\n\x14\x42rake_motor_rpt_1_70\x12\x15\n\rmotor_current\x18\x01 \x01(\x01\x12\x16\n\x0eshaft_position\x18\x02 \x01(\x01\"\xc6\x04\n\x10Headlight_rpt_77\x12\x46\n\x0coutput_value\x18\x01 \x01(\x0e\x32\x30.apollo.canbus.Headlight_rpt_77.Output_valueType\x12\x46\n\x0cmanual_input\x18\x02 \x01(\x0e\x32\x30.apollo.canbus.Headlight_rpt_77.Manual_inputType\x12L\n\x0f\x63ommanded_value\x18\x03 \x01(\x0e\x32\x33.apollo.canbus.Headlight_rpt_77.Commanded_valueType\"l\n\x10Output_valueType\x12\x1f\n\x1bOUTPUT_VALUE_HEADLIGHTS_OFF\x10\x00\x12\x1a\n\x16OUTPUT_VALUE_LOW_BEAMS\x10\x01\x12\x1b\n\x17OUTPUT_VALUE_HIGH_BEAMS\x10\x02\"l\n\x10Manual_inputType\x12\x1f\n\x1bMANUAL_INPUT_HEADLIGHTS_OFF\x10\x00\x12\x1a\n\x16MANUAL_INPUT_LOW_BEAMS\x10\x01\x12\x1b\n\x17MANUAL_INPUT_HIGH_BEAMS\x10\x02\"x\n\x13\x43ommanded_valueType\x12\"\n\x1e\x43OMMANDED_VALUE_HEADLIGHTS_OFF\x10\x00\x12\x1d\n\x19\x43OMMANDED_VALUE_LOW_BEAMS\x10\x01\x12\x1e\n\x1a\x43OMMANDED_VALUE_HIGH_BEAMS\x10\x02\"S\n\x0c\x41\x63\x63\x65l_rpt_68\x12\x14\n\x0cmanual_input\x18\x01 \x01(\x01\x12\x17\n\x0f\x63ommanded_value\x18\x02 \x01(\x01\x12\x14\n\x0coutput_value\x18\x03 \x01(\x01\"F\n\x17Steering_motor_rpt_3_75\x12\x15\n\rtorque_output\x18\x01 \x01(\x01\x12\x14\n\x0ctorque_input\x18\x02 \x01(\x01\"\xd9\x01\n\x0bTurn_cmd_63\x12G\n\x0fturn_signal_cmd\x18\x01 \x01(\x0e\x32..apollo.canbus.Turn_cmd_63.Turn_signal_cmdType\"\x80\x01\n\x13Turn_signal_cmdType\x12\x19\n\x15TURN_SIGNAL_CMD_RIGHT\x10\x00\x12\x18\n\x14TURN_SIGNAL_CMD_NONE\x10\x01\x12\x18\n\x14TURN_SIGNAL_CMD_LEFT\x10\x02\x12\x1a\n\x16TURN_SIGNAL_CMD_HAZARD\x10\x03\"\xc5\x04\n\x0bTurn_rpt_64\x12\x41\n\x0cmanual_input\x18\x01 \x01(\x0e\x32+.apollo.canbus.Turn_rpt_64.Manual_inputType\x12G\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32..apollo.canbus.Turn_rpt_64.Commanded_valueType\x12\x41\n\x0coutput_value\x18\x03 \x01(\x0e\x32+.apollo.canbus.Turn_rpt_64.Output_valueType\"q\n\x10Manual_inputType\x12\x16\n\x12MANUAL_INPUT_RIGHT\x10\x00\x12\x15\n\x11MANUAL_INPUT_NONE\x10\x01\x12\x15\n\x11MANUAL_INPUT_LEFT\x10\x02\x12\x17\n\x13MANUAL_INPUT_HAZARD\x10\x03\"\x80\x01\n\x13\x43ommanded_valueType\x12\x19\n\x15\x43OMMANDED_VALUE_RIGHT\x10\x00\x12\x18\n\x14\x43OMMANDED_VALUE_NONE\x10\x01\x12\x18\n\x14\x43OMMANDED_VALUE_LEFT\x10\x02\x12\x1a\n\x16\x43OMMANDED_VALUE_HAZARD\x10\x03\"q\n\x10Output_valueType\x12\x16\n\x12OUTPUT_VALUE_RIGHT\x10\x00\x12\x15\n\x11OUTPUT_VALUE_NONE\x10\x01\x12\x15\n\x11OUTPUT_VALUE_LEFT\x10\x02\x12\x17\n\x13OUTPUT_VALUE_HAZARD\x10\x03\"\xc9\x01\n\x0cShift_cmd_65\x12<\n\tshift_cmd\x18\x01 \x01(\x0e\x32).apollo.canbus.Shift_cmd_65.Shift_cmdType\"{\n\rShift_cmdType\x12\x12\n\x0eSHIFT_CMD_PARK\x10\x00\x12\x15\n\x11SHIFT_CMD_REVERSE\x10\x01\x12\x15\n\x11SHIFT_CMD_NEUTRAL\x10\x02\x12\x15\n\x11SHIFT_CMD_FORWARD\x10\x03\x12\x11\n\rSHIFT_CMD_LOW\x10\x04\"\xa5\x05\n\x0cShift_rpt_66\x12\x42\n\x0cmanual_input\x18\x01 \x01(\x0e\x32,.apollo.canbus.Shift_rpt_66.Manual_inputType\x12H\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32/.apollo.canbus.Shift_rpt_66.Commanded_valueType\x12\x42\n\x0coutput_value\x18\x03 \x01(\x0e\x32,.apollo.canbus.Shift_rpt_66.Output_valueType\"\x8e\x01\n\x10Manual_inputType\x12\x15\n\x11MANUAL_INPUT_PARK\x10\x00\x12\x18\n\x14MANUAL_INPUT_REVERSE\x10\x01\x12\x18\n\x14MANUAL_INPUT_NEUTRAL\x10\x02\x12\x18\n\x14MANUAL_INPUT_FORWARD\x10\x03\x12\x15\n\x11MANUAL_INPUT_HIGH\x10\x04\"\xa0\x01\n\x13\x43ommanded_valueType\x12\x18\n\x14\x43OMMANDED_VALUE_PARK\x10\x00\x12\x1b\n\x17\x43OMMANDED_VALUE_REVERSE\x10\x01\x12\x1b\n\x17\x43OMMANDED_VALUE_NEUTRAL\x10\x02\x12\x1b\n\x17\x43OMMANDED_VALUE_FORWARD\x10\x03\x12\x18\n\x14\x43OMMANDED_VALUE_HIGH\x10\x04\"\x8e\x01\n\x10Output_valueType\x12\x15\n\x11OUTPUT_VALUE_PARK\x10\x00\x12\x18\n\x14OUTPUT_VALUE_REVERSE\x10\x01\x12\x18\n\x14OUTPUT_VALUE_NEUTRAL\x10\x02\x12\x18\n\x14OUTPUT_VALUE_FORWARD\x10\x03\x12\x15\n\x11OUTPUT_VALUE_HIGH\x10\x04\"!\n\x0c\x41\x63\x63\x65l_cmd_67\x12\x11\n\taccel_cmd\x18\x01 \x01(\x01\"\xc8\x01\n\x16Lat_lon_heading_rpt_82\x12\x0f\n\x07heading\x18\x01 \x01(\x01\x12\x19\n\x11longitude_seconds\x18\x02 \x01(\x05\x12\x19\n\x11longitude_minutes\x18\x03 \x01(\x05\x12\x19\n\x11longitude_degrees\x18\x04 \x01(\x05\x12\x18\n\x10latitude_seconds\x18\x05 \x01(\x05\x12\x18\n\x10latitude_minutes\x18\x06 \x01(\x05\x12\x18\n\x10latitude_degrees\x18\x07 \x01(\x05\"\xab\x04\n\rGlobal_cmd_69\x12\x45\n\rpacmod_enable\x18\x01 \x01(\x0e\x32..apollo.canbus.Global_cmd_69.Pacmod_enableType\x12G\n\x0e\x63lear_override\x18\x02 \x01(\x0e\x32/.apollo.canbus.Global_cmd_69.Clear_overrideType\x12I\n\x0fignore_override\x18\x03 \x01(\x0e\x32\x30.apollo.canbus.Global_cmd_69.Ignore_overrideType\"Z\n\x11Pacmod_enableType\x12\"\n\x1ePACMOD_ENABLE_CONTROL_DISABLED\x10\x00\x12!\n\x1dPACMOD_ENABLE_CONTROL_ENABLED\x10\x01\"p\n\x12\x43lear_overrideType\x12/\n+CLEAR_OVERRIDE_DON_T_CLEAR_ACTIVE_OVERRIDES\x10\x00\x12)\n%CLEAR_OVERRIDE_CLEAR_ACTIVE_OVERRIDES\x10\x01\"q\n\x13Ignore_overrideType\x12/\n+IGNORE_OVERRIDE_DON_T_IGNORE_USER_OVERRIDES\x10\x00\x12)\n%IGNORE_OVERRIDE_IGNORE_USER_OVERRIDES\x10\x01\"\xdc\x01\n\x1bParking_brake_status_rpt_80\x12\x63\n\x15parking_brake_enabled\x18\x01 \x01(\x0e\x32\x44.apollo.canbus.Parking_brake_status_rpt_80.Parking_brake_enabledType\"X\n\x19Parking_brake_enabledType\x12\x1d\n\x19PARKING_BRAKE_ENABLED_OFF\x10\x00\x12\x1c\n\x18PARKING_BRAKE_ENABLED_ON\x10\x01\"#\n\x0fYaw_rate_rpt_81\x12\x10\n\x08yaw_rate\x18\x01 \x01(\x01\"\xa2\x03\n\x0bHorn_rpt_79\x12\x41\n\x0coutput_value\x18\x01 \x01(\x0e\x32+.apollo.canbus.Horn_rpt_79.Output_valueType\x12G\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32..apollo.canbus.Horn_rpt_79.Commanded_valueType\x12\x41\n\x0cmanual_input\x18\x03 \x01(\x0e\x32+.apollo.canbus.Horn_rpt_79.Manual_inputType\"=\n\x10Output_valueType\x12\x14\n\x10OUTPUT_VALUE_OFF\x10\x00\x12\x13\n\x0fOUTPUT_VALUE_ON\x10\x01\"F\n\x13\x43ommanded_valueType\x12\x17\n\x13\x43OMMANDED_VALUE_OFF\x10\x00\x12\x16\n\x12\x43OMMANDED_VALUE_ON\x10\x01\"=\n\x10Manual_inputType\x12\x14\n\x10MANUAL_INPUT_OFF\x10\x00\x12\x13\n\x0fMANUAL_INPUT_ON\x10\x01\"{\n\x0bHorn_cmd_78\x12\x39\n\x08horn_cmd\x18\x01 \x01(\x0e\x32\'.apollo.canbus.Horn_cmd_78.Horn_cmdType\"1\n\x0cHorn_cmdType\x12\x10\n\x0cHORN_CMD_OFF\x10\x00\x12\x0f\n\x0bHORN_CMD_ON\x10\x01\"\x87\x08\n\x0cWiper_rpt_91\x12\x42\n\x0coutput_value\x18\x01 \x01(\x0e\x32,.apollo.canbus.Wiper_rpt_91.Output_valueType\x12H\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32/.apollo.canbus.Wiper_rpt_91.Commanded_valueType\x12\x42\n\x0cmanual_input\x18\x03 \x01(\x0e\x32,.apollo.canbus.Wiper_rpt_91.Manual_inputType\"\x81\x02\n\x10Output_valueType\x12\x1b\n\x17OUTPUT_VALUE_WIPERS_OFF\x10\x00\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_1\x10\x01\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_2\x10\x02\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_3\x10\x03\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_4\x10\x04\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_5\x10\x05\x12\x14\n\x10OUTPUT_VALUE_LOW\x10\x06\x12\x15\n\x11OUTPUT_VALUE_HIGH\x10\x07\"\x9c\x02\n\x13\x43ommanded_valueType\x12\x1e\n\x1a\x43OMMANDED_VALUE_WIPERS_OFF\x10\x00\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_1\x10\x01\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_2\x10\x02\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_3\x10\x03\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_4\x10\x04\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_5\x10\x05\x12\x17\n\x13\x43OMMANDED_VALUE_LOW\x10\x06\x12\x18\n\x14\x43OMMANDED_VALUE_HIGH\x10\x07\"\x81\x02\n\x10Manual_inputType\x12\x1b\n\x17MANUAL_INPUT_WIPERS_OFF\x10\x00\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_1\x10\x01\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_2\x10\x02\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_3\x10\x03\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_4\x10\x04\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_5\x10\x05\x12\x14\n\x10MANUAL_INPUT_LOW\x10\x06\x12\x15\n\x11MANUAL_INPUT_HIGH\x10\x07\"\xe2\x01\n\x14Vehicle_speed_rpt_6f\x12\x15\n\rvehicle_speed\x18\x01 \x01(\x01\x12X\n\x13vehicle_speed_valid\x18\x02 \x01(\x0e\x32;.apollo.canbus.Vehicle_speed_rpt_6f.Vehicle_speed_validType\"Y\n\x17Vehicle_speed_validType\x12\x1f\n\x1bVEHICLE_SPEED_VALID_INVALID\x10\x00\x12\x1d\n\x19VEHICLE_SPEED_VALID_VALID\x10\x01\"\xce\x01\n\x10Headlight_cmd_76\x12H\n\rheadlight_cmd\x18\x01 \x01(\x0e\x32\x31.apollo.canbus.Headlight_cmd_76.Headlight_cmdType\"p\n\x11Headlight_cmdType\x12 \n\x1cHEADLIGHT_CMD_HEADLIGHTS_OFF\x10\x00\x12\x1b\n\x17HEADLIGHT_CMD_LOW_BEAMS\x10\x01\x12\x1c\n\x18HEADLIGHT_CMD_HIGH_BEAMS\x10\x02\"h\n\x17Steering_motor_rpt_2_74\x12\x1b\n\x13\x65ncoder_temperature\x18\x01 \x01(\x05\x12\x19\n\x11motor_temperature\x18\x02 \x01(\x05\x12\x15\n\rangular_speed\x18\x03 \x01(\x01\"e\n\x14\x42rake_motor_rpt_2_71\x12\x1b\n\x13\x65ncoder_temperature\x18\x01 \x01(\x05\x12\x19\n\x11motor_temperature\x18\x02 \x01(\x05\x12\x15\n\rangular_speed\x18\x03 \x01(\x01\"H\n\x17Steering_motor_rpt_1_73\x12\x15\n\rmotor_current\x18\x01 \x01(\x01\x12\x16\n\x0eshaft_position\x18\x02 \x01(\x01\"\xb5\x02\n\x0cWiper_cmd_90\x12<\n\twiper_cmd\x18\x01 \x01(\x0e\x32).apollo.canbus.Wiper_cmd_90.Wiper_cmdType\"\xe6\x01\n\rWiper_cmdType\x12\x18\n\x14WIPER_CMD_WIPERS_OFF\x10\x00\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_1\x10\x01\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_2\x10\x02\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_3\x10\x03\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_4\x10\x04\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_5\x10\x05\x12\x11\n\rWIPER_CMD_LOW\x10\x06\x12\x12\n\x0eWIPER_CMD_HIGH\x10\x07\"C\n\x14\x42rake_motor_rpt_3_72\x12\x15\n\rtorque_output\x18\x01 \x01(\x01\x12\x14\n\x0ctorque_input\x18\x02 \x01(\x01\"\xe9\r\n\x03Gem\x12\x33\n\rglobal_rpt_6a\x18\x01 \x01(\x0b\x32\x1c.apollo.canbus.Global_rpt_6a\x12\x31\n\x0c\x62rake_cmd_6b\x18\x02 \x01(\x0b\x32\x1b.apollo.canbus.Brake_cmd_6b\x12\x31\n\x0c\x62rake_rpt_6c\x18\x03 \x01(\x0b\x32\x1b.apollo.canbus.Brake_rpt_6c\x12\x37\n\x0fsteering_cmd_6d\x18\x04 \x01(\x0b\x32\x1e.apollo.canbus.Steering_cmd_6d\x12;\n\x11steering_rpt_1_6e\x18\x05 \x01(\x0b\x32 .apollo.canbus.Steering_rpt_1_6e\x12=\n\x12wheel_speed_rpt_7a\x18\x06 \x01(\x0b\x32!.apollo.canbus.Wheel_speed_rpt_7a\x12\x39\n\x10\x64\x61te_time_rpt_83\x18\x07 \x01(\x0b\x32\x1f.apollo.canbus.Date_time_rpt_83\x12\x41\n\x14\x62rake_motor_rpt_1_70\x18\x08 \x01(\x0b\x32#.apollo.canbus.Brake_motor_rpt_1_70\x12\x39\n\x10headlight_rpt_77\x18\t \x01(\x0b\x32\x1f.apollo.canbus.Headlight_rpt_77\x12\x31\n\x0c\x61\x63\x63\x65l_rpt_68\x18\n \x01(\x0b\x32\x1b.apollo.canbus.Accel_rpt_68\x12G\n\x17steering_motor_rpt_3_75\x18\x0b \x01(\x0b\x32&.apollo.canbus.Steering_motor_rpt_3_75\x12/\n\x0bturn_cmd_63\x18\x0c \x01(\x0b\x32\x1a.apollo.canbus.Turn_cmd_63\x12/\n\x0bturn_rpt_64\x18\r \x01(\x0b\x32\x1a.apollo.canbus.Turn_rpt_64\x12\x31\n\x0cshift_cmd_65\x18\x0e \x01(\x0b\x32\x1b.apollo.canbus.Shift_cmd_65\x12\x31\n\x0cshift_rpt_66\x18\x0f \x01(\x0b\x32\x1b.apollo.canbus.Shift_rpt_66\x12\x31\n\x0c\x61\x63\x63\x65l_cmd_67\x18\x10 \x01(\x0b\x32\x1b.apollo.canbus.Accel_cmd_67\x12\x45\n\x16lat_lon_heading_rpt_82\x18\x11 \x01(\x0b\x32%.apollo.canbus.Lat_lon_heading_rpt_82\x12\x33\n\rglobal_cmd_69\x18\x12 \x01(\x0b\x32\x1c.apollo.canbus.Global_cmd_69\x12O\n\x1bparking_brake_status_rpt_80\x18\x13 \x01(\x0b\x32*.apollo.canbus.Parking_brake_status_rpt_80\x12\x37\n\x0fyaw_rate_rpt_81\x18\x14 \x01(\x0b\x32\x1e.apollo.canbus.Yaw_rate_rpt_81\x12/\n\x0bhorn_rpt_79\x18\x15 \x01(\x0b\x32\x1a.apollo.canbus.Horn_rpt_79\x12/\n\x0bhorn_cmd_78\x18\x16 \x01(\x0b\x32\x1a.apollo.canbus.Horn_cmd_78\x12\x31\n\x0cwiper_rpt_91\x18\x17 \x01(\x0b\x32\x1b.apollo.canbus.Wiper_rpt_91\x12\x41\n\x14vehicle_speed_rpt_6f\x18\x18 \x01(\x0b\x32#.apollo.canbus.Vehicle_speed_rpt_6f\x12\x39\n\x10headlight_cmd_76\x18\x19 \x01(\x0b\x32\x1f.apollo.canbus.Headlight_cmd_76\x12G\n\x17steering_motor_rpt_2_74\x18\x1a \x01(\x0b\x32&.apollo.canbus.Steering_motor_rpt_2_74\x12\x41\n\x14\x62rake_motor_rpt_2_71\x18\x1b \x01(\x0b\x32#.apollo.canbus.Brake_motor_rpt_2_71\x12G\n\x17steering_motor_rpt_1_73\x18\x1c \x01(\x0b\x32&.apollo.canbus.Steering_motor_rpt_1_73\x12\x31\n\x0cwiper_cmd_90\x18\x1d \x01(\x0b\x32\x1b.apollo.canbus.Wiper_cmd_90\x12\x41\n\x14\x62rake_motor_rpt_3_72\x18\x1e \x01(\x0b\x32#.apollo.canbus.Brake_motor_rpt_3_72')
+  serialized_pb=_b('\n)modules/canbus/proto/chassis_detail.proto\x12\rapollo.canbus\x1a\x31modules/common/configs/proto/vehicle_config.proto\x1a\"modules/canbus/proto/chassis.proto\x1a\x1emodules/canbus/proto/ge3.proto\x1a modules/canbus/proto/lexus.proto\x1a\"modules/canbus/proto/transit.proto\x1a\x1emodules/canbus/proto/wey.proto\x1a#modules/canbus/proto/zhongyun.proto\x1a\x1dmodules/canbus/proto/ch.proto\x1a\x1dmodules/canbus/proto/ls.proto\"\xbd\x08\n\rChassisDetail\x12\x33\n\x08\x63\x61r_type\x18\x01 \x01(\x0e\x32!.apollo.canbus.ChassisDetail.Type\x12\'\n\x05\x62\x61sic\x18\x02 \x01(\x0b\x32\x18.apollo.canbus.BasicInfo\x12%\n\x06safety\x18\x03 \x01(\x0b\x32\x15.apollo.canbus.Safety\x12!\n\x04gear\x18\x04 \x01(\x0b\x32\x13.apollo.canbus.Gear\x12\x1f\n\x03\x65ms\x18\x05 \x01(\x0b\x32\x12.apollo.canbus.Ems\x12\x1f\n\x03\x65sp\x18\x06 \x01(\x0b\x32\x12.apollo.canbus.Esp\x12\x1f\n\x03gas\x18\x07 \x01(\x0b\x32\x12.apollo.canbus.Gas\x12\x1f\n\x03\x65pb\x18\x08 \x01(\x0b\x32\x12.apollo.canbus.Epb\x12#\n\x05\x62rake\x18\t \x01(\x0b\x32\x14.apollo.canbus.Brake\x12\x31\n\x0c\x64\x65\x63\x65leration\x18\n \x01(\x0b\x32\x1b.apollo.canbus.Deceleration\x12.\n\x0bvehicle_spd\x18\x0b \x01(\x0b\x32\x19.apollo.canbus.VehicleSpd\x12\x1f\n\x03\x65ps\x18\x0c \x01(\x0b\x32\x12.apollo.canbus.Eps\x12#\n\x05light\x18\r \x01(\x0b\x32\x14.apollo.canbus.Light\x12\'\n\x07\x62\x61ttery\x18\x0e \x01(\x0b\x32\x16.apollo.canbus.Battery\x12:\n\x0e\x63heck_response\x18\x0f \x01(\x0b\x32\".apollo.canbus.CheckResponseSignal\x12+\n\x07license\x18\x10 \x01(\x0b\x32\x16.apollo.canbus.LicenseB\x02\x18\x01\x12)\n\x08surround\x18\x11 \x01(\x0b\x32\x17.apollo.canbus.Surround\x12\x1f\n\x03gem\x18\x12 \x01(\x0b\x32\x12.apollo.canbus.Gem\x12#\n\x05lexus\x18\x13 \x01(\x0b\x32\x14.apollo.canbus.Lexus\x12\'\n\x07transit\x18\x14 \x01(\x0b\x32\x16.apollo.canbus.Transit\x12\x1f\n\x03ge3\x18\x15 \x01(\x0b\x32\x12.apollo.canbus.Ge3\x12\x1f\n\x03wey\x18\x16 \x01(\x0b\x32\x12.apollo.canbus.Wey\x12)\n\x08zhongyun\x18\x17 \x01(\x0b\x32\x17.apollo.canbus.Zhongyun\x12\x1d\n\x02\x63h\x18\x18 \x01(\x0b\x32\x11.apollo.canbus.Ch\x12\x1d\n\x02ls\x18\x19 \x01(\x0b\x32\x11.apollo.canbus.Ls\x12,\n\nvehicle_id\x18\x65 \x01(\x0b\x32\x18.apollo.common.VehicleID\"-\n\x04Type\x12\x0f\n\x0bQIRUI_EQ_15\x10\x00\x12\x14\n\x10\x43HANGAN_RUICHENG\x10\x01\"\xeb\x01\n\x13\x43heckResponseSignal\x12\x1c\n\ris_eps_online\x18\x01 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_epb_online\x18\x02 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_esp_online\x18\x03 \x01(\x08:\x05\x66\x61lse\x12\x1d\n\x0eis_vtog_online\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_scu_online\x18\x05 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x10is_switch_online\x18\x06 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\ris_vcu_online\x18\x07 \x01(\x08:\x05\x66\x61lse\"6\n\x07\x42\x61ttery\x12\x17\n\x0f\x62\x61ttery_percent\x18\x01 \x01(\x01\x12\x12\n\nfuel_level\x18\x02 \x01(\x01\"\xb1\t\n\x05Light\x12;\n\x0fturn_light_type\x18\x01 \x01(\x0e\x32\".apollo.canbus.Light.TurnLightType\x12\x39\n\x0e\x62\x65\x61m_lamp_type\x18\x02 \x01(\x0e\x32!.apollo.canbus.Light.BeamLampType\x12\x18\n\x10is_brake_lamp_on\x18\x03 \x01(\x08\x12\x15\n\ris_auto_light\x18\x04 \x01(\x08\x12\x12\n\nwiper_gear\x18\x05 \x01(\x05\x12\x13\n\x0blotion_gear\x18\x06 \x01(\x05\x12\x12\n\nis_horn_on\x18\x07 \x01(\x08\x12?\n\x11lincoln_lamp_type\x18\x08 \x01(\x0e\x32$.apollo.canbus.Light.LincolnLampType\x12<\n\rlincoln_wiper\x18\t \x01(\x0e\x32%.apollo.canbus.Light.LincolnWiperType\x12@\n\x0flincoln_ambient\x18\n \x01(\x0e\x32\'.apollo.canbus.Light.LincolnAmbientType\"[\n\rTurnLightType\x12\x12\n\x0eTURN_LIGHT_OFF\x10\x00\x12\x10\n\x0cTURN_LEFT_ON\x10\x01\x12\x11\n\rTURN_RIGHT_ON\x10\x02\x12\x11\n\rTURN_LIGHT_ON\x10\x03\"?\n\x0c\x42\x65\x61mLampType\x12\x0c\n\x08\x42\x45\x41M_OFF\x10\x00\x12\x10\n\x0cHIGH_BEAM_ON\x10\x01\x12\x0f\n\x0bLOW_BEAM_ON\x10\x02\"Y\n\x0fLincolnLampType\x12\r\n\tBEAM_NULL\x10\x00\x12\x16\n\x12\x42\x45\x41M_FLASH_TO_PASS\x10\x01\x12\r\n\tBEAM_HIGH\x10\x02\x12\x10\n\x0c\x42\x45\x41M_INVALID\x10\x03\"\xdc\x02\n\x10LincolnWiperType\x12\r\n\tWIPER_OFF\x10\x00\x12\x12\n\x0eWIPER_AUTO_OFF\x10\x01\x12\x14\n\x10WIPER_OFF_MOVING\x10\x02\x12\x14\n\x10WIPER_MANUAL_OFF\x10\x03\x12\x13\n\x0fWIPER_MANUAL_ON\x10\x04\x12\x14\n\x10WIPER_MANUAL_LOW\x10\x05\x12\x15\n\x11WIPER_MANUAL_HIGH\x10\x06\x12\x14\n\x10WIPER_MIST_FLICK\x10\x07\x12\x0e\n\nWIPER_WASH\x10\x08\x12\x12\n\x0eWIPER_AUTO_LOW\x10\t\x12\x13\n\x0fWIPER_AUTO_HIGH\x10\n\x12\x17\n\x13WIPER_COURTESY_WIPE\x10\x0b\x12\x15\n\x11WIPER_AUTO_ADJUST\x10\x0c\x12\x12\n\x0eWIPER_RESERVED\x10\r\x12\x11\n\rWIPER_STALLED\x10\x0e\x12\x11\n\rWIPER_NO_DATA\x10\x0f\"\xa8\x01\n\x12LincolnAmbientType\x12\x10\n\x0c\x41MBIENT_DARK\x10\x00\x12\x11\n\rAMBIENT_LIGHT\x10\x01\x12\x14\n\x10\x41MBIENT_TWILIGHT\x10\x02\x12\x15\n\x11\x41MBIENT_TUNNEL_ON\x10\x03\x12\x16\n\x12\x41MBIENT_TUNNEL_OFF\x10\x04\x12\x13\n\x0f\x41MBIENT_INVALID\x10\x05\x12\x13\n\x0f\x41MBIENT_NO_DATA\x10\x07\"\x85\x06\n\x03\x45ps\x12\x13\n\x0bis_eps_fail\x18\x01 \x01(\x08\x12\x32\n\x11\x65ps_control_state\x18\x02 \x01(\x0e\x32\x17.apollo.canbus.Eps.Type\x12\x1c\n\x14\x65ps_driver_hand_torq\x18\x03 \x01(\x01\x12\x1f\n\x17is_steering_angle_valid\x18\x04 \x01(\x08\x12\x16\n\x0esteering_angle\x18\x05 \x01(\x01\x12\x1a\n\x12steering_angle_spd\x18\x06 \x01(\x01\x12\x1a\n\x12is_trimming_status\x18\x07 \x01(\x08\x12\x1d\n\x15is_calibration_status\x18\x08 \x01(\x08\x12\x19\n\x11is_failure_status\x18\t \x01(\x08\x12#\n\x1b\x61llow_enter_autonomous_mode\x18\n \x01(\x05\x12\x1c\n\x14\x63urrent_driving_mode\x18\x0b \x01(\x05\x12\x1a\n\x12steering_angle_cmd\x18\x0c \x01(\x01\x12\x15\n\rvehicle_speed\x18\r \x01(\x01\x12\x13\n\x0b\x65pas_torque\x18\x0e \x01(\x01\x12\x18\n\x10steering_enabled\x18\x0f \x01(\x08\x12\x17\n\x0f\x64river_override\x18\x10 \x01(\x08\x12\x17\n\x0f\x64river_activity\x18\x11 \x01(\x08\x12\x16\n\x0ewatchdog_fault\x18\x12 \x01(\x08\x12\x17\n\x0f\x63hannel_1_fault\x18\x13 \x01(\x08\x12\x17\n\x0f\x63hannel_2_fault\x18\x14 \x01(\x08\x12\x19\n\x11\x63\x61libration_fault\x18\x15 \x01(\x08\x12\x17\n\x0f\x63onnector_fault\x18\x16 \x01(\x08\x12\x14\n\x0ctimestamp_65\x18\x17 \x01(\x01\x12\x15\n\rmajor_version\x18\x18 \x01(\x05\x12\x15\n\rminor_version\x18\x19 \x01(\x05\x12\x14\n\x0c\x62uild_number\x18\x1a \x01(\x05\"=\n\x04Type\x12\x11\n\rNOT_AVAILABLE\x10\x00\x12\t\n\x05READY\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0b\n\x07INVALID\x10\x03\"\xeb\x06\n\nVehicleSpd\x12\x1d\n\x15is_vehicle_standstill\x18\x01 \x01(\x08\x12\x1c\n\x14is_vehicle_spd_valid\x18\x02 \x01(\x08\x12\x16\n\x0bvehicle_spd\x18\x03 \x01(\x01:\x01\x30\x12\x1d\n\x15is_wheel_spd_rr_valid\x18\x04 \x01(\x08\x12\x44\n\x12wheel_direction_rr\x18\x05 \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_rr\x18\x06 \x01(\x01\x12\x1d\n\x15is_wheel_spd_rl_valid\x18\x07 \x01(\x08\x12\x44\n\x12wheel_direction_rl\x18\x08 \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_rl\x18\t \x01(\x01\x12\x1d\n\x15is_wheel_spd_fr_valid\x18\n \x01(\x08\x12\x44\n\x12wheel_direction_fr\x18\x0b \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_fr\x18\x0c \x01(\x01\x12\x1d\n\x15is_wheel_spd_fl_valid\x18\r \x01(\x08\x12\x44\n\x12wheel_direction_fl\x18\x0e \x01(\x0e\x32(.apollo.canbus.WheelSpeed.WheelSpeedType\x12\x14\n\x0cwheel_spd_fl\x18\x0f \x01(\x01\x12\x19\n\x11is_yaw_rate_valid\x18\x10 \x01(\x08\x12\x10\n\x08yaw_rate\x18\x11 \x01(\x01\x12\x17\n\x0fyaw_rate_offset\x18\x12 \x01(\x01\x12\x13\n\x0bis_ax_valid\x18\x13 \x01(\x08\x12\n\n\x02\x61x\x18\x14 \x01(\x01\x12\x11\n\tax_offset\x18\x15 \x01(\x01\x12\x13\n\x0bis_ay_valid\x18\x16 \x01(\x08\x12\n\n\x02\x61y\x18\x17 \x01(\x01\x12\x11\n\tay_offset\x18\x18 \x01(\x01\x12\x0f\n\x07lat_acc\x18\x19 \x01(\x01\x12\x10\n\x08long_acc\x18\x1a \x01(\x01\x12\x10\n\x08vert_acc\x18\x1b \x01(\x01\x12\x11\n\troll_rate\x18\x1c \x01(\x01\x12\x0f\n\x07\x61\x63\x63_est\x18\x1d \x01(\x01\x12\x15\n\rtimestamp_sec\x18\x1e \x01(\x01\"\xd2\x01\n\x0c\x44\x65\x63\x65leration\x12!\n\x19is_deceleration_available\x18\x01 \x01(\x08\x12\x1e\n\x16is_deceleration_active\x18\x02 \x01(\x08\x12\x17\n\x0c\x64\x65\x63\x65leration\x18\x03 \x01(\x01:\x01\x30\x12\x13\n\x0bis_evb_fail\x18\x04 \x01(\x01\x12\x17\n\x0c\x65vb_pressure\x18\x05 \x01(\x01:\x01\x30\x12\x19\n\x0e\x62rake_pressure\x18\x06 \x01(\x01:\x01\x30\x12\x1d\n\x12\x62rake_pressure_spd\x18\x07 \x01(\x01:\x01\x30\"\xb6\x08\n\x05\x42rake\x12%\n\x16is_brake_pedal_pressed\x18\x01 \x01(\x08:\x05\x66\x61lse\x12\x1c\n\x14is_brake_force_exist\x18\x02 \x01(\x08\x12\x1a\n\x12is_brake_over_heat\x18\x03 \x01(\x08\x12\x18\n\x10is_hand_brake_on\x18\x04 \x01(\x08\x12\x1c\n\x14\x62rake_pedal_position\x18\x05 \x01(\x01\x12\x16\n\x0eis_brake_valid\x18\x06 \x01(\x08\x12\x13\n\x0b\x62rake_input\x18\x07 \x01(\x01\x12\x11\n\tbrake_cmd\x18\x08 \x01(\x01\x12\x14\n\x0c\x62rake_output\x18\t \x01(\x01\x12\x11\n\tboo_input\x18\n \x01(\x08\x12\x0f\n\x07\x62oo_cmd\x18\x0b \x01(\x08\x12\x12\n\nboo_output\x18\x0c \x01(\x08\x12 \n\x18watchdog_applying_brakes\x18\r \x01(\x08\x12\x17\n\x0fwatchdog_source\x18\x0e \x01(\x05\x12\x15\n\rbrake_enabled\x18\x0f \x01(\x08\x12\x17\n\x0f\x64river_override\x18\x10 \x01(\x08\x12\x17\n\x0f\x64river_activity\x18\x11 \x01(\x08\x12\x16\n\x0ewatchdog_fault\x18\x12 \x01(\x08\x12\x17\n\x0f\x63hannel_1_fault\x18\x13 \x01(\x08\x12\x17\n\x0f\x63hannel_2_fault\x18\x14 \x01(\x08\x12\x11\n\tboo_fault\x18\x15 \x01(\x08\x12\x17\n\x0f\x63onnector_fault\x18\x16 \x01(\x08\x12\x18\n\x10\x62rake_torque_req\x18\x17 \x01(\x01\x12\x36\n\nhsa_status\x18\x18 \x01(\x0e\x32\".apollo.canbus.Brake.HSAStatusType\x12\x18\n\x10\x62rake_torque_act\x18\x19 \x01(\x01\x12\x32\n\x08hsa_mode\x18\x1a \x01(\x0e\x32 .apollo.canbus.Brake.HSAModeType\x12\x18\n\x10wheel_torque_act\x18\x1b \x01(\x01\x12\x15\n\rmajor_version\x18\x1c \x01(\x05\x12\x15\n\rminor_version\x18\x1d \x01(\x05\x12\x14\n\x0c\x62uild_number\x18\x1e \x01(\x05\"\xbb\x01\n\rHSAStatusType\x12\x10\n\x0cHSA_INACTIVE\x10\x00\x12\x18\n\x14HSA_FINDING_GRADIENT\x10\x01\x12\x16\n\x12HSA_ACTIVE_PRESSED\x10\x02\x12\x17\n\x13HSA_ACTIVE_RELEASED\x10\x03\x12\x14\n\x10HSA_FAST_RELEASE\x10\x04\x12\x14\n\x10HSA_SLOW_RELEASE\x10\x05\x12\x0e\n\nHSA_FAILED\x10\x06\x12\x11\n\rHSA_UNDEFINED\x10\x07\"P\n\x0bHSAModeType\x12\x0b\n\x07HSA_OFF\x10\x00\x12\x0c\n\x08HSA_AUTO\x10\x01\x12\x0e\n\nHSA_MANUAL\x10\x02\x12\x16\n\x12HSA_MODE_UNDEFINED\x10\x03\"\xdb\x01\n\x03\x45pb\x12\x14\n\x0cis_epb_error\x18\x01 \x01(\x08\x12\x17\n\x0fis_epb_released\x18\x02 \x01(\x08\x12\x12\n\nepb_status\x18\x03 \x01(\x05\x12;\n\x14parking_brake_status\x18\x04 \x01(\x0e\x32\x1d.apollo.canbus.Epb.PBrakeType\"T\n\nPBrakeType\x12\x0e\n\nPBRAKE_OFF\x10\x00\x12\x15\n\x11PBRAKE_TRANSITION\x10\x01\x12\r\n\tPBRAKE_ON\x10\x02\x12\x10\n\x0cPBRAKE_FAULT\x10\x03\"\x8e\x04\n\x03Gas\x12\x1a\n\x12is_gas_pedal_error\x18\x01 \x01(\x08\x12!\n\x19is_gas_pedal_pressed_more\x18\x02 \x01(\x08\x12\x1d\n\x12gas_pedal_position\x18\x03 \x01(\x01:\x01\x30\x12\x1b\n\x0cis_gas_valid\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x16\n\x0ethrottle_input\x18\x05 \x01(\x01\x12\x14\n\x0cthrottle_cmd\x18\x06 \x01(\x01\x12\x17\n\x0fthrottle_output\x18\x07 \x01(\x01\x12\x17\n\x0fwatchdog_source\x18\x08 \x01(\x05\x12\x18\n\x10throttle_enabled\x18\t \x01(\x08\x12\x17\n\x0f\x64river_override\x18\n \x01(\x08\x12\x17\n\x0f\x64river_activity\x18\x0b \x01(\x08\x12\x16\n\x0ewatchdog_fault\x18\x0c \x01(\x08\x12\x17\n\x0f\x63hannel_1_fault\x18\r \x01(\x08\x12\x17\n\x0f\x63hannel_2_fault\x18\x0e \x01(\x08\x12\x17\n\x0f\x63onnector_fault\x18\x0f \x01(\x08\x12\x19\n\x11\x61\x63\x63\x65lerator_pedal\x18\x10 \x01(\x01\x12\x1e\n\x16\x61\x63\x63\x65lerator_pedal_rate\x18\x11 \x01(\x01\x12\x15\n\rmajor_version\x18\x12 \x01(\x05\x12\x15\n\rminor_version\x18\x13 \x01(\x05\x12\x14\n\x0c\x62uild_number\x18\x14 \x01(\x05\"\x88\x02\n\x03\x45sp\x12\x18\n\x10is_esp_acc_error\x18\x01 \x01(\x08\x12\x11\n\tis_esp_on\x18\x02 \x01(\x08\x12\x15\n\ris_esp_active\x18\x03 \x01(\x08\x12\x14\n\x0cis_abs_error\x18\x04 \x01(\x08\x12\x15\n\ris_abs_active\x18\x05 \x01(\x08\x12\x16\n\x0eis_tcsvdc_fail\x18\x06 \x01(\x08\x12\x16\n\x0eis_abs_enabled\x18\x07 \x01(\x08\x12\x16\n\x0eis_stab_active\x18\x08 \x01(\x08\x12\x17\n\x0fis_stab_enabled\x18\t \x01(\x08\x12\x16\n\x0eis_trac_active\x18\n \x01(\x08\x12\x17\n\x0fis_trac_enabled\x18\x0b \x01(\x08\"\x8d\x03\n\x03\x45ms\x12\x1f\n\x17is_engine_acc_available\x18\x01 \x01(\x08\x12\x1b\n\x13is_engine_acc_error\x18\x02 \x01(\x08\x12-\n\x0c\x65ngine_state\x18\x03 \x01(\x0e\x32\x17.apollo.canbus.Ems.Type\x12\x1f\n\x17max_engine_torq_percent\x18\x04 \x01(\x01\x12\x1f\n\x17min_engine_torq_percent\x18\x05 \x01(\x01\x12!\n\x19\x62\x61se_engine_torq_constant\x18\x06 \x01(\x05\x12\x1d\n\x15is_engine_speed_error\x18\x07 \x01(\x08\x12\x14\n\x0c\x65ngine_speed\x18\x08 \x01(\x01\x12\x15\n\rengine_torque\x18\t \x01(\x05\x12\x1d\n\x15is_over_engine_torque\x18\n \x01(\x08\x12\x12\n\nengine_rpm\x18\x0b \x01(\x01\"5\n\x04Type\x12\x08\n\x04STOP\x10\x00\x12\t\n\x05\x43RANK\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0b\n\x07INVALID\x10\x03\"\xc6\x01\n\x04Gear\x12\x1f\n\x17is_shift_position_valid\x18\x01 \x01(\x08\x12\x37\n\ngear_state\x18\x02 \x01(\x0e\x32#.apollo.canbus.Chassis.GearPosition\x12\x17\n\x0f\x64river_override\x18\x03 \x01(\x08\x12\x35\n\x08gear_cmd\x18\x04 \x01(\x0e\x32#.apollo.canbus.Chassis.GearPosition\x12\x14\n\x0c\x63\x61nbus_fault\x18\x05 \x01(\x08\"\xee\x05\n\x06Safety\x12 \n\x18is_driver_car_door_close\x18\x01 \x01(\x08\x12\x19\n\x11is_driver_buckled\x18\x02 \x01(\x08\x12\x18\n\x10\x65mergency_button\x18\x03 \x01(\x05\x12\x18\n\thas_error\x18\x04 \x01(\x08:\x05\x66\x61lse\x12\x1f\n\x17is_motor_invertor_fault\x18\x05 \x01(\x08\x12\x17\n\x0fis_system_fault\x18\x06 \x01(\x08\x12\x1e\n\x16is_power_battery_fault\x18\x07 \x01(\x08\x12*\n\"is_motor_invertor_over_temperature\x18\x08 \x01(\x08\x12/\n\'is_small_battery_charge_discharge_fault\x18\t \x01(\x08\x12\x14\n\x0c\x64riving_mode\x18\n \x01(\x05\x12\x1e\n\x16is_passenger_door_open\x18\x0b \x01(\x08\x12\x1d\n\x15is_rearleft_door_open\x18\x0c \x01(\x08\x12\x1e\n\x16is_rearright_door_open\x18\r \x01(\x08\x12\x14\n\x0cis_hood_open\x18\x0e \x01(\x08\x12\x15\n\ris_trunk_open\x18\x0f \x01(\x08\x12\x1d\n\x15is_passenger_detected\x18\x10 \x01(\x08\x12#\n\x1bis_passenger_airbag_enabled\x18\x11 \x01(\x08\x12\x1c\n\x14is_passenger_buckled\x18\x12 \x01(\x08\x12\x1d\n\x15\x66ront_left_tire_press\x18\x13 \x01(\x05\x12\x1e\n\x16\x66ront_right_tire_press\x18\x14 \x01(\x05\x12\x1c\n\x14rear_left_tire_press\x18\x15 \x01(\x05\x12\x1d\n\x15rear_right_tire_press\x18\x16 \x01(\x05\x12<\n\x10\x63\x61r_driving_mode\x18\x17 \x01(\x0e\x32\".apollo.canbus.Chassis.DrivingMode\"\xbc\x07\n\tBasicInfo\x12\x14\n\x0cis_auto_mode\x18\x01 \x01(\x08\x12\x32\n\x0bpower_state\x18\x02 \x01(\x0e\x32\x1d.apollo.canbus.BasicInfo.Type\x12\x1b\n\x13is_air_bag_deployed\x18\x03 \x01(\x08\x12\x11\n\todo_meter\x18\x04 \x01(\x01\x12\x13\n\x0b\x64rive_range\x18\x05 \x01(\x01\x12\x17\n\x0fis_system_error\x18\x06 \x01(\x08\x12\x1a\n\x12is_human_interrupt\x18\x07 \x01(\x08\x12\x15\n\racc_on_button\x18\x08 \x01(\x08\x12\x16\n\x0e\x61\x63\x63_off_button\x18\t \x01(\x08\x12\x16\n\x0e\x61\x63\x63_res_button\x18\n \x01(\x08\x12\x19\n\x11\x61\x63\x63_cancel_button\x18\x0b \x01(\x08\x12\x19\n\x11\x61\x63\x63_on_off_button\x18\x0c \x01(\x08\x12\x1d\n\x15\x61\x63\x63_res_cancel_button\x18\r \x01(\x08\x12\x1a\n\x12\x61\x63\x63_inc_spd_button\x18\x0e \x01(\x08\x12\x1a\n\x12\x61\x63\x63_dec_spd_button\x18\x0f \x01(\x08\x12\x1a\n\x12\x61\x63\x63_inc_gap_button\x18\x10 \x01(\x08\x12\x1a\n\x12\x61\x63\x63_dec_gap_button\x18\x11 \x01(\x08\x12\x12\n\nlka_button\x18\x12 \x01(\x08\x12\x14\n\x0c\x63\x61nbus_fault\x18\x13 \x01(\x08\x12\x10\n\x08latitude\x18\x14 \x01(\x01\x12\x11\n\tlongitude\x18\x15 \x01(\x01\x12\x11\n\tgps_valid\x18\x16 \x01(\x08\x12\x0c\n\x04year\x18\x17 \x01(\x05\x12\r\n\x05month\x18\x18 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x19 \x01(\x05\x12\r\n\x05hours\x18\x1a \x01(\x05\x12\x0f\n\x07minutes\x18\x1b \x01(\x05\x12\x0f\n\x07seconds\x18\x1c \x01(\x05\x12\x19\n\x11\x63ompass_direction\x18\x1d \x01(\x01\x12\x0c\n\x04pdop\x18\x1e \x01(\x01\x12\x14\n\x0cis_gps_fault\x18\x1f \x01(\x08\x12\x13\n\x0bis_inferred\x18  \x01(\x08\x12\x10\n\x08\x61ltitude\x18! \x01(\x01\x12\x0f\n\x07heading\x18\" \x01(\x01\x12\x0c\n\x04hdop\x18# \x01(\x01\x12\x0c\n\x04vdop\x18$ \x01(\x01\x12*\n\x07quality\x18% \x01(\x0e\x32\x19.apollo.canbus.GpsQuality\x12\x16\n\x0enum_satellites\x18& \x01(\x05\x12\x11\n\tgps_speed\x18\' \x01(\x01\"8\n\x04Type\x12\x07\n\x03OFF\x10\x00\x12\x07\n\x03\x41\x43\x43\x10\x01\x12\x06\n\x02ON\x10\x02\x12\t\n\x05START\x10\x03\x12\x0b\n\x07INVALID\x10\x04\"\xf5\x04\n\rGlobal_rpt_6a\x12\x45\n\rpacmod_status\x18\x01 \x01(\x0e\x32..apollo.canbus.Global_rpt_6a.Pacmod_statusType\x12I\n\x0foverride_status\x18\x02 \x01(\x0e\x32\x30.apollo.canbus.Global_rpt_6a.Override_statusType\x12\x17\n\x0fveh_can_timeout\x18\x03 \x01(\x08\x12\x17\n\x0fstr_can_timeout\x18\x04 \x01(\x08\x12I\n\x0f\x62rk_can_timeout\x18\x05 \x01(\x0e\x32\x30.apollo.canbus.Global_rpt_6a.Brk_can_timeoutType\x12\x17\n\x0fusr_can_timeout\x18\x06 \x01(\x08\x12\x1b\n\x13usr_can_read_errors\x18\x07 \x01(\x05\"Z\n\x11Pacmod_statusType\x12\"\n\x1ePACMOD_STATUS_CONTROL_DISABLED\x10\x00\x12!\n\x1dPACMOD_STATUS_CONTROL_ENABLED\x10\x01\"Y\n\x13Override_statusType\x12\"\n\x1eOVERRIDE_STATUS_NOT_OVERRIDDEN\x10\x00\x12\x1e\n\x1aOVERRIDE_STATUS_OVERRIDDEN\x10\x01\"h\n\x13\x42rk_can_timeoutType\x12)\n%BRK_CAN_TIMEOUT_NO_ACTIVE_CAN_TIMEOUT\x10\x00\x12&\n\"BRK_CAN_TIMEOUT_ACTIVE_CAN_TIMEOUT\x10\x01\"!\n\x0c\x42rake_cmd_6b\x12\x11\n\tbrake_cmd\x18\x01 \x01(\x01\"\xd6\x01\n\x0c\x42rake_rpt_6c\x12\x14\n\x0cmanual_input\x18\x01 \x01(\x01\x12\x17\n\x0f\x63ommanded_value\x18\x02 \x01(\x01\x12\x14\n\x0coutput_value\x18\x03 \x01(\x01\x12\x42\n\x0c\x62rake_on_off\x18\x04 \x01(\x0e\x32,.apollo.canbus.Brake_rpt_6c.Brake_on_offType\"=\n\x10\x42rake_on_offType\x12\x14\n\x10\x42RAKE_ON_OFF_OFF\x10\x00\x12\x13\n\x0f\x42RAKE_ON_OFF_ON\x10\x01\">\n\x0fSteering_cmd_6d\x12\x16\n\x0eposition_value\x18\x01 \x01(\x01\x12\x13\n\x0bspeed_limit\x18\x02 \x01(\x01\"X\n\x11Steering_rpt_1_6e\x12\x14\n\x0cmanual_input\x18\x01 \x01(\x01\x12\x17\n\x0f\x63ommanded_value\x18\x02 \x01(\x01\x12\x14\n\x0coutput_value\x18\x03 \x01(\x01\"\x8c\x01\n\x12Wheel_speed_rpt_7a\x12\x1c\n\x14wheel_spd_rear_right\x18\x01 \x01(\x05\x12\x1b\n\x13wheel_spd_rear_left\x18\x02 \x01(\x05\x12\x1d\n\x15wheel_spd_front_right\x18\x03 \x01(\x05\x12\x1c\n\x14wheel_spd_front_left\x18\x04 \x01(\x05\"\x88\x01\n\x10\x44\x61te_time_rpt_83\x12\x13\n\x0btime_second\x18\x01 \x01(\x05\x12\x13\n\x0btime_minute\x18\x02 \x01(\x05\x12\x11\n\ttime_hour\x18\x03 \x01(\x05\x12\x10\n\x08\x64\x61te_day\x18\x04 \x01(\x05\x12\x12\n\ndate_month\x18\x05 \x01(\x05\x12\x11\n\tdate_year\x18\x06 \x01(\x05\"E\n\x14\x42rake_motor_rpt_1_70\x12\x15\n\rmotor_current\x18\x01 \x01(\x01\x12\x16\n\x0eshaft_position\x18\x02 \x01(\x01\"\xc6\x04\n\x10Headlight_rpt_77\x12\x46\n\x0coutput_value\x18\x01 \x01(\x0e\x32\x30.apollo.canbus.Headlight_rpt_77.Output_valueType\x12\x46\n\x0cmanual_input\x18\x02 \x01(\x0e\x32\x30.apollo.canbus.Headlight_rpt_77.Manual_inputType\x12L\n\x0f\x63ommanded_value\x18\x03 \x01(\x0e\x32\x33.apollo.canbus.Headlight_rpt_77.Commanded_valueType\"l\n\x10Output_valueType\x12\x1f\n\x1bOUTPUT_VALUE_HEADLIGHTS_OFF\x10\x00\x12\x1a\n\x16OUTPUT_VALUE_LOW_BEAMS\x10\x01\x12\x1b\n\x17OUTPUT_VALUE_HIGH_BEAMS\x10\x02\"l\n\x10Manual_inputType\x12\x1f\n\x1bMANUAL_INPUT_HEADLIGHTS_OFF\x10\x00\x12\x1a\n\x16MANUAL_INPUT_LOW_BEAMS\x10\x01\x12\x1b\n\x17MANUAL_INPUT_HIGH_BEAMS\x10\x02\"x\n\x13\x43ommanded_valueType\x12\"\n\x1e\x43OMMANDED_VALUE_HEADLIGHTS_OFF\x10\x00\x12\x1d\n\x19\x43OMMANDED_VALUE_LOW_BEAMS\x10\x01\x12\x1e\n\x1a\x43OMMANDED_VALUE_HIGH_BEAMS\x10\x02\"S\n\x0c\x41\x63\x63\x65l_rpt_68\x12\x14\n\x0cmanual_input\x18\x01 \x01(\x01\x12\x17\n\x0f\x63ommanded_value\x18\x02 \x01(\x01\x12\x14\n\x0coutput_value\x18\x03 \x01(\x01\"F\n\x17Steering_motor_rpt_3_75\x12\x15\n\rtorque_output\x18\x01 \x01(\x01\x12\x14\n\x0ctorque_input\x18\x02 \x01(\x01\"\xd9\x01\n\x0bTurn_cmd_63\x12G\n\x0fturn_signal_cmd\x18\x01 \x01(\x0e\x32..apollo.canbus.Turn_cmd_63.Turn_signal_cmdType\"\x80\x01\n\x13Turn_signal_cmdType\x12\x19\n\x15TURN_SIGNAL_CMD_RIGHT\x10\x00\x12\x18\n\x14TURN_SIGNAL_CMD_NONE\x10\x01\x12\x18\n\x14TURN_SIGNAL_CMD_LEFT\x10\x02\x12\x1a\n\x16TURN_SIGNAL_CMD_HAZARD\x10\x03\"\xc5\x04\n\x0bTurn_rpt_64\x12\x41\n\x0cmanual_input\x18\x01 \x01(\x0e\x32+.apollo.canbus.Turn_rpt_64.Manual_inputType\x12G\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32..apollo.canbus.Turn_rpt_64.Commanded_valueType\x12\x41\n\x0coutput_value\x18\x03 \x01(\x0e\x32+.apollo.canbus.Turn_rpt_64.Output_valueType\"q\n\x10Manual_inputType\x12\x16\n\x12MANUAL_INPUT_RIGHT\x10\x00\x12\x15\n\x11MANUAL_INPUT_NONE\x10\x01\x12\x15\n\x11MANUAL_INPUT_LEFT\x10\x02\x12\x17\n\x13MANUAL_INPUT_HAZARD\x10\x03\"\x80\x01\n\x13\x43ommanded_valueType\x12\x19\n\x15\x43OMMANDED_VALUE_RIGHT\x10\x00\x12\x18\n\x14\x43OMMANDED_VALUE_NONE\x10\x01\x12\x18\n\x14\x43OMMANDED_VALUE_LEFT\x10\x02\x12\x1a\n\x16\x43OMMANDED_VALUE_HAZARD\x10\x03\"q\n\x10Output_valueType\x12\x16\n\x12OUTPUT_VALUE_RIGHT\x10\x00\x12\x15\n\x11OUTPUT_VALUE_NONE\x10\x01\x12\x15\n\x11OUTPUT_VALUE_LEFT\x10\x02\x12\x17\n\x13OUTPUT_VALUE_HAZARD\x10\x03\"\xc9\x01\n\x0cShift_cmd_65\x12<\n\tshift_cmd\x18\x01 \x01(\x0e\x32).apollo.canbus.Shift_cmd_65.Shift_cmdType\"{\n\rShift_cmdType\x12\x12\n\x0eSHIFT_CMD_PARK\x10\x00\x12\x15\n\x11SHIFT_CMD_REVERSE\x10\x01\x12\x15\n\x11SHIFT_CMD_NEUTRAL\x10\x02\x12\x15\n\x11SHIFT_CMD_FORWARD\x10\x03\x12\x11\n\rSHIFT_CMD_LOW\x10\x04\"\xa5\x05\n\x0cShift_rpt_66\x12\x42\n\x0cmanual_input\x18\x01 \x01(\x0e\x32,.apollo.canbus.Shift_rpt_66.Manual_inputType\x12H\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32/.apollo.canbus.Shift_rpt_66.Commanded_valueType\x12\x42\n\x0coutput_value\x18\x03 \x01(\x0e\x32,.apollo.canbus.Shift_rpt_66.Output_valueType\"\x8e\x01\n\x10Manual_inputType\x12\x15\n\x11MANUAL_INPUT_PARK\x10\x00\x12\x18\n\x14MANUAL_INPUT_REVERSE\x10\x01\x12\x18\n\x14MANUAL_INPUT_NEUTRAL\x10\x02\x12\x18\n\x14MANUAL_INPUT_FORWARD\x10\x03\x12\x15\n\x11MANUAL_INPUT_HIGH\x10\x04\"\xa0\x01\n\x13\x43ommanded_valueType\x12\x18\n\x14\x43OMMANDED_VALUE_PARK\x10\x00\x12\x1b\n\x17\x43OMMANDED_VALUE_REVERSE\x10\x01\x12\x1b\n\x17\x43OMMANDED_VALUE_NEUTRAL\x10\x02\x12\x1b\n\x17\x43OMMANDED_VALUE_FORWARD\x10\x03\x12\x18\n\x14\x43OMMANDED_VALUE_HIGH\x10\x04\"\x8e\x01\n\x10Output_valueType\x12\x15\n\x11OUTPUT_VALUE_PARK\x10\x00\x12\x18\n\x14OUTPUT_VALUE_REVERSE\x10\x01\x12\x18\n\x14OUTPUT_VALUE_NEUTRAL\x10\x02\x12\x18\n\x14OUTPUT_VALUE_FORWARD\x10\x03\x12\x15\n\x11OUTPUT_VALUE_HIGH\x10\x04\"!\n\x0c\x41\x63\x63\x65l_cmd_67\x12\x11\n\taccel_cmd\x18\x01 \x01(\x01\"\xc8\x01\n\x16Lat_lon_heading_rpt_82\x12\x0f\n\x07heading\x18\x01 \x01(\x01\x12\x19\n\x11longitude_seconds\x18\x02 \x01(\x05\x12\x19\n\x11longitude_minutes\x18\x03 \x01(\x05\x12\x19\n\x11longitude_degrees\x18\x04 \x01(\x05\x12\x18\n\x10latitude_seconds\x18\x05 \x01(\x05\x12\x18\n\x10latitude_minutes\x18\x06 \x01(\x05\x12\x18\n\x10latitude_degrees\x18\x07 \x01(\x05\"\xab\x04\n\rGlobal_cmd_69\x12\x45\n\rpacmod_enable\x18\x01 \x01(\x0e\x32..apollo.canbus.Global_cmd_69.Pacmod_enableType\x12G\n\x0e\x63lear_override\x18\x02 \x01(\x0e\x32/.apollo.canbus.Global_cmd_69.Clear_overrideType\x12I\n\x0fignore_override\x18\x03 \x01(\x0e\x32\x30.apollo.canbus.Global_cmd_69.Ignore_overrideType\"Z\n\x11Pacmod_enableType\x12\"\n\x1ePACMOD_ENABLE_CONTROL_DISABLED\x10\x00\x12!\n\x1dPACMOD_ENABLE_CONTROL_ENABLED\x10\x01\"p\n\x12\x43lear_overrideType\x12/\n+CLEAR_OVERRIDE_DON_T_CLEAR_ACTIVE_OVERRIDES\x10\x00\x12)\n%CLEAR_OVERRIDE_CLEAR_ACTIVE_OVERRIDES\x10\x01\"q\n\x13Ignore_overrideType\x12/\n+IGNORE_OVERRIDE_DON_T_IGNORE_USER_OVERRIDES\x10\x00\x12)\n%IGNORE_OVERRIDE_IGNORE_USER_OVERRIDES\x10\x01\"\xdc\x01\n\x1bParking_brake_status_rpt_80\x12\x63\n\x15parking_brake_enabled\x18\x01 \x01(\x0e\x32\x44.apollo.canbus.Parking_brake_status_rpt_80.Parking_brake_enabledType\"X\n\x19Parking_brake_enabledType\x12\x1d\n\x19PARKING_BRAKE_ENABLED_OFF\x10\x00\x12\x1c\n\x18PARKING_BRAKE_ENABLED_ON\x10\x01\"#\n\x0fYaw_rate_rpt_81\x12\x10\n\x08yaw_rate\x18\x01 \x01(\x01\"\xa2\x03\n\x0bHorn_rpt_79\x12\x41\n\x0coutput_value\x18\x01 \x01(\x0e\x32+.apollo.canbus.Horn_rpt_79.Output_valueType\x12G\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32..apollo.canbus.Horn_rpt_79.Commanded_valueType\x12\x41\n\x0cmanual_input\x18\x03 \x01(\x0e\x32+.apollo.canbus.Horn_rpt_79.Manual_inputType\"=\n\x10Output_valueType\x12\x14\n\x10OUTPUT_VALUE_OFF\x10\x00\x12\x13\n\x0fOUTPUT_VALUE_ON\x10\x01\"F\n\x13\x43ommanded_valueType\x12\x17\n\x13\x43OMMANDED_VALUE_OFF\x10\x00\x12\x16\n\x12\x43OMMANDED_VALUE_ON\x10\x01\"=\n\x10Manual_inputType\x12\x14\n\x10MANUAL_INPUT_OFF\x10\x00\x12\x13\n\x0fMANUAL_INPUT_ON\x10\x01\"{\n\x0bHorn_cmd_78\x12\x39\n\x08horn_cmd\x18\x01 \x01(\x0e\x32\'.apollo.canbus.Horn_cmd_78.Horn_cmdType\"1\n\x0cHorn_cmdType\x12\x10\n\x0cHORN_CMD_OFF\x10\x00\x12\x0f\n\x0bHORN_CMD_ON\x10\x01\"\x87\x08\n\x0cWiper_rpt_91\x12\x42\n\x0coutput_value\x18\x01 \x01(\x0e\x32,.apollo.canbus.Wiper_rpt_91.Output_valueType\x12H\n\x0f\x63ommanded_value\x18\x02 \x01(\x0e\x32/.apollo.canbus.Wiper_rpt_91.Commanded_valueType\x12\x42\n\x0cmanual_input\x18\x03 \x01(\x0e\x32,.apollo.canbus.Wiper_rpt_91.Manual_inputType\"\x81\x02\n\x10Output_valueType\x12\x1b\n\x17OUTPUT_VALUE_WIPERS_OFF\x10\x00\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_1\x10\x01\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_2\x10\x02\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_3\x10\x03\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_4\x10\x04\x12\x1f\n\x1bOUTPUT_VALUE_INTERMITTENT_5\x10\x05\x12\x14\n\x10OUTPUT_VALUE_LOW\x10\x06\x12\x15\n\x11OUTPUT_VALUE_HIGH\x10\x07\"\x9c\x02\n\x13\x43ommanded_valueType\x12\x1e\n\x1a\x43OMMANDED_VALUE_WIPERS_OFF\x10\x00\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_1\x10\x01\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_2\x10\x02\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_3\x10\x03\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_4\x10\x04\x12\"\n\x1e\x43OMMANDED_VALUE_INTERMITTENT_5\x10\x05\x12\x17\n\x13\x43OMMANDED_VALUE_LOW\x10\x06\x12\x18\n\x14\x43OMMANDED_VALUE_HIGH\x10\x07\"\x81\x02\n\x10Manual_inputType\x12\x1b\n\x17MANUAL_INPUT_WIPERS_OFF\x10\x00\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_1\x10\x01\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_2\x10\x02\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_3\x10\x03\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_4\x10\x04\x12\x1f\n\x1bMANUAL_INPUT_INTERMITTENT_5\x10\x05\x12\x14\n\x10MANUAL_INPUT_LOW\x10\x06\x12\x15\n\x11MANUAL_INPUT_HIGH\x10\x07\"\xe2\x01\n\x14Vehicle_speed_rpt_6f\x12\x15\n\rvehicle_speed\x18\x01 \x01(\x01\x12X\n\x13vehicle_speed_valid\x18\x02 \x01(\x0e\x32;.apollo.canbus.Vehicle_speed_rpt_6f.Vehicle_speed_validType\"Y\n\x17Vehicle_speed_validType\x12\x1f\n\x1bVEHICLE_SPEED_VALID_INVALID\x10\x00\x12\x1d\n\x19VEHICLE_SPEED_VALID_VALID\x10\x01\"\xce\x01\n\x10Headlight_cmd_76\x12H\n\rheadlight_cmd\x18\x01 \x01(\x0e\x32\x31.apollo.canbus.Headlight_cmd_76.Headlight_cmdType\"p\n\x11Headlight_cmdType\x12 \n\x1cHEADLIGHT_CMD_HEADLIGHTS_OFF\x10\x00\x12\x1b\n\x17HEADLIGHT_CMD_LOW_BEAMS\x10\x01\x12\x1c\n\x18HEADLIGHT_CMD_HIGH_BEAMS\x10\x02\"h\n\x17Steering_motor_rpt_2_74\x12\x1b\n\x13\x65ncoder_temperature\x18\x01 \x01(\x05\x12\x19\n\x11motor_temperature\x18\x02 \x01(\x05\x12\x15\n\rangular_speed\x18\x03 \x01(\x01\"e\n\x14\x42rake_motor_rpt_2_71\x12\x1b\n\x13\x65ncoder_temperature\x18\x01 \x01(\x05\x12\x19\n\x11motor_temperature\x18\x02 \x01(\x05\x12\x15\n\rangular_speed\x18\x03 \x01(\x01\"H\n\x17Steering_motor_rpt_1_73\x12\x15\n\rmotor_current\x18\x01 \x01(\x01\x12\x16\n\x0eshaft_position\x18\x02 \x01(\x01\"\xb5\x02\n\x0cWiper_cmd_90\x12<\n\twiper_cmd\x18\x01 \x01(\x0e\x32).apollo.canbus.Wiper_cmd_90.Wiper_cmdType\"\xe6\x01\n\rWiper_cmdType\x12\x18\n\x14WIPER_CMD_WIPERS_OFF\x10\x00\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_1\x10\x01\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_2\x10\x02\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_3\x10\x03\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_4\x10\x04\x12\x1c\n\x18WIPER_CMD_INTERMITTENT_5\x10\x05\x12\x11\n\rWIPER_CMD_LOW\x10\x06\x12\x12\n\x0eWIPER_CMD_HIGH\x10\x07\"C\n\x14\x42rake_motor_rpt_3_72\x12\x15\n\rtorque_output\x18\x01 \x01(\x01\x12\x14\n\x0ctorque_input\x18\x02 \x01(\x01\"\xe9\r\n\x03Gem\x12\x33\n\rglobal_rpt_6a\x18\x01 \x01(\x0b\x32\x1c.apollo.canbus.Global_rpt_6a\x12\x31\n\x0c\x62rake_cmd_6b\x18\x02 \x01(\x0b\x32\x1b.apollo.canbus.Brake_cmd_6b\x12\x31\n\x0c\x62rake_rpt_6c\x18\x03 \x01(\x0b\x32\x1b.apollo.canbus.Brake_rpt_6c\x12\x37\n\x0fsteering_cmd_6d\x18\x04 \x01(\x0b\x32\x1e.apollo.canbus.Steering_cmd_6d\x12;\n\x11steering_rpt_1_6e\x18\x05 \x01(\x0b\x32 .apollo.canbus.Steering_rpt_1_6e\x12=\n\x12wheel_speed_rpt_7a\x18\x06 \x01(\x0b\x32!.apollo.canbus.Wheel_speed_rpt_7a\x12\x39\n\x10\x64\x61te_time_rpt_83\x18\x07 \x01(\x0b\x32\x1f.apollo.canbus.Date_time_rpt_83\x12\x41\n\x14\x62rake_motor_rpt_1_70\x18\x08 \x01(\x0b\x32#.apollo.canbus.Brake_motor_rpt_1_70\x12\x39\n\x10headlight_rpt_77\x18\t \x01(\x0b\x32\x1f.apollo.canbus.Headlight_rpt_77\x12\x31\n\x0c\x61\x63\x63\x65l_rpt_68\x18\n \x01(\x0b\x32\x1b.apollo.canbus.Accel_rpt_68\x12G\n\x17steering_motor_rpt_3_75\x18\x0b \x01(\x0b\x32&.apollo.canbus.Steering_motor_rpt_3_75\x12/\n\x0bturn_cmd_63\x18\x0c \x01(\x0b\x32\x1a.apollo.canbus.Turn_cmd_63\x12/\n\x0bturn_rpt_64\x18\r \x01(\x0b\x32\x1a.apollo.canbus.Turn_rpt_64\x12\x31\n\x0cshift_cmd_65\x18\x0e \x01(\x0b\x32\x1b.apollo.canbus.Shift_cmd_65\x12\x31\n\x0cshift_rpt_66\x18\x0f \x01(\x0b\x32\x1b.apollo.canbus.Shift_rpt_66\x12\x31\n\x0c\x61\x63\x63\x65l_cmd_67\x18\x10 \x01(\x0b\x32\x1b.apollo.canbus.Accel_cmd_67\x12\x45\n\x16lat_lon_heading_rpt_82\x18\x11 \x01(\x0b\x32%.apollo.canbus.Lat_lon_heading_rpt_82\x12\x33\n\rglobal_cmd_69\x18\x12 \x01(\x0b\x32\x1c.apollo.canbus.Global_cmd_69\x12O\n\x1bparking_brake_status_rpt_80\x18\x13 \x01(\x0b\x32*.apollo.canbus.Parking_brake_status_rpt_80\x12\x37\n\x0fyaw_rate_rpt_81\x18\x14 \x01(\x0b\x32\x1e.apollo.canbus.Yaw_rate_rpt_81\x12/\n\x0bhorn_rpt_79\x18\x15 \x01(\x0b\x32\x1a.apollo.canbus.Horn_rpt_79\x12/\n\x0bhorn_cmd_78\x18\x16 \x01(\x0b\x32\x1a.apollo.canbus.Horn_cmd_78\x12\x31\n\x0cwiper_rpt_91\x18\x17 \x01(\x0b\x32\x1b.apollo.canbus.Wiper_rpt_91\x12\x41\n\x14vehicle_speed_rpt_6f\x18\x18 \x01(\x0b\x32#.apollo.canbus.Vehicle_speed_rpt_6f\x12\x39\n\x10headlight_cmd_76\x18\x19 \x01(\x0b\x32\x1f.apollo.canbus.Headlight_cmd_76\x12G\n\x17steering_motor_rpt_2_74\x18\x1a \x01(\x0b\x32&.apollo.canbus.Steering_motor_rpt_2_74\x12\x41\n\x14\x62rake_motor_rpt_2_71\x18\x1b \x01(\x0b\x32#.apollo.canbus.Brake_motor_rpt_2_71\x12G\n\x17steering_motor_rpt_1_73\x18\x1c \x01(\x0b\x32&.apollo.canbus.Steering_motor_rpt_1_73\x12\x31\n\x0cwiper_cmd_90\x18\x1d \x01(\x0b\x32\x1b.apollo.canbus.Wiper_cmd_90\x12\x41\n\x14\x62rake_motor_rpt_3_72\x18\x1e \x01(\x0b\x32#.apollo.canbus.Brake_motor_rpt_3_72')
   ,
-  dependencies=[modules_dot_common_dot_configs_dot_proto_dot_vehicle__config__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_chassis__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_ge3__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_lexus__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_transit__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_wey__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_zhongyun__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_ch__pb2.DESCRIPTOR,])
+  dependencies=[modules_dot_common_dot_configs_dot_proto_dot_vehicle__config__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_chassis__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_ge3__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_lexus__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_transit__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_wey__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_zhongyun__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_ch__pb2.DESCRIPTOR,modules_dot_canbus_dot_proto_dot_ls__pb2.DESCRIPTOR,])
 
 
 
@@ -50,8 +51,8 @@ _CHASSISDETAIL_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1359,
-  serialized_end=1404,
+  serialized_start=1421,
+  serialized_end=1466,
 )
 _sym_db.RegisterEnumDescriptor(_CHASSISDETAIL_TYPE)
 
@@ -80,8 +81,8 @@ _LIGHT_TURNLIGHTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2133,
-  serialized_end=2224,
+  serialized_start=2195,
+  serialized_end=2286,
 )
 _sym_db.RegisterEnumDescriptor(_LIGHT_TURNLIGHTTYPE)
 
@@ -106,8 +107,8 @@ _LIGHT_BEAMLAMPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2226,
-  serialized_end=2289,
+  serialized_start=2288,
+  serialized_end=2351,
 )
 _sym_db.RegisterEnumDescriptor(_LIGHT_BEAMLAMPTYPE)
 
@@ -136,8 +137,8 @@ _LIGHT_LINCOLNLAMPTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2291,
-  serialized_end=2380,
+  serialized_start=2353,
+  serialized_end=2442,
 )
 _sym_db.RegisterEnumDescriptor(_LIGHT_LINCOLNLAMPTYPE)
 
@@ -214,8 +215,8 @@ _LIGHT_LINCOLNWIPERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2383,
-  serialized_end=2731,
+  serialized_start=2445,
+  serialized_end=2793,
 )
 _sym_db.RegisterEnumDescriptor(_LIGHT_LINCOLNWIPERTYPE)
 
@@ -256,8 +257,8 @@ _LIGHT_LINCOLNAMBIENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2734,
-  serialized_end=2902,
+  serialized_start=2796,
+  serialized_end=2964,
 )
 _sym_db.RegisterEnumDescriptor(_LIGHT_LINCOLNAMBIENTTYPE)
 
@@ -286,8 +287,8 @@ _EPS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3617,
-  serialized_end=3678,
+  serialized_start=3679,
+  serialized_end=3740,
 )
 _sym_db.RegisterEnumDescriptor(_EPS_TYPE)
 
@@ -332,8 +333,8 @@ _BRAKE_HSASTATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5581,
-  serialized_end=5768,
+  serialized_start=5643,
+  serialized_end=5830,
 )
 _sym_db.RegisterEnumDescriptor(_BRAKE_HSASTATUSTYPE)
 
@@ -362,8 +363,8 @@ _BRAKE_HSAMODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5770,
-  serialized_end=5850,
+  serialized_start=5832,
+  serialized_end=5912,
 )
 _sym_db.RegisterEnumDescriptor(_BRAKE_HSAMODETYPE)
 
@@ -392,8 +393,8 @@ _EPB_PBRAKETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=5988,
-  serialized_end=6072,
+  serialized_start=6050,
+  serialized_end=6134,
 )
 _sym_db.RegisterEnumDescriptor(_EPB_PBRAKETYPE)
 
@@ -422,8 +423,8 @@ _EMS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7215,
-  serialized_end=7268,
+  serialized_start=7277,
+  serialized_end=7330,
 )
 _sym_db.RegisterEnumDescriptor(_EMS_TYPE)
 
@@ -456,8 +457,8 @@ _BASICINFO_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9125,
-  serialized_end=9181,
+  serialized_start=9187,
+  serialized_end=9243,
 )
 _sym_db.RegisterEnumDescriptor(_BASICINFO_TYPE)
 
@@ -478,8 +479,8 @@ _GLOBAL_RPT_6A_PACMOD_STATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9526,
-  serialized_end=9616,
+  serialized_start=9588,
+  serialized_end=9678,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBAL_RPT_6A_PACMOD_STATUSTYPE)
 
@@ -500,8 +501,8 @@ _GLOBAL_RPT_6A_OVERRIDE_STATUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9618,
-  serialized_end=9707,
+  serialized_start=9680,
+  serialized_end=9769,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBAL_RPT_6A_OVERRIDE_STATUSTYPE)
 
@@ -522,8 +523,8 @@ _GLOBAL_RPT_6A_BRK_CAN_TIMEOUTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=9709,
-  serialized_end=9813,
+  serialized_start=9771,
+  serialized_end=9875,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBAL_RPT_6A_BRK_CAN_TIMEOUTTYPE)
 
@@ -544,8 +545,8 @@ _BRAKE_RPT_6C_BRAKE_ON_OFFTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10004,
-  serialized_end=10065,
+  serialized_start=10066,
+  serialized_end=10127,
 )
 _sym_db.RegisterEnumDescriptor(_BRAKE_RPT_6C_BRAKE_ON_OFFTYPE)
 
@@ -570,8 +571,8 @@ _HEADLIGHT_RPT_77_OUTPUT_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10817,
-  serialized_end=10925,
+  serialized_start=10879,
+  serialized_end=10987,
 )
 _sym_db.RegisterEnumDescriptor(_HEADLIGHT_RPT_77_OUTPUT_VALUETYPE)
 
@@ -596,8 +597,8 @@ _HEADLIGHT_RPT_77_MANUAL_INPUTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10927,
-  serialized_end=11035,
+  serialized_start=10989,
+  serialized_end=11097,
 )
 _sym_db.RegisterEnumDescriptor(_HEADLIGHT_RPT_77_MANUAL_INPUTTYPE)
 
@@ -622,8 +623,8 @@ _HEADLIGHT_RPT_77_COMMANDED_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11037,
-  serialized_end=11157,
+  serialized_start=11099,
+  serialized_end=11219,
 )
 _sym_db.RegisterEnumDescriptor(_HEADLIGHT_RPT_77_COMMANDED_VALUETYPE)
 
@@ -652,8 +653,8 @@ _TURN_CMD_63_TURN_SIGNAL_CMDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11406,
-  serialized_end=11534,
+  serialized_start=11468,
+  serialized_end=11596,
 )
 _sym_db.RegisterEnumDescriptor(_TURN_CMD_63_TURN_SIGNAL_CMDTYPE)
 
@@ -682,8 +683,8 @@ _TURN_RPT_64_MANUAL_INPUTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11759,
-  serialized_end=11872,
+  serialized_start=11821,
+  serialized_end=11934,
 )
 _sym_db.RegisterEnumDescriptor(_TURN_RPT_64_MANUAL_INPUTTYPE)
 
@@ -712,8 +713,8 @@ _TURN_RPT_64_COMMANDED_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11875,
-  serialized_end=12003,
+  serialized_start=11937,
+  serialized_end=12065,
 )
 _sym_db.RegisterEnumDescriptor(_TURN_RPT_64_COMMANDED_VALUETYPE)
 
@@ -742,8 +743,8 @@ _TURN_RPT_64_OUTPUT_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12005,
-  serialized_end=12118,
+  serialized_start=12067,
+  serialized_end=12180,
 )
 _sym_db.RegisterEnumDescriptor(_TURN_RPT_64_OUTPUT_VALUETYPE)
 
@@ -776,8 +777,8 @@ _SHIFT_CMD_65_SHIFT_CMDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12199,
-  serialized_end=12322,
+  serialized_start=12261,
+  serialized_end=12384,
 )
 _sym_db.RegisterEnumDescriptor(_SHIFT_CMD_65_SHIFT_CMDTYPE)
 
@@ -810,8 +811,8 @@ _SHIFT_RPT_66_MANUAL_INPUTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12552,
-  serialized_end=12694,
+  serialized_start=12614,
+  serialized_end=12756,
 )
 _sym_db.RegisterEnumDescriptor(_SHIFT_RPT_66_MANUAL_INPUTTYPE)
 
@@ -844,8 +845,8 @@ _SHIFT_RPT_66_COMMANDED_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12697,
-  serialized_end=12857,
+  serialized_start=12759,
+  serialized_end=12919,
 )
 _sym_db.RegisterEnumDescriptor(_SHIFT_RPT_66_COMMANDED_VALUETYPE)
 
@@ -878,8 +879,8 @@ _SHIFT_RPT_66_OUTPUT_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12860,
-  serialized_end=13002,
+  serialized_start=12922,
+  serialized_end=13064,
 )
 _sym_db.RegisterEnumDescriptor(_SHIFT_RPT_66_OUTPUT_VALUETYPE)
 
@@ -900,8 +901,8 @@ _GLOBAL_CMD_69_PACMOD_ENABLETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=13479,
-  serialized_end=13569,
+  serialized_start=13541,
+  serialized_end=13631,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBAL_CMD_69_PACMOD_ENABLETYPE)
 
@@ -922,8 +923,8 @@ _GLOBAL_CMD_69_CLEAR_OVERRIDETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=13571,
-  serialized_end=13683,
+  serialized_start=13633,
+  serialized_end=13745,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBAL_CMD_69_CLEAR_OVERRIDETYPE)
 
@@ -944,8 +945,8 @@ _GLOBAL_CMD_69_IGNORE_OVERRIDETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=13685,
-  serialized_end=13798,
+  serialized_start=13747,
+  serialized_end=13860,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBAL_CMD_69_IGNORE_OVERRIDETYPE)
 
@@ -966,8 +967,8 @@ _PARKING_BRAKE_STATUS_RPT_80_PARKING_BRAKE_ENABLEDTYPE = _descriptor.EnumDescrip
   ],
   containing_type=None,
   options=None,
-  serialized_start=13933,
-  serialized_end=14021,
+  serialized_start=13995,
+  serialized_end=14083,
 )
 _sym_db.RegisterEnumDescriptor(_PARKING_BRAKE_STATUS_RPT_80_PARKING_BRAKE_ENABLEDTYPE)
 
@@ -988,8 +989,8 @@ _HORN_RPT_79_OUTPUT_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=14283,
-  serialized_end=14344,
+  serialized_start=14345,
+  serialized_end=14406,
 )
 _sym_db.RegisterEnumDescriptor(_HORN_RPT_79_OUTPUT_VALUETYPE)
 
@@ -1010,8 +1011,8 @@ _HORN_RPT_79_COMMANDED_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=14346,
-  serialized_end=14416,
+  serialized_start=14408,
+  serialized_end=14478,
 )
 _sym_db.RegisterEnumDescriptor(_HORN_RPT_79_COMMANDED_VALUETYPE)
 
@@ -1032,8 +1033,8 @@ _HORN_RPT_79_MANUAL_INPUTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=14418,
-  serialized_end=14479,
+  serialized_start=14480,
+  serialized_end=14541,
 )
 _sym_db.RegisterEnumDescriptor(_HORN_RPT_79_MANUAL_INPUTTYPE)
 
@@ -1054,8 +1055,8 @@ _HORN_CMD_78_HORN_CMDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=14555,
-  serialized_end=14604,
+  serialized_start=14617,
+  serialized_end=14666,
 )
 _sym_db.RegisterEnumDescriptor(_HORN_CMD_78_HORN_CMDTYPE)
 
@@ -1100,8 +1101,8 @@ _WIPER_RPT_91_OUTPUT_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=14834,
-  serialized_end=15091,
+  serialized_start=14896,
+  serialized_end=15153,
 )
 _sym_db.RegisterEnumDescriptor(_WIPER_RPT_91_OUTPUT_VALUETYPE)
 
@@ -1146,8 +1147,8 @@ _WIPER_RPT_91_COMMANDED_VALUETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=15094,
-  serialized_end=15378,
+  serialized_start=15156,
+  serialized_end=15440,
 )
 _sym_db.RegisterEnumDescriptor(_WIPER_RPT_91_COMMANDED_VALUETYPE)
 
@@ -1192,8 +1193,8 @@ _WIPER_RPT_91_MANUAL_INPUTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=15381,
-  serialized_end=15638,
+  serialized_start=15443,
+  serialized_end=15700,
 )
 _sym_db.RegisterEnumDescriptor(_WIPER_RPT_91_MANUAL_INPUTTYPE)
 
@@ -1214,8 +1215,8 @@ _VEHICLE_SPEED_RPT_6F_VEHICLE_SPEED_VALIDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=15778,
-  serialized_end=15867,
+  serialized_start=15840,
+  serialized_end=15929,
 )
 _sym_db.RegisterEnumDescriptor(_VEHICLE_SPEED_RPT_6F_VEHICLE_SPEED_VALIDTYPE)
 
@@ -1240,8 +1241,8 @@ _HEADLIGHT_CMD_76_HEADLIGHT_CMDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=15964,
-  serialized_end=16076,
+  serialized_start=16026,
+  serialized_end=16138,
 )
 _sym_db.RegisterEnumDescriptor(_HEADLIGHT_CMD_76_HEADLIGHT_CMDTYPE)
 
@@ -1286,8 +1287,8 @@ _WIPER_CMD_90_WIPER_CMDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=16441,
-  serialized_end=16671,
+  serialized_start=16503,
+  serialized_end=16733,
 )
 _sym_db.RegisterEnumDescriptor(_WIPER_CMD_90_WIPER_CMDTYPE)
 
@@ -1468,7 +1469,14 @@ _CHASSISDETAIL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='vehicle_id', full_name='apollo.canbus.ChassisDetail.vehicle_id', index=24,
+      name='ls', full_name='apollo.canbus.ChassisDetail.ls', index=24,
+      number=25, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='vehicle_id', full_name='apollo.canbus.ChassisDetail.vehicle_id', index=25,
       number=101, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1487,8 +1495,8 @@ _CHASSISDETAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=350,
-  serialized_end=1404,
+  serialized_start=381,
+  serialized_end=1466,
 )
 
 
@@ -1560,8 +1568,8 @@ _CHECKRESPONSESIGNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1407,
-  serialized_end=1642,
+  serialized_start=1469,
+  serialized_end=1704,
 )
 
 
@@ -1598,8 +1606,8 @@ _BATTERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1644,
-  serialized_end=1698,
+  serialized_start=1706,
+  serialized_end=1760,
 )
 
 
@@ -1697,8 +1705,8 @@ _LIGHT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1701,
-  serialized_end=2902,
+  serialized_start=1763,
+  serialized_end=2964,
 )
 
 
@@ -1904,8 +1912,8 @@ _EPS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2905,
-  serialized_end=3678,
+  serialized_start=2967,
+  serialized_end=3740,
 )
 
 
@@ -2138,8 +2146,8 @@ _VEHICLESPD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3681,
-  serialized_end=4556,
+  serialized_start=3743,
+  serialized_end=4618,
 )
 
 
@@ -2211,8 +2219,8 @@ _DECELERATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4559,
-  serialized_end=4769,
+  serialized_start=4621,
+  serialized_end=4831,
 )
 
 
@@ -2447,8 +2455,8 @@ _BRAKE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4772,
-  serialized_end=5850,
+  serialized_start=4834,
+  serialized_end=5912,
 )
 
 
@@ -2500,8 +2508,8 @@ _EPB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5853,
-  serialized_end=6072,
+  serialized_start=5915,
+  serialized_end=6134,
 )
 
 
@@ -2664,8 +2672,8 @@ _GAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6075,
-  serialized_end=6601,
+  serialized_start=6137,
+  serialized_end=6663,
 )
 
 
@@ -2765,8 +2773,8 @@ _ESP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6604,
-  serialized_end=6868,
+  serialized_start=6666,
+  serialized_end=6930,
 )
 
 
@@ -2867,8 +2875,8 @@ _EMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6871,
-  serialized_end=7268,
+  serialized_start=6933,
+  serialized_end=7330,
 )
 
 
@@ -2926,8 +2934,8 @@ _GEAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7271,
-  serialized_end=7469,
+  serialized_start=7333,
+  serialized_end=7531,
 )
 
 
@@ -3111,8 +3119,8 @@ _SAFETY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7472,
-  serialized_end=8222,
+  serialized_start=7534,
+  serialized_end=8284,
 )
 
 
@@ -3409,8 +3417,8 @@ _BASICINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8225,
-  serialized_end=9181,
+  serialized_start=8287,
+  serialized_end=9243,
 )
 
 
@@ -3485,8 +3493,8 @@ _GLOBAL_RPT_6A = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9184,
-  serialized_end=9813,
+  serialized_start=9246,
+  serialized_end=9875,
 )
 
 
@@ -3516,8 +3524,8 @@ _BRAKE_CMD_6B = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9815,
-  serialized_end=9848,
+  serialized_start=9877,
+  serialized_end=9910,
 )
 
 
@@ -3569,8 +3577,8 @@ _BRAKE_RPT_6C = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9851,
-  serialized_end=10065,
+  serialized_start=9913,
+  serialized_end=10127,
 )
 
 
@@ -3607,8 +3615,8 @@ _STEERING_CMD_6D = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10067,
-  serialized_end=10129,
+  serialized_start=10129,
+  serialized_end=10191,
 )
 
 
@@ -3652,8 +3660,8 @@ _STEERING_RPT_1_6E = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10131,
-  serialized_end=10219,
+  serialized_start=10193,
+  serialized_end=10281,
 )
 
 
@@ -3704,8 +3712,8 @@ _WHEEL_SPEED_RPT_7A = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10222,
-  serialized_end=10362,
+  serialized_start=10284,
+  serialized_end=10424,
 )
 
 
@@ -3770,8 +3778,8 @@ _DATE_TIME_RPT_83 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10365,
-  serialized_end=10501,
+  serialized_start=10427,
+  serialized_end=10563,
 )
 
 
@@ -3808,8 +3816,8 @@ _BRAKE_MOTOR_RPT_1_70 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10503,
-  serialized_end=10572,
+  serialized_start=10565,
+  serialized_end=10634,
 )
 
 
@@ -3856,8 +3864,8 @@ _HEADLIGHT_RPT_77 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10575,
-  serialized_end=11157,
+  serialized_start=10637,
+  serialized_end=11219,
 )
 
 
@@ -3901,8 +3909,8 @@ _ACCEL_RPT_68 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11159,
-  serialized_end=11242,
+  serialized_start=11221,
+  serialized_end=11304,
 )
 
 
@@ -3939,8 +3947,8 @@ _STEERING_MOTOR_RPT_3_75 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11244,
-  serialized_end=11314,
+  serialized_start=11306,
+  serialized_end=11376,
 )
 
 
@@ -3971,8 +3979,8 @@ _TURN_CMD_63 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11317,
-  serialized_end=11534,
+  serialized_start=11379,
+  serialized_end=11596,
 )
 
 
@@ -4019,8 +4027,8 @@ _TURN_RPT_64 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11537,
-  serialized_end=12118,
+  serialized_start=11599,
+  serialized_end=12180,
 )
 
 
@@ -4051,8 +4059,8 @@ _SHIFT_CMD_65 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12121,
-  serialized_end=12322,
+  serialized_start=12183,
+  serialized_end=12384,
 )
 
 
@@ -4099,8 +4107,8 @@ _SHIFT_RPT_66 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12325,
-  serialized_end=13002,
+  serialized_start=12387,
+  serialized_end=13064,
 )
 
 
@@ -4130,8 +4138,8 @@ _ACCEL_CMD_67 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13004,
-  serialized_end=13037,
+  serialized_start=13066,
+  serialized_end=13099,
 )
 
 
@@ -4203,8 +4211,8 @@ _LAT_LON_HEADING_RPT_82 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13040,
-  serialized_end=13240,
+  serialized_start=13102,
+  serialized_end=13302,
 )
 
 
@@ -4251,8 +4259,8 @@ _GLOBAL_CMD_69 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13243,
-  serialized_end=13798,
+  serialized_start=13305,
+  serialized_end=13860,
 )
 
 
@@ -4283,8 +4291,8 @@ _PARKING_BRAKE_STATUS_RPT_80 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13801,
-  serialized_end=14021,
+  serialized_start=13863,
+  serialized_end=14083,
 )
 
 
@@ -4314,8 +4322,8 @@ _YAW_RATE_RPT_81 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14023,
-  serialized_end=14058,
+  serialized_start=14085,
+  serialized_end=14120,
 )
 
 
@@ -4362,8 +4370,8 @@ _HORN_RPT_79 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14061,
-  serialized_end=14479,
+  serialized_start=14123,
+  serialized_end=14541,
 )
 
 
@@ -4394,8 +4402,8 @@ _HORN_CMD_78 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14481,
-  serialized_end=14604,
+  serialized_start=14543,
+  serialized_end=14666,
 )
 
 
@@ -4442,8 +4450,8 @@ _WIPER_RPT_91 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14607,
-  serialized_end=15638,
+  serialized_start=14669,
+  serialized_end=15700,
 )
 
 
@@ -4481,8 +4489,8 @@ _VEHICLE_SPEED_RPT_6F = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15641,
-  serialized_end=15867,
+  serialized_start=15703,
+  serialized_end=15929,
 )
 
 
@@ -4513,8 +4521,8 @@ _HEADLIGHT_CMD_76 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15870,
-  serialized_end=16076,
+  serialized_start=15932,
+  serialized_end=16138,
 )
 
 
@@ -4558,8 +4566,8 @@ _STEERING_MOTOR_RPT_2_74 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16078,
-  serialized_end=16182,
+  serialized_start=16140,
+  serialized_end=16244,
 )
 
 
@@ -4603,8 +4611,8 @@ _BRAKE_MOTOR_RPT_2_71 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16184,
-  serialized_end=16285,
+  serialized_start=16246,
+  serialized_end=16347,
 )
 
 
@@ -4641,8 +4649,8 @@ _STEERING_MOTOR_RPT_1_73 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16287,
-  serialized_end=16359,
+  serialized_start=16349,
+  serialized_end=16421,
 )
 
 
@@ -4673,8 +4681,8 @@ _WIPER_CMD_90 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16362,
-  serialized_end=16671,
+  serialized_start=16424,
+  serialized_end=16733,
 )
 
 
@@ -4711,8 +4719,8 @@ _BRAKE_MOTOR_RPT_3_72 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16673,
-  serialized_end=16740,
+  serialized_start=16735,
+  serialized_end=16802,
 )
 
 
@@ -4945,8 +4953,8 @@ _GEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16743,
-  serialized_end=18512,
+  serialized_start=16805,
+  serialized_end=18574,
 )
 
 _CHASSISDETAIL.fields_by_name['car_type'].enum_type = _CHASSISDETAIL_TYPE
@@ -4973,6 +4981,7 @@ _CHASSISDETAIL.fields_by_name['ge3'].message_type = modules_dot_canbus_dot_proto
 _CHASSISDETAIL.fields_by_name['wey'].message_type = modules_dot_canbus_dot_proto_dot_wey__pb2._WEY
 _CHASSISDETAIL.fields_by_name['zhongyun'].message_type = modules_dot_canbus_dot_proto_dot_zhongyun__pb2._ZHONGYUN
 _CHASSISDETAIL.fields_by_name['ch'].message_type = modules_dot_canbus_dot_proto_dot_ch__pb2._CH
+_CHASSISDETAIL.fields_by_name['ls'].message_type = modules_dot_canbus_dot_proto_dot_ls__pb2._LS
 _CHASSISDETAIL.fields_by_name['vehicle_id'].message_type = modules_dot_common_dot_configs_dot_proto_dot_vehicle__config__pb2._VEHICLEID
 _CHASSISDETAIL_TYPE.containing_type = _CHASSISDETAIL
 _LIGHT.fields_by_name['turn_light_type'].enum_type = _LIGHT_TURNLIGHTTYPE

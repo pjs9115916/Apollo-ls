@@ -26,22 +26,22 @@
 #include "modules/common/proto/error_code.pb.h"
 #include "modules/control/proto/control_cmd.pb.h"
 
-#include "modules/canbus/vehicle/ch/protocol/brake_command_111.h"
-#include "modules/canbus/vehicle/ch/protocol/control_command_115.h"
-#include "modules/canbus/vehicle/ch/protocol/gear_command_114.h"
-#include "modules/canbus/vehicle/ch/protocol/steer_command_112.h"
-#include "modules/canbus/vehicle/ch/protocol/throttle_command_110.h"
-#include "modules/canbus/vehicle/ch/protocol/turnsignal_command_113.h"
+#include "modules/canbus/vehicle/ls/protocol/brake_command_102.h"
+#include "modules/canbus/vehicle/ls/protocol/control_command_100.h"
+#include "modules/canbus/vehicle/ls/protocol/gear_command_104.h"
+#include "modules/canbus/vehicle/ls/protocol/steer_command_103.h"
+#include "modules/canbus/vehicle/ls/protocol/throttle_command_101.h"
+#include "modules/canbus/vehicle/ls/protocol/turnsignal_command_104.h"
 
 namespace apollo {
 namespace canbus {
-namespace ch {
+namespace ls {
 
-class ChController final : public VehicleController {
+class LsController final : public VehicleController {
  public:
-  ChController() {}
+  LsController() {}
 
-  virtual ~ChController();
+  virtual ~LsController();
 
   ::apollo::common::ErrorCode Init(
       const VehicleParameter& params,
@@ -61,9 +61,9 @@ class ChController final : public VehicleController {
    * @returns a copy of chassis. Use copy here to avoid multi-thread issues.
    */
   Chassis chassis() override;
-  FRIEND_TEST(ChControllerTest, SetDrivingMode);
-  FRIEND_TEST(ChControllerTest, Status);
-  FRIEND_TEST(ChControllerTest, UpdateDrivingMode);
+  FRIEND_TEST(LsControllerTest, SetDrivingMode);
+  FRIEND_TEST(LsControllerTest, Status);
+  FRIEND_TEST(LsControllerTest, UpdateDrivingMode);
 
  private:
   // main logical function for operation the car enter or exit the auto driving
@@ -116,12 +116,12 @@ class ChController final : public VehicleController {
 
  private:
   // control protocol
-  Brakecommand111* brake_command_111_ = nullptr;
-  Controlcommand115* control_command_115_ = nullptr;
-  Gearcommand114* gear_command_114_ = nullptr;
-  Steercommand112* steer_command_112_ = nullptr;
-  Throttlecommand110* throttle_command_110_ = nullptr;
-  Turnsignalcommand113* turnsignal_command_113_ = nullptr;
+  Brakecommand102* brake_command_102_ = nullptr;
+  Controlcommand100* control_command_100_ = nullptr;
+  Gearcommand104* gear_command_104_ = nullptr;
+  Steercommand103* steer_command_103_ = nullptr;
+  Throttlecommand101* throttle_command_101_ = nullptr;
+  Turnsignalcommand104* turnsignal_command_104_ = nullptr;
 
   Chassis chassis_;
   std::unique_ptr<std::thread> thread_;
@@ -134,6 +134,6 @@ class ChController final : public VehicleController {
   int32_t chassis_error_mask_ = 0;
 };
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

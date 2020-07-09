@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ls/protocol/throttle_status__510.h"
+#include "modules/canbus/vehicle/ls/protocol/throttle_status__201.h"
 #include "gtest/gtest.h"
 
 namespace apollo {
@@ -41,10 +41,10 @@ TEST_F(Throttlestatus201Test, General) {
   EXPECT_EQ(data[6], 0b00010011);
   EXPECT_EQ(data[7], 0b00010100);
 
-  EXPECT_EQ(cd.ch().throttle_status__510().throttle_pedal_en_sts(), 1);
-  EXPECT_EQ(cd.ch().throttle_status__510().throttle_pedal_sts(), 2);
+  EXPECT_EQ(cd.ls().throttle_status__201().throttle_pedal_en_sts(), 1);
+  EXPECT_EQ(cd.ls().throttle_status__201().throttle_pedal_sts(), 2);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

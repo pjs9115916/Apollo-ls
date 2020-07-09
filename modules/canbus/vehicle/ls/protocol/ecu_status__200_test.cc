@@ -14,22 +14,22 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ch/protocol/ecu_status_1_515.h"
+#include "modules/canbus/vehicle/ls/protocol/ecu_status__200.h"
 #include "gtest/gtest.h"
 
 namespace apollo {
 namespace canbus {
-namespace ch {
-class Ecustatus1515Test : public ::testing::Test {
+namespace ls {
+class Ecustatus200Test : public ::testing::Test {
  public:
   virtual void SetUp() {}
 };
 
-TEST_F(Ecustatus1515Test, General) {
+TEST_F(Ecustatus200Test, General) {
   uint8_t data[8] = {0x01, 0x02, 0x03, 0x04, 0x01, 0x12, 0x13, 0x14};
   int32_t length = 8;
   ChassisDetail cd;
-  Ecustatus1515 ecustatus;
+  Ecustatus200 ecustatus;
   ecustatus.Parse(data, length, &cd);
 
   EXPECT_EQ(data[0], 0b00000001);
@@ -41,13 +41,13 @@ TEST_F(Ecustatus1515Test, General) {
   EXPECT_EQ(data[6], 0b00010011);
   EXPECT_EQ(data[7], 0b00010100);
 
-  EXPECT_DOUBLE_EQ(cd.ch().ecu_status_1_515().speed(), 5.1299999999999999);
-  EXPECT_DOUBLE_EQ(cd.ch().ecu_status_1_515().acc_speed(), 1.0269999999999999);
-  EXPECT_EQ(cd.ch().ecu_status_1_515().ctrl_sts(), 1);
-  EXPECT_EQ(cd.ch().ecu_status_1_515().chassis_sts(), 18);
-  EXPECT_EQ(cd.ch().ecu_status_1_515().chassis_err(), 5139);
+  EXPECT_DOUBLE_EQ(cd.ls().ecu_status__200().speed(), 5.1299999999999999);
+  EXPECT_DOUBLE_EQ(cd.ls().ecu_status__200().acc_speed(), 1.0269999999999999);
+  EXPECT_EQ(cd.ls().ecu_status__200().ctrl_sts(), 1);
+  EXPECT_EQ(cd.ls().ecu_status__200().chassis_sts(), 18);
+  EXPECT_EQ(cd.ls().ecu_status__200().chassis_err(), 5139);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

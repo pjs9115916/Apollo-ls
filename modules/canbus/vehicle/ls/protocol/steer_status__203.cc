@@ -30,9 +30,9 @@ const int32_t Steerstatus203::ID = 0x203;
 
 void Steerstatus203::Parse(const std::uint8_t* bytes, int32_t length,
                            ChassisDetail* chassis) const {
-  chassis->mutable_ch()->mutable_steer_status__203()->set_steer_angle_en_sts(
+  chassis->mutable_ls()->mutable_steer_status__203()->set_steer_angle_en_sts(
       steer_angle_en_sts(bytes, length));
-  chassis->mutable_ch()->mutable_steer_status__203()->set_steer_angle_sts(
+  chassis->mutable_ls()->mutable_steer_status__203()->set_steer_angle_sts(
       steer_angle_sts(bytes, length));
   chassis->mutable_check_response()->set_is_eps_online(
       steer_angle_en_sts(bytes, length) == 1);
@@ -44,13 +44,13 @@ void Steerstatus203::Parse(const std::uint8_t* bytes, int32_t length,
 // 'steer_angle_en_sts', 'is_signed_var': False, 'offset': 0.0,
 // 'physical_range': '[0|1]', 'bit': 0, 'type': 'enum', 'order': 'intel',
 // 'physical_unit': ''}
-steer_status__203::Steer_angle_en_stsType Steerstatus203::steer_angle_en_sts(
+Steer_status__203::Steer_angle_en_stsType Steerstatus203::steer_angle_en_sts(
     const std::uint8_t* bytes, int32_t length) const {
   Byte t0(bytes + 0);
   int32_t x = t0.get_byte(0, 8);
 
-  steer_status__203::Steer_angle_en_stsType ret =
-      static_cast<steer_status__203::Steer_angle_en_stsType>(x);
+  Steer_status__203::Steer_angle_en_stsType ret =
+      static_cast<Steer_status__203::Steer_angle_en_stsType>(x);
   return ret;
 }
 
@@ -74,6 +74,6 @@ double Steerstatus203::steer_angle_sts(const std::uint8_t* bytes,
   double ret = x * 0.001000;
   return ret;
 }
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo

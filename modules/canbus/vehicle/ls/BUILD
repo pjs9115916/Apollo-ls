@@ -3,49 +3,49 @@ load("//tools:cpplint.bzl", "cpplint")
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
-    name = "ch_vehicle_factory",
+    name = "ls_vehicle_factory",
     srcs = [
-        "ch_vehicle_factory.cc",
+        "ls_vehicle_factory.cc",
     ],
     hdrs = [
-        "ch_vehicle_factory.h",
+        "ls_vehicle_factory.h",
     ],
     deps = [
-        ":ch_controller",
-        ":ch_message_manager",
+        ":ls_controller",
+        ":ls_message_manager",
         "//modules/canbus/vehicle:abstract_vehicle_factory",
     ],
 )
 
 cc_library(
-    name = "ch_message_manager",
+    name = "ls_message_manager",
     srcs = [
-        "ch_message_manager.cc",
+        "ls_message_manager.cc",
     ],
     hdrs = [
-        "ch_message_manager.h",
+        "ls_message_manager.h",
     ],
     deps = [
         "//modules/canbus/proto:canbus_proto",
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "//modules/drivers/canbus/can_comm:message_manager_base",
         "//modules/drivers/canbus/common:canbus_common",
     ],
 )
 
 cc_library(
-    name = "ch_controller",
+    name = "ls_controller",
     srcs = [
-        "ch_controller.cc",
+        "ls_controller.cc",
     ],
     hdrs = [
-        "ch_controller.h",
+        "ls_controller.h",
     ],
     deps = [
-        ":ch_message_manager",
+        ":ls_message_manager",
         "//modules/canbus/proto:canbus_proto",
         "//modules/canbus/vehicle:vehicle_controller_base",
-        "//modules/canbus/vehicle/ch/protocol:canbus_ch_protocol",
+        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
         "//modules/drivers/canbus/can_comm:can_sender",
         "//modules/drivers/canbus/can_comm:message_manager_base",
         "//modules/drivers/canbus/common:canbus_common",
@@ -53,36 +53,36 @@ cc_library(
 )
 
 cc_test(
-    name = "ch_controller_test",
+    name = "ls_controller_test",
     size = "small",
     srcs = [
-        "ch_controller_test.cc",
+        "ls_controller_test.cc",
     ],
     data = ["//modules/canbus:canbus_testdata"],
     deps = [
-        ":ch_controller",
+        ":ls_controller",
         "@gtest//:main",
     ],
 )
 
 cc_test(
-    name = "ch_message_manager_test",
+    name = "ls_message_manager_test",
     size = "small",
     srcs = [
-        "ch_message_manager_test.cc",
+        "ls_message_manager_test.cc",
     ],
     deps = [
-        "//modules/canbus/vehicle/ch:ch_message_manager",
+        "//modules/canbus/vehicle/ls:ls_message_manager",
         "@gtest//:main",
     ],
 )
 
 cc_test(
-    name = "ch_vehicle_factory_test",
+    name = "ls_vehicle_factory_test",
     size = "small",
-    srcs = ["ch_vehicle_factory_test.cc"],
+    srcs = ["ls_vehicle_factory_test.cc"],
     deps = [
-        ":ch_vehicle_factory",
+        ":ls_vehicle_factory",
         "@gtest//:main",
     ],
 )

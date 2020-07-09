@@ -51,10 +51,10 @@ void VehicleFactory::RegisterVehicleFactory() {
   Register(apollo::common::ZHONGYUN, []() -> AbstractVehicleFactory * {
     return new ZhongyunVehicleFactory();
   });
-  Register(apollo::common::CH,
-           []() -> AbstractVehicleFactory * { return new ChVehicleFactory(); });
-  Register(apollo::common::LS,
-           []() -> AbstractVehicleFactory * { return new ChVehicleFactory(); });
+  Register(apollo::common::CH, []() -> AbstractVehicleFactory * { 
+    return new ChVehicleFactory(); });
+  Register(apollo::common::LS, []() -> AbstractVehicleFactory * { 
+    return new LsVehicleFactory(); });
 }
 
 std::unique_ptr<AbstractVehicleFactory> VehicleFactory::CreateVehicle(
