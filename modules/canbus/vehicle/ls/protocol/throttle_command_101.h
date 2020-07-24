@@ -71,7 +71,7 @@ class Throttlecommand101 : public ::apollo::drivers::canbus::ProtocolData<
 
  private:
   Throttle_command_101::Throttle_pedal_en_ctrlType throttle_pedal_en_ctrl_;
-  int throttle_pedal_cmd_;
+  int throttle_pedal_cmd_;   //油门百分比
 };
 
 }  // namespace ls

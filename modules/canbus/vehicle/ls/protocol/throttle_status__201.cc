@@ -62,10 +62,23 @@ Throttlestatus201::throttle_pedal_en_sts(const std::uint8_t* bytes,
 // 'order': 'intel', 'physical_unit': '%'}
 int Throttlestatus201::throttle_pedal_sts(const std::uint8_t* bytes,
                                           int32_t length) const {
+  //Byte t0(bytes + 0);
+  //int32_t x = t0.get_byte(6, 2);
+
+  //int ret = x;
+  //return ret;
   Byte t0(bytes + 1);
   int32_t x = t0.get_byte(0, 8);
 
-  int ret = x;
+  Byte t1(bytes + 0);
+  int32_t t = t1.get_byte(0, 2);
+  x <<= 8;
+  x |= t;
+
+  x <<= 16;
+  x >>= 16;
+
+  double ret = x ;//* 0.001000;
   return ret;
 }
 }  // namespace ls

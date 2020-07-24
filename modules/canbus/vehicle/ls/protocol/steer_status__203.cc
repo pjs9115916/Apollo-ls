@@ -47,7 +47,7 @@ void Steerstatus203::Parse(const std::uint8_t* bytes, int32_t length,
 Steer_status__203::Steer_angle_en_stsType Steerstatus203::steer_angle_en_sts(
     const std::uint8_t* bytes, int32_t length) const {
   Byte t0(bytes + 0);
-  int32_t x = t0.get_byte(0, 8);
+  int32_t x = t0.get_byte(6, 2);
 
   Steer_status__203::Steer_angle_en_stsType ret =
       static_cast<Steer_status__203::Steer_angle_en_stsType>(x);
@@ -60,11 +60,11 @@ Steer_status__203::Steer_angle_en_stsType Steerstatus203::steer_angle_en_sts(
 // 'double', 'order': 'intel', 'physical_unit': 'radian'}
 double Steerstatus203::steer_angle_sts(const std::uint8_t* bytes,
                                        int32_t length) const {
-  Byte t0(bytes + 2);
+  Byte t0(bytes + 1);
   int32_t x = t0.get_byte(0, 8);
 
-  Byte t1(bytes + 1);
-  int32_t t = t1.get_byte(0, 8);
+  Byte t1(bytes + 0);
+  int32_t t = t1.get_byte(0, 5);
   x <<= 8;
   x |= t;
 

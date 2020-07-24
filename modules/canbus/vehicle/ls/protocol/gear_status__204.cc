@@ -42,7 +42,7 @@ void Gearstatus204::Parse(const std::uint8_t* bytes, int32_t length,
 Gear_status__204::Gear_stsType Gearstatus204::gear_sts(const std::uint8_t* bytes,
                                                       int32_t length) const {
   Byte t0(bytes + 0);
-  int32_t x = t0.get_byte(0, 8);
+  int32_t x = t0.get_byte(0, 4);
 
   Gear_status__204::Gear_stsType ret =
       static_cast<Gear_status__204::Gear_stsType>(x);

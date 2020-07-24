@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package apollo.canbus;
 
-// Coolhigh vehicle starts from here
+// sightseeing bus _ls starts from here
 message Control_command_100 {
 // Control Message
   enum Ctrl_cmdType {
@@ -131,6 +131,7 @@ message Ecu_status__200 {
   // Current speed (Steering status) [m/s] [0|0]
   optional double speed = 1;
   // Current acceleration (Steering status) [m/s^2] [0|0]
+  //原则上速度和加速度都要重新写
   optional double acc_speed = 2;
   // Current Auto-mode state (Chassis status) [] [0|1]
   optional Ctrl_stsType ctrl_sts = 3;
@@ -140,6 +141,20 @@ message Ecu_status__200 {
   optional int32 chassis_err = 5;
 }
 
+message Speed_feedback__206 {
+// Report Message
+ 
+  // Current speed (Steering status) [m/s] [0|0]
+  optional double fspeed = 1;
+  // Current acceleration (Steering status) [m/s^2] [0|0]
+  //optional double acc_speed = 2;
+  // Current Auto-mode state (Chassis status) [] [0|1]
+  //optional Ctrl_stsType ctrl_sts = 3;
+  // Current chassis state (Chassis status) [] [0|255]
+  //optional int32 chassis_sts = 4;
+  // Chassis error code (Chassis status) [] [0|65535]
+  //optional int32 chassis_err = 5;
+}
 message Gear_status__204 {
 // Report Message
   enum Gear_stsType {

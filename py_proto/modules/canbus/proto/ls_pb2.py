@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='modules/canbus/proto/ls.proto',
   package='apollo.canbus',
   syntax='proto2',
-  serialized_pb=_b('\n\x1dmodules/canbus/proto/ls.proto\x12\rapollo.canbus\"\xa1\x01\n\x13\x43ontrol_command_100\x12\x41\n\x08\x63trl_cmd\x18\x01 \x01(\x0e\x32/.apollo.canbus.Control_command_100.Ctrl_cmdType\"G\n\x0c\x43trl_cmdType\x12\x1b\n\x17\x43TRL_CMD_OUT_OF_CONTROL\x10\x00\x12\x1a\n\x16\x43TRL_CMD_UNDER_CONTROL\x10\x01\"\xb5\x01\n\x10Gear_command_104\x12>\n\x08gear_cmd\x18\x01 \x01(\x0e\x32,.apollo.canbus.Gear_command_104.Gear_cmdType\"a\n\x0cGear_cmdType\x12\x11\n\rGEAR_CMD_PARK\x10\x01\x12\x14\n\x10GEAR_CMD_REVERSE\x10\x02\x12\x14\n\x10GEAR_CMD_NEUTRAL\x10\x03\x12\x12\n\x0eGEAR_CMD_DRIVE\x10\x04\"\xdf\x01\n\x11\x42rake_command_102\x12U\n\x13\x62rake_pedal_en_ctrl\x18\x01 \x01(\x0e\x32\x38.apollo.canbus.Brake_command_102.Brake_pedal_en_ctrlType\x12\x17\n\x0f\x62rake_pedal_cmd\x18\x02 \x01(\x05\"Z\n\x17\x42rake_pedal_en_ctrlType\x12\x1f\n\x1b\x42RAKE_PEDAL_EN_CTRL_DISABLE\x10\x00\x12\x1e\n\x1a\x42RAKE_PEDAL_EN_CTRL_ENABLE\x10\x01\"\xf7\x01\n\x14Throttle_command_101\x12^\n\x16throttle_pedal_en_ctrl\x18\x01 \x01(\x0e\x32>.apollo.canbus.Throttle_command_101.Throttle_pedal_en_ctrlType\x12\x1a\n\x12throttle_pedal_cmd\x18\x02 \x01(\x05\"c\n\x1aThrottle_pedal_en_ctrlType\x12\"\n\x1eTHROTTLE_PEDAL_EN_CTRL_DISABLE\x10\x00\x12!\n\x1dTHROTTLE_PEDAL_EN_CTRL_ENABLE\x10\x01\"\xd2\x01\n\x16Turnsignal_command_104\x12R\n\x0fturn_signal_cmd\x18\x01 \x01(\x0e\x32\x39.apollo.canbus.Turnsignal_command_104.Turn_signal_cmdType\"d\n\x13Turn_signal_cmdType\x12\x18\n\x14TURN_SIGNAL_CMD_NONE\x10\x00\x12\x18\n\x14TURN_SIGNAL_CMD_LEFT\x10\x01\x12\x19\n\x15TURN_SIGNAL_CMD_RIGHT\x10\x02\"\xdf\x01\n\x11Steer_command_103\x12U\n\x13steer_angle_en_ctrl\x18\x01 \x01(\x0e\x32\x38.apollo.canbus.Steer_command_103.Steer_angle_en_ctrlType\x12\x17\n\x0fsteer_angle_cmd\x18\x02 \x01(\x01\"Z\n\x17Steer_angle_en_ctrlType\x12\x1f\n\x1bSTEER_ANGLE_EN_CTRL_DISABLE\x10\x00\x12\x1e\n\x1aSTEER_ANGLE_EN_CTRL_ENABLE\x10\x01\"\xfb\x01\n\x11\x42rake_status__202\x12S\n\x12\x62rake_pedal_en_sts\x18\x01 \x01(\x0e\x32\x37.apollo.canbus.Brake_status__202.Brake_pedal_en_stsType\x12\x17\n\x0f\x62rake_pedal_sts\x18\x02 \x01(\x05\"x\n\x16\x42rake_pedal_en_stsType\x12\x1e\n\x1a\x42RAKE_PEDAL_EN_STS_DISABLE\x10\x00\x12\x1d\n\x19\x42RAKE_PEDAL_EN_STS_ENABLE\x10\x01\x12\x1f\n\x1b\x42RAKE_PEDAL_EN_STS_TAKEOVER\x10\x02\"\x97\x02\n\x14Throttle_status__201\x12\\\n\x15throttle_pedal_en_sts\x18\x01 \x01(\x0e\x32=.apollo.canbus.Throttle_status__201.Throttle_pedal_en_stsType\x12\x1a\n\x12throttle_pedal_sts\x18\x02 \x01(\x05\"\x84\x01\n\x19Throttle_pedal_en_stsType\x12!\n\x1dTHROTTLE_PEDAL_EN_STS_DISABLE\x10\x00\x12 \n\x1cTHROTTLE_PEDAL_EN_STS_ENABLE\x10\x01\x12\"\n\x1eTHROTTLE_PEDAL_EN_STS_TAKEOVER\x10\x02\"\xd2\x01\n\x16Turnsignal_status__204\x12R\n\x0fturn_signal_sts\x18\x01 \x01(\x0e\x32\x39.apollo.canbus.Turnsignal_status__204.Turn_signal_stsType\"d\n\x13Turn_signal_stsType\x12\x18\n\x14TURN_SIGNAL_STS_NONE\x10\x00\x12\x18\n\x14TURN_SIGNAL_STS_LEFT\x10\x01\x12\x19\n\x15TURN_SIGNAL_STS_RIGHT\x10\x02\"\xfb\x01\n\x11Steer_status__203\x12S\n\x12steer_angle_en_sts\x18\x01 \x01(\x0e\x32\x37.apollo.canbus.Steer_status__203.Steer_angle_en_stsType\x12\x17\n\x0fsteer_angle_sts\x18\x02 \x01(\x01\"x\n\x16Steer_angle_en_stsType\x12\x1e\n\x1aSTEER_ANGLE_EN_STS_DISABLE\x10\x00\x12\x1d\n\x19STEER_ANGLE_EN_STS_ENABLE\x10\x01\x12\x1f\n\x1bSTEER_ANGLE_EN_STS_TAKEOVER\x10\x02\"\xe5\x01\n\x0f\x45\x63u_status__200\x12\r\n\x05speed\x18\x01 \x01(\x01\x12\x11\n\tacc_speed\x18\x02 \x01(\x01\x12=\n\x08\x63trl_sts\x18\x03 \x01(\x0e\x32+.apollo.canbus.Ecu_status__200.Ctrl_stsType\x12\x13\n\x0b\x63hassis_sts\x18\x04 \x01(\x05\x12\x13\n\x0b\x63hassis_err\x18\x05 \x01(\x05\"G\n\x0c\x43trl_stsType\x12\x1b\n\x17\x43TRL_STS_OUT_OF_CONTROL\x10\x00\x12\x1a\n\x16\x43TRL_STS_UNDER_CONTROL\x10\x01\"\xb5\x01\n\x10Gear_status__204\x12>\n\x08gear_sts\x18\x01 \x01(\x0e\x32,.apollo.canbus.Gear_status__204.Gear_stsType\"a\n\x0cGear_stsType\x12\x11\n\rGEAR_STS_PARK\x10\x01\x12\x14\n\x10GEAR_STS_REVERSE\x10\x02\x12\x14\n\x10GEAR_STS_NEUTRAL\x10\x03\x12\x12\n\x0eGEAR_STS_DRIVE\x10\x04\"\xfc\x05\n\x02Ls\x12?\n\x13\x63ontrol_command_100\x18\x01 \x01(\x0b\x32\".apollo.canbus.Control_command_100\x12\x39\n\x10gear_command_104\x18\x02 \x01(\x0b\x32\x1f.apollo.canbus.Gear_command_104\x12;\n\x11\x62rake_command_102\x18\x03 \x01(\x0b\x32 .apollo.canbus.Brake_command_102\x12\x41\n\x14throttle_command_101\x18\x04 \x01(\x0b\x32#.apollo.canbus.Throttle_command_101\x12\x45\n\x16turnsignal_command_104\x18\x05 \x01(\x0b\x32%.apollo.canbus.Turnsignal_command_104\x12;\n\x11steer_command_103\x18\x06 \x01(\x0b\x32 .apollo.canbus.Steer_command_103\x12;\n\x11\x62rake_status__202\x18\x07 \x01(\x0b\x32 .apollo.canbus.Brake_status__202\x12\x41\n\x14throttle_status__201\x18\x08 \x01(\x0b\x32#.apollo.canbus.Throttle_status__201\x12\x45\n\x16turnsignal_status__204\x18\t \x01(\x0b\x32%.apollo.canbus.Turnsignal_status__204\x12;\n\x11steer_status__203\x18\n \x01(\x0b\x32 .apollo.canbus.Steer_status__203\x12\x37\n\x0f\x65\x63u_status__200\x18\x0b \x01(\x0b\x32\x1e.apollo.canbus.Ecu_status__200\x12\x39\n\x10gear_status__204\x18\x0c \x01(\x0b\x32\x1f.apollo.canbus.Gear_status__204')
+  serialized_pb=_b('\n\x1dmodules/canbus/proto/ls.proto\x12\rapollo.canbus\"\xa1\x01\n\x13\x43ontrol_command_100\x12\x41\n\x08\x63trl_cmd\x18\x01 \x01(\x0e\x32/.apollo.canbus.Control_command_100.Ctrl_cmdType\"G\n\x0c\x43trl_cmdType\x12\x1b\n\x17\x43TRL_CMD_OUT_OF_CONTROL\x10\x00\x12\x1a\n\x16\x43TRL_CMD_UNDER_CONTROL\x10\x01\"\xb5\x01\n\x10Gear_command_104\x12>\n\x08gear_cmd\x18\x01 \x01(\x0e\x32,.apollo.canbus.Gear_command_104.Gear_cmdType\"a\n\x0cGear_cmdType\x12\x11\n\rGEAR_CMD_PARK\x10\x01\x12\x14\n\x10GEAR_CMD_REVERSE\x10\x02\x12\x14\n\x10GEAR_CMD_NEUTRAL\x10\x03\x12\x12\n\x0eGEAR_CMD_DRIVE\x10\x04\"\xdf\x01\n\x11\x42rake_command_102\x12U\n\x13\x62rake_pedal_en_ctrl\x18\x01 \x01(\x0e\x32\x38.apollo.canbus.Brake_command_102.Brake_pedal_en_ctrlType\x12\x17\n\x0f\x62rake_pedal_cmd\x18\x02 \x01(\x05\"Z\n\x17\x42rake_pedal_en_ctrlType\x12\x1f\n\x1b\x42RAKE_PEDAL_EN_CTRL_DISABLE\x10\x00\x12\x1e\n\x1a\x42RAKE_PEDAL_EN_CTRL_ENABLE\x10\x01\"\xf7\x01\n\x14Throttle_command_101\x12^\n\x16throttle_pedal_en_ctrl\x18\x01 \x01(\x0e\x32>.apollo.canbus.Throttle_command_101.Throttle_pedal_en_ctrlType\x12\x1a\n\x12throttle_pedal_cmd\x18\x02 \x01(\x05\"c\n\x1aThrottle_pedal_en_ctrlType\x12\"\n\x1eTHROTTLE_PEDAL_EN_CTRL_DISABLE\x10\x00\x12!\n\x1dTHROTTLE_PEDAL_EN_CTRL_ENABLE\x10\x01\"\xd2\x01\n\x16Turnsignal_command_104\x12R\n\x0fturn_signal_cmd\x18\x01 \x01(\x0e\x32\x39.apollo.canbus.Turnsignal_command_104.Turn_signal_cmdType\"d\n\x13Turn_signal_cmdType\x12\x18\n\x14TURN_SIGNAL_CMD_NONE\x10\x00\x12\x18\n\x14TURN_SIGNAL_CMD_LEFT\x10\x01\x12\x19\n\x15TURN_SIGNAL_CMD_RIGHT\x10\x02\"\xdf\x01\n\x11Steer_command_103\x12U\n\x13steer_angle_en_ctrl\x18\x01 \x01(\x0e\x32\x38.apollo.canbus.Steer_command_103.Steer_angle_en_ctrlType\x12\x17\n\x0fsteer_angle_cmd\x18\x02 \x01(\x01\"Z\n\x17Steer_angle_en_ctrlType\x12\x1f\n\x1bSTEER_ANGLE_EN_CTRL_DISABLE\x10\x00\x12\x1e\n\x1aSTEER_ANGLE_EN_CTRL_ENABLE\x10\x01\"\xfb\x01\n\x11\x42rake_status__202\x12S\n\x12\x62rake_pedal_en_sts\x18\x01 \x01(\x0e\x32\x37.apollo.canbus.Brake_status__202.Brake_pedal_en_stsType\x12\x17\n\x0f\x62rake_pedal_sts\x18\x02 \x01(\x05\"x\n\x16\x42rake_pedal_en_stsType\x12\x1e\n\x1a\x42RAKE_PEDAL_EN_STS_DISABLE\x10\x00\x12\x1d\n\x19\x42RAKE_PEDAL_EN_STS_ENABLE\x10\x01\x12\x1f\n\x1b\x42RAKE_PEDAL_EN_STS_TAKEOVER\x10\x02\"\x97\x02\n\x14Throttle_status__201\x12\\\n\x15throttle_pedal_en_sts\x18\x01 \x01(\x0e\x32=.apollo.canbus.Throttle_status__201.Throttle_pedal_en_stsType\x12\x1a\n\x12throttle_pedal_sts\x18\x02 \x01(\x05\"\x84\x01\n\x19Throttle_pedal_en_stsType\x12!\n\x1dTHROTTLE_PEDAL_EN_STS_DISABLE\x10\x00\x12 \n\x1cTHROTTLE_PEDAL_EN_STS_ENABLE\x10\x01\x12\"\n\x1eTHROTTLE_PEDAL_EN_STS_TAKEOVER\x10\x02\"\xd2\x01\n\x16Turnsignal_status__204\x12R\n\x0fturn_signal_sts\x18\x01 \x01(\x0e\x32\x39.apollo.canbus.Turnsignal_status__204.Turn_signal_stsType\"d\n\x13Turn_signal_stsType\x12\x18\n\x14TURN_SIGNAL_STS_NONE\x10\x00\x12\x18\n\x14TURN_SIGNAL_STS_LEFT\x10\x01\x12\x19\n\x15TURN_SIGNAL_STS_RIGHT\x10\x02\"\xfb\x01\n\x11Steer_status__203\x12S\n\x12steer_angle_en_sts\x18\x01 \x01(\x0e\x32\x37.apollo.canbus.Steer_status__203.Steer_angle_en_stsType\x12\x17\n\x0fsteer_angle_sts\x18\x02 \x01(\x01\"x\n\x16Steer_angle_en_stsType\x12\x1e\n\x1aSTEER_ANGLE_EN_STS_DISABLE\x10\x00\x12\x1d\n\x19STEER_ANGLE_EN_STS_ENABLE\x10\x01\x12\x1f\n\x1bSTEER_ANGLE_EN_STS_TAKEOVER\x10\x02\"\xe5\x01\n\x0f\x45\x63u_status__200\x12\r\n\x05speed\x18\x01 \x01(\x01\x12\x11\n\tacc_speed\x18\x02 \x01(\x01\x12=\n\x08\x63trl_sts\x18\x03 \x01(\x0e\x32+.apollo.canbus.Ecu_status__200.Ctrl_stsType\x12\x13\n\x0b\x63hassis_sts\x18\x04 \x01(\x05\x12\x13\n\x0b\x63hassis_err\x18\x05 \x01(\x05\"G\n\x0c\x43trl_stsType\x12\x1b\n\x17\x43TRL_STS_OUT_OF_CONTROL\x10\x00\x12\x1a\n\x16\x43TRL_STS_UNDER_CONTROL\x10\x01\"%\n\x13Speed_feedback__206\x12\x0e\n\x06\x66speed\x18\x01 \x01(\x01\"\xb5\x01\n\x10Gear_status__204\x12>\n\x08gear_sts\x18\x01 \x01(\x0e\x32,.apollo.canbus.Gear_status__204.Gear_stsType\"a\n\x0cGear_stsType\x12\x11\n\rGEAR_STS_PARK\x10\x01\x12\x14\n\x10GEAR_STS_REVERSE\x10\x02\x12\x14\n\x10GEAR_STS_NEUTRAL\x10\x03\x12\x12\n\x0eGEAR_STS_DRIVE\x10\x04\"\xfc\x05\n\x02Ls\x12?\n\x13\x63ontrol_command_100\x18\x01 \x01(\x0b\x32\".apollo.canbus.Control_command_100\x12\x39\n\x10gear_command_104\x18\x02 \x01(\x0b\x32\x1f.apollo.canbus.Gear_command_104\x12;\n\x11\x62rake_command_102\x18\x03 \x01(\x0b\x32 .apollo.canbus.Brake_command_102\x12\x41\n\x14throttle_command_101\x18\x04 \x01(\x0b\x32#.apollo.canbus.Throttle_command_101\x12\x45\n\x16turnsignal_command_104\x18\x05 \x01(\x0b\x32%.apollo.canbus.Turnsignal_command_104\x12;\n\x11steer_command_103\x18\x06 \x01(\x0b\x32 .apollo.canbus.Steer_command_103\x12;\n\x11\x62rake_status__202\x18\x07 \x01(\x0b\x32 .apollo.canbus.Brake_status__202\x12\x41\n\x14throttle_status__201\x18\x08 \x01(\x0b\x32#.apollo.canbus.Throttle_status__201\x12\x45\n\x16turnsignal_status__204\x18\t \x01(\x0b\x32%.apollo.canbus.Turnsignal_status__204\x12;\n\x11steer_status__203\x18\n \x01(\x0b\x32 .apollo.canbus.Steer_status__203\x12\x37\n\x0f\x65\x63u_status__200\x18\x0b \x01(\x0b\x32\x1e.apollo.canbus.Ecu_status__200\x12\x39\n\x10gear_status__204\x18\x0c \x01(\x0b\x32\x1f.apollo.canbus.Gear_status__204')
 )
 
 
@@ -319,8 +319,8 @@ _GEAR_STATUS__204_GEAR_STSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2631,
-  serialized_end=2728,
+  serialized_start=2670,
+  serialized_end=2767,
 )
 _sym_db.RegisterEnumDescriptor(_GEAR_STATUS__204_GEAR_STSTYPE)
 
@@ -747,6 +747,37 @@ _ECU_STATUS__200 = _descriptor.Descriptor(
 )
 
 
+_SPEED_FEEDBACK__206 = _descriptor.Descriptor(
+  name='Speed_feedback__206',
+  full_name='apollo.canbus.Speed_feedback__206',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='fspeed', full_name='apollo.canbus.Speed_feedback__206.fspeed', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2546,
+  serialized_end=2583,
+)
+
+
 _GEAR_STATUS__204 = _descriptor.Descriptor(
   name='Gear_status__204',
   full_name='apollo.canbus.Gear_status__204',
@@ -774,8 +805,8 @@ _GEAR_STATUS__204 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2547,
-  serialized_end=2728,
+  serialized_start=2586,
+  serialized_end=2767,
 )
 
 
@@ -882,8 +913,8 @@ _LS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2731,
-  serialized_end=3495,
+  serialized_start=2770,
+  serialized_end=3534,
 )
 
 _CONTROL_COMMAND_100.fields_by_name['ctrl_cmd'].enum_type = _CONTROL_COMMAND_100_CTRL_CMDTYPE
@@ -933,6 +964,7 @@ DESCRIPTOR.message_types_by_name['Throttle_status__201'] = _THROTTLE_STATUS__201
 DESCRIPTOR.message_types_by_name['Turnsignal_status__204'] = _TURNSIGNAL_STATUS__204
 DESCRIPTOR.message_types_by_name['Steer_status__203'] = _STEER_STATUS__203
 DESCRIPTOR.message_types_by_name['Ecu_status__200'] = _ECU_STATUS__200
+DESCRIPTOR.message_types_by_name['Speed_feedback__206'] = _SPEED_FEEDBACK__206
 DESCRIPTOR.message_types_by_name['Gear_status__204'] = _GEAR_STATUS__204
 DESCRIPTOR.message_types_by_name['Ls'] = _LS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -1013,6 +1045,13 @@ Ecu_status__200 = _reflection.GeneratedProtocolMessageType('Ecu_status__200', (_
   # @@protoc_insertion_point(class_scope:apollo.canbus.Ecu_status__200)
   ))
 _sym_db.RegisterMessage(Ecu_status__200)
+
+Speed_feedback__206 = _reflection.GeneratedProtocolMessageType('Speed_feedback__206', (_message.Message,), dict(
+  DESCRIPTOR = _SPEED_FEEDBACK__206,
+  __module__ = 'modules.canbus.proto.ls_pb2'
+  # @@protoc_insertion_point(class_scope:apollo.canbus.Speed_feedback__206)
+  ))
+_sym_db.RegisterMessage(Speed_feedback__206)
 
 Gear_status__204 = _reflection.GeneratedProtocolMessageType('Gear_status__204', (_message.Message,), dict(
   DESCRIPTOR = _GEAR_STATUS__204,

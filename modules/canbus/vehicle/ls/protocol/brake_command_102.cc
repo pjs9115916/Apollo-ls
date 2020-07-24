@@ -63,7 +63,7 @@ void Brakecommand102::set_p_brake_pedal_en_ctrl(
   int x = brake_pedal_en_ctrl;
 
   Byte to_set(data + 0);
-  to_set.set_value(static_cast<uint8_t>(x), 0, 8);
+  to_set.set_value(static_cast<uint8_t>(x), 7, 1);
 }
 
 Brakecommand102* Brakecommand102::set_brake_pedal_cmd(int brake_pedal_cmd) {
@@ -80,8 +80,19 @@ void Brakecommand102::set_p_brake_pedal_cmd(uint8_t* data,
   brake_pedal_cmd = ProtocolData::BoundedValue(0, 100, brake_pedal_cmd);
   int x = brake_pedal_cmd;
 
-  Byte to_set(data + 1);
-  to_set.set_value(static_cast<uint8_t>(x), 0, 8);
+   //此处油门值是从第1位开始长度为10,此处应该可以取近似值即舍弃掉第0个字节的第1位和第0位;
+  //Byte to_set(data + 1);
+  //to_set.set_value(static_cast<uint8_t>(x), 0, 8);
+  uint8_t t = 0;
+
+  t = static_cast<uint8_t>(x & 0xFF);
+  Byte to_set0(data + 0);
+  to_set0.set_value(t, 0, 2);
+  x >>= 8;
+
+  t = static_cast<uint8_t>(x & 0xFF);
+  Byte to_set1(data + 1);
+  to_set1.set_value(t, 0, 8);
 }
 
 }  // namespace ls 

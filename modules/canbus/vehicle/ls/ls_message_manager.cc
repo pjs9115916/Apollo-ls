@@ -19,7 +19,7 @@
 #include "modules/canbus/vehicle/ls/protocol/brake_status__202.h"
 #include "modules/canbus/vehicle/ls/protocol/control_command_100.h"
 #include "modules/canbus/vehicle/ls/protocol/ecu_status__200.h"
-//#include "modules/canbus/vehicle/ls/protocol/ecu_status_2_516.h"
+#include "modules/canbus/vehicle/ls/protocol/speed_feedback.h"
 //#include "modules/canbus/vehicle/ls/protocol/ecu_status_3_517.h"
 #include "modules/canbus/vehicle/ls/protocol/gear_command_104.h"
 #include "modules/canbus/vehicle/ls/protocol/gear_status__204.h"
@@ -52,6 +52,7 @@ LsMessageManager::LsMessageManager() {
   AddRecvProtocolData<Steerstatus203, true>();
   AddRecvProtocolData<Throttlestatus201, true>();
   AddRecvProtocolData<Turnsignalstatus204, true>();
+  AddRecvProtocolData<Speedfeedback206,true>();
 }
 
 LsMessageManager::~LsMessageManager() {}

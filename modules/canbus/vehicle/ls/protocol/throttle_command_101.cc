@@ -31,7 +31,7 @@ Throttlecommand101::Throttlecommand101() { Reset(); }
 
 uint32_t Throttlecommand101::GetPeriod() const {
   // modify every protocol's period manually
-  static const uint32_t PERIOD = 20 * 1000;
+  static const uint32_t PERIOD = 10 * 1000;
   return PERIOD;
 }
 
@@ -66,7 +66,7 @@ void Throttlecommand101::set_p_throttle_pedal_en_ctrl(
   int x = throttle_pedal_en_ctrl;
 
   Byte to_set(data + 0);
-  to_set.set_value(static_cast<uint8_t>(x), 0, 8);
+  to_set.set_value(static_cast<uint8_t>(x), 7, 1);//第7位开始长度1
 }
 
 Throttlecommand101* Throttlecommand101::set_throttle_pedal_cmd(
@@ -83,9 +83,17 @@ void Throttlecommand101::set_p_throttle_pedal_cmd(uint8_t* data,
                                                   int throttle_pedal_cmd) {
   throttle_pedal_cmd = ProtocolData::BoundedValue(0, 100, throttle_pedal_cmd);
   int x = throttle_pedal_cmd;
+  //此处油门值是从第1位开始长度为10,此处应该可以取近似值即舍弃掉第0个字节的第1位和第0位;
+   uint8_t t = 0;
 
-  Byte to_set(data + 1);
-  to_set.set_value(static_cast<uint8_t>(x), 0, 8);
+  t = static_cast<uint8_t>(x & 0xFF);
+  Byte to_set0(data + 0);
+  to_set0.set_value(t, 0, 2);
+  x >>= 8;
+
+  t = static_cast<uint8_t>(x & 0xFF);
+  Byte to_set1(data + 1);
+  to_set1.set_value(t, 0, 8);
 }
 
 }  // namespace ls

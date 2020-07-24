@@ -49,11 +49,11 @@ ErrorCode LsController::Init(
     return ErrorCode::CANBUS_ERROR;//common下error_code.proto的文件中,CANBUS_ERROR的代号是2000;
     /*范围解析运算符 :: 
     语法  ::identifier
-class-name :: identifier
-namespace :: identifier
-enum class :: identifier
-enum struct :: identifier
-备注: identifier 可以是变量、函数或枚举值。*/
+    class-name :: identifier
+    namespace :: identifier
+    enum class :: identifier
+    enum struct :: identifier
+    备注: identifier 可以是变量、函数或枚举值。*/
   }
 
   vehicle_params_.CopyFrom(
@@ -167,9 +167,9 @@ Chassis LsController::chassis() {
 
   // 3
   chassis_.set_engine_started(true);
-  // 4 engine rpm ch has no engine rpm
+  // 4 engine rpm ls has no engine rpm
   // chassis_.set_engine_rpm(0);
-  // 5 ch has no wheel spd.
+  // 5 ls has no wheel spd.
   if (chassis_detail.ls().has_ecu_status__200() &&
       chassis_detail.ls().ecu_status__200().has_speed()) {
     chassis_.set_speed_mps(

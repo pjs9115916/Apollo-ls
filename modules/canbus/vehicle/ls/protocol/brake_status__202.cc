@@ -47,7 +47,7 @@ void Brakestatus202::Parse(const std::uint8_t* bytes, int32_t length,
 Brake_status__202::Brake_pedal_en_stsType Brakestatus202::brake_pedal_en_sts(
     const std::uint8_t* bytes, int32_t length) const {
   Byte t0(bytes + 0);
-  int32_t x = t0.get_byte(0, 8);
+  int32_t x = t0.get_byte(6, 2);//要看是否需要写成(7,2)
   Brake_status__202::Brake_pedal_en_stsType ret =
       static_cast<Brake_status__202::Brake_pedal_en_stsType>(x);
   return ret;
@@ -59,10 +59,23 @@ Brake_status__202::Brake_pedal_en_stsType Brakestatus202::brake_pedal_en_sts(
 // 'intel', 'physical_unit': '%'}
 int Brakestatus202::brake_pedal_sts(const std::uint8_t* bytes,
                                     int32_t length) const {
+  //Byte t0(bytes + 1);//思考如何将低2位加一个字节;
+ // int32_t x = t0.get_byte(0, 8);
+
+ // int ret = x;
+  //return ret;
   Byte t0(bytes + 1);
   int32_t x = t0.get_byte(0, 8);
 
-  int ret = x;
+  Byte t1(bytes + 0);
+  int32_t t = t1.get_byte(0, 2);
+  x <<= 8;
+  x |= t;
+
+  x <<= 16;
+  x >>= 16;
+
+  double ret = x ;//* 0.001000;
   return ret;
 }
 }  // namespace ls

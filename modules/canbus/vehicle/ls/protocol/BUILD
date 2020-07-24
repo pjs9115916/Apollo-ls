@@ -17,6 +17,7 @@ cc_library(
         ":throttle_status__201",
         ":turnsignal_command_104",
         ":turnsignal_status__204",
+        ":speed_feedback__206",
     ],
 )
 
@@ -120,17 +121,22 @@ cc_library(
     ],
 )
 
-cc_test(
-    name = "ecu_status__200_test",
-    size = "small",
+cc_library(
+    name = "speed_feedback__206",
     srcs = [
-        "ecu_status__200_test.cc",
+        "speed_feedback__206.cc",
     ],
+    hdrs = [
+        "speed_feedback__206.h",
+    ],
+    copts = ["-DMODULE_NAME=\\\"canbus\\\""],
     deps = [
-        "//modules/canbus/vehicle/ls/protocol:canbus_ls_protocol",
-        "@gtest//:main",
+        "//modules/canbus/proto:canbus_proto",
+        "//modules/drivers/canbus/can_comm:message_manager_base",
+        "//modules/drivers/canbus/common:canbus_common",
     ],
 )
+
 
 
 

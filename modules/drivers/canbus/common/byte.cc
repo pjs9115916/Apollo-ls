@@ -29,9 +29,9 @@ namespace {
 constexpr int32_t BYTE_LENGTH = static_cast<int32_t>(sizeof(int8_t) * 8);
 
 const uint8_t RANG_MASK_1_L[] = {0x01, 0x03, 0x07, 0x0F,
-                                 0x1F, 0x3F, 0x7F, 0xFF};
+                                 0x1F, 0x3F, 0x7F, 0xFF};//可以粗暴的理解为按1的个数排序;
 const uint8_t RANG_MASK_0_L[] = {0xFE, 0XFC, 0xF8, 0xF0,
-                                 0xE0, 0xC0, 0x80, 0x00};
+                                 0xE0, 0xC0, 0x80, 0x00};//可以粗暴的理解为按0的个数排序;
 
 }  // namespace
 
@@ -102,7 +102,7 @@ void Byte::set_value_low_4_bits(const uint8_t value) { set_value(value, 0, 4); }
 void Byte::set_value(const uint8_t value, const int32_t start_pos,
                      const int32_t length) {
   if (start_pos > BYTE_LENGTH - 1 || start_pos < 0 || length < 1) {
-    return;
+    return; //return不带返回值，应用于void，相当于break。
   }
   int32_t end_pos = std::min(start_pos + length - 1, BYTE_LENGTH - 1);
   int32_t real_len = end_pos + 1 - start_pos;

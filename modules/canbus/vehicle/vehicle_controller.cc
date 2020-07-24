@@ -29,7 +29,8 @@ Chassis::DrivingMode VehicleController::driving_mode() {
   return driving_mode_;
 }
 
-void VehicleController::set_driving_mode(
+ //此函數在其他具體車型裏有使用
+void VehicleController::set_driving_mode(  
     const Chassis::DrivingMode &driving_mode) {
   std::lock_guard<std::mutex> lock(mode_mutex_);
   driving_mode_ = driving_mode;
@@ -101,7 +102,7 @@ ErrorCode VehicleController::Update(const ControlCommand &control_command) {
   if (control_command.has_pad_msg() && control_command.pad_msg().has_action()) {
     AINFO << "Canbus received pad msg: "
           << control_command.pad_msg().ShortDebugString();
-    Chassis::DrivingMode mode = Chassis::COMPLETE_MANUAL;
+    Chassis::DrivingMode mode = Chassis::COMPLETE_MANUAL;//=0;
     switch (control_command.pad_msg().action()) {
       case control::DrivingAction::START: {
         mode = Chassis::COMPLETE_AUTO_DRIVE;

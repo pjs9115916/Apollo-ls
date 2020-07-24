@@ -30,7 +30,7 @@ Controlcommand100::Controlcommand100() { Reset(); }
 
 uint32_t Controlcommand100::GetPeriod() const {
   // modify every protocol's period manually
-  static const uint32_t PERIOD = 20 * 1000;
+  static const uint32_t PERIOD = 10 * 1000;
   return PERIOD;
 }
 

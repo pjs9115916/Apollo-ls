@@ -30,7 +30,7 @@ Gearcommand104::Gearcommand104() { Reset(); }
 
 uint32_t Gearcommand104::GetPeriod() const {
   // modify every protocol's period manually
-  static const uint32_t PERIOD = 20 * 1000;
+  static const uint32_t PERIOD = 10 * 1000;
   return PERIOD;
 }
 
@@ -49,6 +49,7 @@ Gearcommand104* Gearcommand104::set_gear_cmd(
   return this;
 }
 
+
 // config detail: {'description': 'PRND control(Command)', 'enum': {1:
 // 'GEAR_CMD_PARK', 2: 'GEAR_CMD_REVERSE', 3: 'GEAR_CMD_NEUTRAL', 4:
 // 'GEAR_CMD_DRIVE'}, 'precision': 1.0, 'len': 8, 'name': 'GEAR_CMD',
@@ -57,11 +58,11 @@ Gearcommand104* Gearcommand104::set_gear_cmd(
 void Gearcommand104::set_p_gear_cmd(uint8_t* data,
                                     Gear_command_104::Gear_cmdType gear_cmd) {
   int x = gear_cmd;
-
+//需要确认是否需要使能,以及是否需要参考steer代码中的赋值方式;
   Byte to_set(data + 0);
-  to_set.set_value(static_cast<uint8_t>(x), 0, 8);
+  to_set.set_value(static_cast<uint8_t>(x), 3, 4);
 }
 
-}  // namespace ch
+}  // namespace ls
 }  // namespace canbus
 }  // namespace apollo
