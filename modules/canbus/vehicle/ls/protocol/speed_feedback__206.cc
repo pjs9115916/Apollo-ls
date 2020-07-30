@@ -14,27 +14,32 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "modules/canbus/vehicle/ls/protocol/ecu_status__206.h"
+#include "modules/canbus/vehicle/ls/protocol/speed_feedback__206.h"
 #include "glog/logging.h"
 #include "modules/drivers/canbus/common/byte.h"
 #include "modules/drivers/canbus/common/canbus_consts.h"
 
-namespace apollo {
-namespace canbus {
-namespace ls {
+namespace apollo
+{
+namespace canbus
+{
+namespace ls
+{
 
 using ::apollo::drivers::canbus::Byte;
 
-Speed_feedback206::Speed_feedback206() {}
-const int32_t Speed_feedback206::ID = 0x206;
+Speedfeedback206::Speedfeedback206() {}
+const int32_t Speedfeedback206::ID = 0x206;
 
-void Speed_feedback206::Parse(const std::uint8_t* bytes, int32_t length,
-                          ChassisDetail* chassis) const {
-  chassis->mutable_ls()->mutable_speed_feedback__206()->set_speed(
+void Speedfeedback206::Parse(const std::uint8_t *bytes, int32_t length,
+                             ChassisDetail *chassis) const
+{
+  //chassis->mutable_ls()->mutable_speed_feedback__206().set_speed(
+  //fspeed(bytes, length));
+
+  chassis->mutable_ls()->mutable_speed_feedback__206()->set_fspeed(
       fspeed(bytes, length));
-  //chassis->mutable_ls()->mutable_ecu_status__206()->set_acc_speed(
-     // acc_speed(bytes, length));
- /* chassis->mutable_ls()->mutable_ecu_status__206()->set_ctrl_sts(
+  /* chassis->mutable_ls()->mutable_ecu_status__206()->set_ctrl_sts(
       ctrl_sts(bytes, length));
   chassis->mutable_ls()->mutable_ecu_status__206()->set_chassis_sts(
       chassis_sts(bytes, length));
@@ -46,7 +51,8 @@ void Speed_feedback206::Parse(const std::uint8_t* bytes, int32_t length,
 // 0.0, 'precision': 0.01, 'len': 16, 'name': 'speed', 'is_signed_var': True,
 // 'physical_range': '[0|0]', 'bit': 0, 'type': 'double', 'order': 'intel',
 // 'physical_unit': 'm/s'}
-double Speed_feedback206::fspeed(const std::uint8_t* bytes, int32_t length) const {
+double Speedfeedback206::fspeed(const std::uint8_t *bytes, int32_t length) const
+{
   Byte t0(bytes + 1);
   int32_t x = t0.get_byte(0, 8);
 
@@ -127,8 +133,7 @@ int Speed_feedback206::chassis_err(const std::uint8_t* bytes,
 
   int ret = x;
   return ret;*/
-}
-}  // namespace ls
-}  // namespace canbus
-}  // namespace apollo
-
+} // namespace ls
+} // namespace canbus
+} // namespace apollo
+//} // namespace apollo

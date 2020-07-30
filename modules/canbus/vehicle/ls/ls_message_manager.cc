@@ -19,7 +19,7 @@
 #include "modules/canbus/vehicle/ls/protocol/brake_status__202.h"
 #include "modules/canbus/vehicle/ls/protocol/control_command_100.h"
 #include "modules/canbus/vehicle/ls/protocol/ecu_status__200.h"
-#include "modules/canbus/vehicle/ls/protocol/speed_feedback.h"
+#include "modules/canbus/vehicle/ls/protocol/speed_feedback__206.h"
 //#include "modules/canbus/vehicle/ls/protocol/ecu_status_3_517.h"
 #include "modules/canbus/vehicle/ls/protocol/gear_command_104.h"
 #include "modules/canbus/vehicle/ls/protocol/gear_status__204.h"
@@ -30,11 +30,15 @@
 #include "modules/canbus/vehicle/ls/protocol/turnsignal_command_104.h"
 #include "modules/canbus/vehicle/ls/protocol/turnsignal_status__204.h"
 
-namespace apollo {
-namespace canbus {
-namespace ls {
+namespace apollo
+{
+namespace canbus
+{
+namespace ls
+{
 
-LsMessageManager::LsMessageManager() {
+LsMessageManager::LsMessageManager()
+{
   // Control Messages
   AddSendProtocolData<Brakecommand102, true>();
   AddSendProtocolData<Controlcommand100, true>();
@@ -47,16 +51,16 @@ LsMessageManager::LsMessageManager() {
   AddRecvProtocolData<Brakestatus202, true>();
   AddRecvProtocolData<Ecustatus200, true>();
   //AddRecvProtocolData<Ecustatus2516, true>();
- // AddRecvProtocolData<Ecustatus3517, true>();
+  // AddRecvProtocolData<Ecustatus3517, true>();
   AddRecvProtocolData<Gearstatus204, true>();
   AddRecvProtocolData<Steerstatus203, true>();
   AddRecvProtocolData<Throttlestatus201, true>();
   AddRecvProtocolData<Turnsignalstatus204, true>();
-  AddRecvProtocolData<Speedfeedback206,true>();
+  AddRecvProtocolData<Speedfeedback206, true>();
 }
 
 LsMessageManager::~LsMessageManager() {}
 
-}  // namespace ls
-}  // namespace canbus
-}  // namespace apollo
+} // namespace ls
+} // namespace canbus
+} // namespace apollo
